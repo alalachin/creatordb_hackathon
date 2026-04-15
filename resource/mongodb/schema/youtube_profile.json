@@ -1,0 +1,215 @@
+{
+    "_id": "str",
+    "cName": "str",
+    "uId": "str",
+    "verified": "bool",
+    "desc": "str",
+    "country": "str",
+    "countryCode": "str",
+    "keywords": "str",
+    "active": "bool",
+    "videosIn30Days": "int",
+    "videosIn90Days": "int",
+    "topicIds": [
+        "str"
+    ],
+    "nicheIds": [
+        "str"
+    ],
+    "cate1st": "str",
+    "cate2st": "str",
+    "cate3st": "str",
+    "lang1st": "str",
+    "lang2st": "str",
+    "misc": {
+        "db": {
+            "workerKey": "int",
+            "createdAt": "Int64",
+            "updatedAt": "datetime",
+            "archivedHistoryYTB": "Int64",
+            "photoAvatarUpdatedAt": "Int64",
+            "scrapedAt": "Int64",
+            "scrapedStatus": "str",
+            "loggedInDataUpdatedAt": "int"
+        },
+        "calculated": {
+            "language": "str",
+            "language2nd": "str",
+            "languages": [
+                "str"
+            ],
+            "manualLanguage": "bool",
+            "manualLanguage2nd": "bool",
+            "manuallyLanguagesUpdatedAt": "Int64",
+            "location": "str",
+            "createdAt": "int",
+            "updatedAt": "Int64",
+            "sponsorUpdatedAt": "Int64",
+            "sponsorNextUpdatedAt": "Int64",
+            "manuallyLocation": "str",
+            "manuallyUpdatedAt": "int",
+            "demographic": {
+                "genderManual": "bool",
+                "genderManPercent": "float",
+                "genderWomanPercent": "float",
+                "ageManual": "bool",
+                "avgAge": "float",
+                "ageRangePercent": [
+                    "float"
+                ],
+                "maxAgeRange": "int",
+                "countryManual": "bool",
+                "maxCountry": "str",
+                "maxCountryPercent": "float",
+                "countryPercent": [
+                    {
+                        "value": "float",
+                        "key": "str"
+                    }
+                ]
+            },
+            "demographicUpdatedAt": "Int64",
+            "nicheIds": [
+                "empty_list"
+            ],
+            "nicheUpdatedAt": "int",
+            "topicIds": [
+                "empty_list"
+            ],
+            "topicUpdatedAt": "int",
+            "officialLanguage": "str",
+            "officialLanguageUpdateAt": "Int64",
+            "ytVideoPrice": {
+                "cpmLow": "int",
+                "cpmRaw": "int",
+                "cpmHigh": "int",
+                "priceLow": "int",
+                "priceRaw": "int",
+                "priceHigh": "int",
+                "debug": "str"
+            },
+            "ytShortsPrice": {
+                "cpmLow": "int",
+                "cpmRaw": "int",
+                "cpmHigh": "int",
+                "priceLow": "int",
+                "priceRaw": "int",
+                "priceHigh": "int",
+                "debug": "str"
+            },
+            "priceUpdatedAt": "Int64"
+        }
+    },
+    "emails": [
+        "str"
+    ],
+    "businessEmail": "str",
+    "links": [
+        {
+            "title": "str",
+            "url": "str"
+        }
+    ],
+    "stats": {
+        "channel": {
+            "channelViews": "Int64",
+            "followers": "int",
+            "posts": "int"
+        },
+        "videosAll": {
+            "videosNumber": "int",
+            "avgViews": "int",
+            "avgLikes": "int",
+            "avgComments": "int",
+            "avgLengthSec": "int",
+            "avgSelfCommentRatio": "float",
+            "avgCommentLikeRatio": "int",
+            "avgCommentReplyRatio": "float",
+            "avgStmScore": "float",
+            "avgStmComparative": "float",
+            "avgViews1d": "int",
+            "avgViews7d": "int",
+            "avgViews30d": "int",
+            "midViews": "int",
+            "minViews": "int",
+            "maxViews": "int"
+        },
+        "shortsAll": {
+            "videosNumber": "int",
+            "avgViews": "int",
+            "avgLikes": "int",
+            "avgComments": "int",
+            "avgLengthSec": "int",
+            "avgSelfCommentRatio": "float",
+            "avgCommentLikeRatio": "int",
+            "avgCommentReplyRatio": "int",
+            "avgStmScore": "float",
+            "avgStmComparative": "float",
+            "avgViews1d": "int",
+            "avgViews7d": "int",
+            "avgViews30d": "int",
+            "midViews": "int",
+            "minViews": "int",
+            "maxViews": "int"
+        },
+        "videosRecentSponsored": {
+            "videosNumber": "int",
+            "avgViews": "int",
+            "avgLikes": "int",
+            "avgComments": "int",
+            "avgLengthSec": "int",
+            "avgSelfCommentRatio": "float",
+            "avgCommentLikeRatio": "int",
+            "avgCommentReplyRatio": "float",
+            "avgStmScore": "float",
+            "avgStmComparative": "float",
+            "avgViews1d": "int",
+            "avgViews7d": "int",
+            "avgViews30d": "int",
+            "midViews": "int",
+            "minViews": "int",
+            "maxViews": "int"
+        },
+        "shortsRecentSponsored": {
+            "videosNumber": "int",
+            "avgViews": "int",
+            "avgLikes": "int",
+            "avgComments": "int",
+            "avgLengthSec": "int",
+            "avgSelfCommentRatio": "int",
+            "avgCommentLikeRatio": "int",
+            "avgCommentReplyRatio": "int",
+            "avgStmScore": "int",
+            "avgStmComparative": "int",
+            "avgViews1d": "int",
+            "avgViews7d": "int",
+            "avgViews30d": "int",
+            "midViews": "int",
+            "minViews": "int",
+            "maxViews": "int"
+        }
+    },
+    "statsLite": {
+        "video30d": {
+            "minViews": "int",
+            "avgViews": "int",
+            "maxViews": "int"
+        },
+        "video90d": {
+            "minViews": "int",
+            "avgViews": "int",
+            "maxViews": "int"
+        },
+        "short30d": {
+            "minViews": "int",
+            "avgViews": "int",
+            "maxViews": "int"
+        },
+        "short90d": {
+            "minViews": "int",
+            "avgViews": "int",
+            "maxViews": "int"
+        }
+    },
+    "backupDate_latest": "datetime"
+}

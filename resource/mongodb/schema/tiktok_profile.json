@@ -1,0 +1,144 @@
+{
+    "_id": "str",
+    "secureUserId": "str",
+    "handle": "str",
+    "name": "str",
+    "isVerified": "bool",
+    "isPrivate": "bool",
+    "joinedDate": "datetime",
+    "description": "str",
+    "country": "str",
+    "countryCode": "str",
+    "isActive": "bool",
+    "isBusiness": "bool",
+    "category1": "str",
+    "language1": "str",
+    "misc": {
+        "calculated": {
+            "topicIds": [
+                "empty_list"
+            ],
+            "createdAt": "int",
+            "language": "str",
+            "location": "str",
+            "sponsorNextUpdatedAt": "Int64",
+            "sponsorUpdatedAt": "int",
+            "manuallyUpdatedAt": "int",
+            "manuallyLocation": "str",
+            "officialLanguage": "str",
+            "officialLanguageUpdateAt": "int",
+            "languages": [
+                "str"
+            ],
+            "language2nd": "str",
+            "nicheIds": [
+                "str"
+            ],
+            "priceUpdatedAt": "int",
+            "nicheUpdatedAt": "Int64",
+            "demographicUpdatedAt": "Int64",
+            "demographic": {
+                "genderManPercent": "float",
+                "genderWomanPercent": "float",
+                "genderManual": "bool",
+                "ageRangePercent": [
+                    "float"
+                ],
+                "avgAge": "float",
+                "maxAgeRange": "int",
+                "ageManual": "bool",
+                "maxCountry": "str",
+                "maxCountryPercent": "float",
+                "countryPercent": [
+                    {
+                        "key": "str",
+                        "value": "float"
+                    }
+                ],
+                "countryManual": "bool"
+            },
+            "topicUpdatedAt": "int",
+            "manualLanguage": "bool",
+            "manuallyLanguagesUpdatedAt": "Int64",
+            "manualLanguage2nd": "bool",
+            "updatedAt": "Int64"
+        },
+        "db": {
+            "createdAt": "Int64",
+            "workerKey": "int",
+            "loggedInDataUpdatedAt": "int",
+            "archivedHistoryYTB": "Int64",
+            "scrapedStatus": "str",
+            "photoAvatarUpdatedAt": "Int64",
+            "nextUpdateDTB": "Int64",
+            "scrapedAt": "Int64",
+            "updatedAt": "datetime"
+        }
+    },
+    "hasEmail": "bool",
+    "emails": [
+        "empty_list"
+    ],
+    "links": [
+        {
+            "title": "str",
+            "url": "str"
+        }
+    ],
+    "followingAccountIds": [
+        "str"
+    ],
+    "stats": {
+        "user": {
+            "accountLikes": "int",
+            "accountPosts": "int",
+            "followers": "int",
+            "following": "int",
+            "posts": "int",
+            "videos": "int"
+        },
+        "videosAll": {
+            "postsNumber": "int",
+            "avgPlays": "int",
+            "avgPlays1d": "int",
+            "avgPlays7d": "int",
+            "avgPlays30d": "int",
+            "maxPlays": "int",
+            "midPlays": "int",
+            "minPlays": "int",
+            "avgLikes": "int",
+            "avgLikes1d": "int",
+            "avgLikes7d": "int",
+            "avgLikes30d": "int",
+            "maxLikes": "int",
+            "midLikes": "int",
+            "minLikes": "int",
+            "avgShares": "int",
+            "maxShares": "int",
+            "midShares": "int",
+            "minShares": "int",
+            "avgComments": "int",
+            "avgEngageRate": "float",
+            "midEngageRate": "float",
+            "avgLengthSec": "int"
+        }
+    },
+    "statsLite": {
+        "video30d": {
+            "minPlays": "int",
+            "avgPlays": "int",
+            "maxPlays": "int"
+        },
+        "video90d": {
+            "minPlays": "int",
+            "avgPlays": "int",
+            "maxPlays": "int"
+        }
+    },
+    "publishing": {
+        "lastPublishTime": "datetime",
+        "numVideosLast30d": "int",
+        "numVideosLast90d": "int"
+    },
+    "backupDate_latest": "datetime"
+}
