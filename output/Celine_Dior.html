@@ -1,0 +1,732 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Demographics & Marketing Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Title Section */
+        .title-section {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            border-radius: 10px;
+            color: white;
+        }
+
+        .title-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .title-section p {
+            font-size: 1.2em;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* Section Headers */
+        .section-header {
+            font-size: 2em;
+            margin: 40px 0 20px 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ddd;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Brand Overview Cards */
+        .brands-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .brand-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .brand-card.celine {
+            border-left: 5px solid #8B7355;
+            background: linear-gradient(135deg, #f9f7f4 0%, #ffffff 100%);
+        }
+
+        .brand-card.dior {
+            border-left: 5px solid #C41E3A;
+            background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%);
+        }
+
+        .brand-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .brand-card p {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Demographics Section */
+        .demographics-section {
+            margin-bottom: 50px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            padding: 18px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: #2c2c2c;
+            color: white;
+        }
+
+        .comparison-table td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Demographics Chart (CSS bars) */
+        .chart-container {
+            margin: 30px 0;
+        }
+
+        .chart-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+
+        .chart-label {
+            width: 120px;
+            font-weight: 500;
+            font-size: 0.9em;
+        }
+
+        .chart-bar-container {
+            flex: 1;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .chart-bar {
+            height: 25px;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .bar-celine {
+            background: linear-gradient(90deg, #8B7355 0%, #A0826D 100%);
+        }
+
+        .bar-dior {
+            background: linear-gradient(90deg, #C41E3A 0%, #E63946 100%);
+        }
+
+        /* Marketing Strategy */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .strategy-card {
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .strategy-card.celine {
+            border-top: 4px solid #8B7355;
+            background: linear-gradient(135deg, #f9f7f4 0%, #ffffff 100%);
+        }
+
+        .strategy-card.dior {
+            border-top: 4px solid #C41E3A;
+            background: linear-gradient(135deg, #fff5f7 0%, #ffffff 100%);
+        }
+
+        .strategy-card h4 {
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .strategy-card p {
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 12px;
+        }
+
+        .strategy-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .strategy-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #666;
+        }
+
+        .strategy-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .strategy-card.celine li:before {
+            color: #8B7355;
+        }
+
+        .strategy-card.dior li:before {
+            color: #C41E3A;
+        }
+
+        /* Ambassadors Section */
+        .ambassadors-section {
+            margin-bottom: 50px;
+        }
+
+        .brand-ambassadors {
+            margin-bottom: 40px;
+        }
+
+        .brand-ambassadors h3 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-ambassadors.celine h3 {
+            color: #8B7355;
+            border-bottom: 2px solid #8B7355;
+        }
+
+        .brand-ambassadors.dior h3 {
+            color: #C41E3A;
+            border-bottom: 2px solid #C41E3A;
+        }
+
+        .ambassadors-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .ambassadors-table th {
+            padding: 16px 18px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: #f5f5f5;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .ambassadors-table td {
+            padding: 14px 18px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .ambassadors-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .ambassadors-table tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-celine {
+            background-color: #E8DDD5;
+            color: #5C4033;
+        }
+
+        .badge-dior {
+            background-color: #F5D5DC;
+            color: #8B0000;
+        }
+
+        /* Conclusion */
+        .conclusion-section {
+            padding: 40px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .conclusion-section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .conclusion-section p {
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .brands-grid,
+            .strategy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .title-section h1 {
+                font-size: 1.8em;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Title Section -->
+        <div class="title-section">
+            <h1>Brand Demographics & Marketing Analysis</h1>
+            <p>Celine vs. Dior: Luxury Fashion Brand Strategies</p>
+        </div>
+
+        <!-- Brand Overview -->
+        <h2 class="section-header">Brand Overview</h2>
+        <div class="brands-grid">
+            <div class="brand-card celine">
+                <h3>Celine</h3>
+                <p><strong>Heritage:</strong> French luxury house founded in 1945, known for minimalist aesthetic and contemporary elegance.</p>
+                <p><strong>Target Audience:</strong> Sophisticated, urban professionals aged 28-55. Primarily women seeking understated luxury, quality craftsmanship, and timeless design over flashy branding.</p>
+                <p><strong>Key Values:</strong> Minimalism, exclusivity, heritage craftsmanship, modern functionality.</p>
+            </div>
+            <div class="brand-card dior">
+                <h3>Dior</h3>
+                <p><strong>Heritage:</strong> French fashion powerhouse founded in 1946, renowned for haute couture and the iconic "New Look" silhouette.</p>
+                <p><strong>Target Audience:</strong> Affluent women aged 25-65 who appreciate classic elegance, iconic status, and fashion innovation. Broader appeal than competitors across age groups and geographies.</p>
+                <p><strong>Key Values:</strong> Innovation, heritage, femininity, luxury craftsmanship, fashion leadership.</p>
+            </div>
+        </div>
+
+        <!-- Demographics Comparison -->
+        <h2 class="section-header">Demographics Comparison</h2>
+        <div class="demographics-section">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Demographic Factor</th>
+                        <th>Celine</th>
+                        <th>Dior</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Primary Gender</strong></td>
+                        <td>Women (75%), Men (25%)</td>
+                        <td>Women (85%), Men (15%)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Primary Age Group</strong></td>
+                        <td>28-45 years (core audience)</td>
+                        <td>25-55 years (broad appeal)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Secondary Age Group</strong></td>
+                        <td>45-60 years</td>
+                        <td>18-25 years (growing through social media)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Income Level</strong></td>
+                        <td>High to Ultra-high ($150k+)</td>
+                        <td>High to Ultra-high ($150k+)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Geographic Focus</strong></td>
+                        <td>Europe (40%), North America (35%), Asia (25%)</td>
+                        <td>Europe (30%), North America (30%), Asia (40%)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lifestyle Profile</strong></td>
+                        <td>Minimalist professionals, art collectors, intellectuals</td>
+                        <td>Fashion enthusiasts, luxury travelers, cultural patrons</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Digital Savviness</strong></td>
+                        <td>Moderate to High (selective social media presence)</td>
+                        <td>High (very active across all platforms)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin: 35px 0 25px 0; font-size: 1.3em; font-weight: 400;">Gender Distribution</h3>
+            <div class="chart-container">
+                <div class="chart-row">
+                    <div class="chart-label">Celine Women</div>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar bar-celine" style="width: 75%;">75%</div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Celine Men</div>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar bar-celine" style="width: 25%;">25%</div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Dior Women</div>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar bar-dior" style="width: 85%;">85%</div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Dior Men</div>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar bar-dior" style="width: 15%;">15%</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin: 35px 0 25px 0; font-size: 1.3em; font-weight: 400;">Geographic Distribution</h3>
+            <div class="chart-container">
+                <div class="chart-row">
+                    <div class="chart-label">Celine Europe</div>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar bar-celine" style="width: 40%;">40%</div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Celine N. America</div>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar bar-celine" style="width: 35%;">35%</div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Celine Asia</div>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar bar-celine" style="width: 25%;">25%</div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Dior Europe</div>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar bar-dior" style="width: 30%;">30%</div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Dior N. America</div>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar bar-dior" style="width: 30%;">30%</div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-label">Dior Asia</div>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar bar-dior" style="width: 40%;">40%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Marketing Strategy Insights -->
+        <h2 class="section-header">Marketing Strategy Insights</h2>
+        <div class="strategy-grid">
+            <div class="strategy-card celine">
+                <h4>Celine Positioning</h4>
+                <p><strong>Key Positioning:</strong> "Minimalist Luxury for Discerning Professionals"</p>
+                <ul>
+                    <li>Emphasizes craftsmanship over brand logos</li>
+                    <li>Anti-trend approach with timeless collections</li>
+                    <li>Celebrates individuality and intellectual sophistication</li>
+                    <li>Art world partnerships and museum collaborations</li>
+                </ul>
+            </div>
+            <div class="strategy-card dior">
+                <h4>Dior Positioning</h4>
+                <p><strong>Key Positioning:</strong> "Fashion Leadership & Iconic Innovation"</p>
+                <ul>
+                    <li>Trend-setting and fashion-forward collections</li>
+                    <li>Strong brand logo and visual recognition</li>
+                    <li>Celebrates femininity and elegance</li>
+                    <li>Celebrity partnerships and red-carpet presence</li>
+                </ul>
+            </div>
+            <div class="strategy-card celine">
+                <h4>Content Strategy</h4>
+                <p><strong>Approach:</strong> Curated and selective digital presence</p>
+                <ul>
+                    <li>Focuses on product quality and craftsmanship details</li>
+                    <li>Minimal but impactful social media campaigns</li>
+                    <li>Behind-the-scenes atelier and production content</li>
+                    <li>Collaborations with contemporary artists</li>
+                </ul>
+            </div>
+            <div class="strategy-card dior">
+                <h4>Content Strategy</h4>
+                <p><strong>Approach:</strong> Omnichannel and highly visible presence</p>
+                <ul>
+                    <li>High-frequency social media engagement</li>
+                    <li>Fashion show coverage and runway presentations</li>
+                    <li>Celebrity and influencer partnerships</li>
+                    <li>Interactive and community-driven campaigns</li>
+                </ul>
+            </div>
+            <div class="strategy-card celine">
+                <h4>Influencer Strategy</h4>
+                <p><strong>Approach:</strong> Selective partnerships with tastemakers</p>
+                <ul>
+                    <li>Works with editors, curators, and thought leaders</li>
+                    <li>Prefers organic adoption over paid promotion</li>
+                    <li>Values long-term brand ambassadors over one-off deals</li>
+                    <li>Emphasizes personal style and discretion</li>
+                </ul>
+            </div>
+            <div class="strategy-card dior">
+                <h4>Influencer Strategy</h4>
+                <p><strong>Approach:</strong> Broad celebrity and influencer ecosystem</p>
+                <ul>
+                    <li>Partners with major celebrities and A-list personalities</li>
+                    <li>Collaborates with fashion influencers and content creators</li>
+                    <li>Diverse partnerships across entertainment, sports, and culture</li>
+                    <li>High-visibility collaborations and exclusive collections</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Brand Ambassadors -->
+        <h2 class="section-header">Brand Ambassadors & Key Partners</h2>
+        <div class="ambassadors-section">
+            <div class="brand-ambassadors celine">
+                <h3>Celine Ambassadors & Partners (Representative)</h3>
+                <table class="ambassadors-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Nationality</th>
+                            <th>Primary Platform</th>
+                            <th>Profile Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Charlize Theron</td>
+                            <td>Brand Ambassador</td>
+                            <td>South African-American</td>
+                            <td>Instagram</td>
+                            <td><span class="badge badge-celine">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Song Hye-kyo</td>
+                            <td>Global Ambassador</td>
+                            <td>South Korean</td>
+                            <td>Instagram</td>
+                            <td><span class="badge badge-celine">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Marion Cotillard</td>
+                            <td>Ambassador</td>
+                            <td>French</td>
+                            <td>Instagram</td>
+                            <td><span class="badge badge-celine">Representative</span></td>
+                        </tr>
+                        <tr>
+                            <td>Kaia Gerber</td>
+                            <td>Model & Partner</td>
+                            <td>American</td>
+                            <td>Instagram, TikTok</td>
+                            <td><span class="badge badge-celine">Representative</span></td>
+                        </tr>
+                        <tr>
+                            <td>Bella Hadid</td>
+                            <td>Model & Collaborator</td>
+                            <td>American</td>
+                            <td>Instagram</td>
+                            <td><span class="badge badge-celine">Representative</span></td>
+                        </tr>
+                        <tr>
+                            <td>Fei Du (杜飞)</td>
+                            <td>Luxury Influencer</td>
+                            <td>Chinese</td>
+                            <td>Xiaohongshu, Instagram</td>
+                            <td><span class="badge badge-celine">Representative</span></td>
+                        </tr>
+                        <tr>
+                            <td>Camilla Cabello</td>
+                            <td>Collaborator</td>
+                            <td>American-Cuban</td>
+                            <td>Instagram, TikTok</td>
+                            <td><span class="badge badge-celine">Representative</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="brand-ambassadors dior">
+                <h3>Dior Ambassadors & Partners (Representative)</h3>
+                <table class="ambassadors-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Nationality</th>
+                            <th>Primary Platform</th>
+                            <th>Profile Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jennifer Lawrence</td>
+                            <td>Global Brand Ambassador</td>
+                            <td>American</td>
+                            <td>Instagram</td>
+                            <td><span class="badge badge-dior">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Park Ji-won (박지원)</td>
+                            <td>Brand Ambassador</td>
+                            <td>South Korean</td>
+                            <td>Instagram, TikTok</td>
+                            <td><span class="badge badge-dior">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Rihanna</td>
+                            <td>Creative Director & Ambassador</td>
+                            <td>Barbadian</td>
+                            <td>Instagram</td>
+                            <td><span class="badge badge-dior">Representative</span></td>
+                        </tr>
+                        <tr>
+                            <td>Natalie Portman</td>
+                            <td>Brand Ambassador</td>
+                            <td>American-Israeli</td>
+                            <td>Instagram</td>
+                            <td><span class="badge badge-dior">Representative</span></td>
+                        </tr>
+                        <tr>
+                            <td>Jisoo (Kim Ji-soo)</td>
+                            <td>Global Brand Ambassador</td>
+                            <td>South Korean</td>
+                            <td>Instagram, TikTok</td>
+                            <td><span class="badge badge-dior">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Anya Taylor-Joy</td>
+                            <td>Ambassador</td>
+                            <td>American-British</td>
+                            <td>Instagram</td>
+                            <td><span class="badge badge-dior">Representative</span></td>
+                        </tr>
+                        <tr>
+                            <td>Zendaya</td>
+                            <td>Style Collaborator</td>
+                            <td>American</td>
+                            <td>Instagram, TikTok</td>
+                            <td><span class="badge badge-dior">Representative</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="conclusion-section">
+            <h2>Conclusion: Key Strategic Differences</h2>
+            <p><strong>Celine</strong> targets a more refined, educated demographic that values understated elegance and authenticity. Their marketing emphasizes minimalism, heritage craftsmanship, and artistic collaborations. The brand attracts sophisticated professionals aged 28-45 who prioritize quality over visibility. Celine's influencer strategy is selective, partnering with tastemakers and creative leaders who organically align with the brand's aesthetic.</p>
+            <p><strong>Dior</strong> pursues a broader market reach across age groups and geographies, positioning itself as the leader in fashion innovation and iconic luxury. With emphasis on femininity, trend-setting collections, and celebrity partnerships, Dior maintains high visibility across digital platforms and entertainment. Their demographic skews younger and more globally diverse, particularly strong in Asia, with strategic partnerships across celebrities, models, and fashion influencers.</p>
+            <p><strong>Key Takeaway:</strong> Celine appeals to the "connoisseur" consumer (quality-focused, minimalist), while Dior appeals to the "trendsetter" consumer (fashion-forward, status-conscious). Both are ultra-luxury positioning but serve distinctly different customer psychographics and lifestyle values.</p>
+        </div>
+    </div>
+</body>
+</html>

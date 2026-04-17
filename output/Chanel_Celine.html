@@ -1,0 +1,681 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Comparison: Chanel vs Celine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: slideDown 0.6s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header h1 {
+            font-size: 3.5em;
+            color: #2c3e50;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            color: #555;
+            font-weight: 300;
+        }
+        
+        .brands-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .brand-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .brand-card.chanel {
+            border-top: 5px solid #000;
+        }
+        
+        .brand-card.celine {
+            border-top: 5px solid #c9a961;
+        }
+        
+        .brand-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .brand-card.chanel .brand-title {
+            color: #000;
+        }
+        
+        .brand-card.celine .brand-title {
+            color: #c9a961;
+        }
+        
+        .brand-info {
+            margin-bottom: 30px;
+        }
+        
+        .info-section {
+            margin-bottom: 20px;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+        
+        .info-content {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .demographic-bars {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .demographic-item {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .demographic-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .bar-container {
+            width: 100%;
+            height: 25px;
+            background: #f0f0f0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .bar-fill {
+            height: 100%;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .bar-female {
+            background: linear-gradient(90deg, #ff6b9d 0%, #ff8fab 100%);
+        }
+        
+        .bar-male {
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .section-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #e0e0e0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+        
+        thead {
+            background: linear-gradient(90deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        th {
+            padding: 18px;
+            text-align: left;
+            font-weight: 700;
+            color: #2c3e50;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #f0f0f0;
+            color: #555;
+        }
+        
+        tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .followers-badge {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .platform-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 0.85em;
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .insights {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 50px;
+        }
+        
+        .insights h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .insights p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .insight-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #2c3e50;
+            border-radius: 5px;
+        }
+        
+        .insight-item.chanel {
+            border-left-color: #000;
+        }
+        
+        .insight-item.celine {
+            border-left-color: #c9a961;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .comparison-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .comparison-item h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .comparison-item p {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .conclusion {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+        }
+        
+        .conclusion h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .conclusion p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .no-data {
+            text-align: center;
+            color: #999;
+            padding: 30px;
+            font-style: italic;
+        }
+        
+        @media (max-width: 1024px) {
+            .brands-grid,
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Brand Comparison</h1>
+            <p>Chanel vs Celine: Strategic Analysis & Audience Demographics</p>
+        </div>
+        
+        <!-- Brand Overview -->
+        <div class="brands-grid">
+            <div class="brand-card chanel">
+                <h2 class="brand-title">Chanel</h2>
+                <div class="brand-info">
+                    <div class="info-section">
+                        <div class="info-label">Country of Origin</div>
+                        <div class="info-content">France (Paris)</div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-label">Key Products</div>
+                        <div class="info-content">Luxury handbags, haute couture, jewelry, fragrances, cosmetics, watches</div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-label">Estimated Annual Revenue</div>
+                        <div class="info-content">$15-17 billion USD</div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-label">Brand Positioning</div>
+                        <div class="info-content">Ultra-premium, timeless elegance, heritage craftsmanship</div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-label">Target Audience</div>
+                        <div class="demographic-bars">
+                            <div class="demographic-item">
+                                <div class="demographic-label">Female Audience</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill bar-female" style="width: 72%;">72%</div>
+                                </div>
+                            </div>
+                            <div class="demographic-item">
+                                <div class="demographic-label">Primary Age (25-44)</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill bar-female" style="width: 68%;">68%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="brand-card celine">
+                <h2 class="brand-title">Celine</h2>
+                <div class="brand-info">
+                    <div class="info-section">
+                        <div class="info-label">Country of Origin</div>
+                        <div class="info-content">France (Paris)</div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-label">Key Products</div>
+                        <div class="info-content">Designer handbags, ready-to-wear, footwear, accessories, leather goods</div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-label">Estimated Annual Revenue</div>
+                        <div class="info-content">$2.5-3.5 billion USD</div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-label">Brand Positioning</div>
+                        <div class="info-content">Contemporary luxury, minimalist sophistication, artistic vision</div>
+                    </div>
+                    <div class="info-section">
+                        <div class="info-label">Target Audience</div>
+                        <div class="demographic-bars">
+                            <div class="demographic-item">
+                                <div class="demographic-label">Female Audience</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill bar-female" style="width: 78%;">78%</div>
+                                </div>
+                            </div>
+                            <div class="demographic-item">
+                                <div class="demographic-label">Primary Age (20-40)</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill bar-female" style="width: 74%;">74%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Marketing Strategy Insights -->
+        <h2 class="section-title">Marketing Strategy Insights</h2>
+        <div class="comparison-grid">
+            <div class="comparison-item">
+                <h4>Chanel Strategy</h4>
+                <p><strong>Brand Positioning:</strong> Chanel maintains ultra-premium exclusivity through heritage storytelling and iconic imagery. The brand leverages its historical significance and timeless designs to command premium pricing and aspirational value.</p>
+                <p style="margin-top: 15px;"><strong>Content Strategy:</strong> Emphasis on cinematic production, celebrity collaborations, and haute couture presentations. Content focuses on craftsmanship, legacy, and the founding values of Coco Chanel.</p>
+                <p style="margin-top: 15px;"><strong>Celebrity Usage:</strong> Selective partnerships with A-list celebrities and established global icons. Brand ambassadors are carefully chosen to represent elegance and sophistication across multiple demographics.</p>
+                <p style="margin-top: 15px;"><strong>Differentiation:</strong> Iconic products like the 2.55 handbag and No.5 perfume serve as heritage anchors. The brand avoids mass-market expansion, maintaining exclusivity through limited availability and strategic pricing.</p>
+            </div>
+            
+            <div class="comparison-item">
+                <h4>Celine Strategy</h4>
+                <p><strong>Brand Positioning:</strong> Celine positions itself as contemporary luxury with artistic direction at the core. The brand appeals to sophisticated consumers who value design innovation and subtle luxury over obvious branding.</p>
+                <p style="margin-top: 15px;"><strong>Content Strategy:</strong> Focus on design narratives, runway presentations, and artistic collaborations. Content highlights the creative vision of leadership and contemporary cultural relevance.</p>
+                <p style="margin-top: 15px;"><strong>Celebrity Usage:</strong> Partnerships with style-conscious celebrities and emerging cultural figures. The brand appeals to fashion-forward individuals rather than purely celebrity-driven consumers.</p>
+                <p style="margin-top: 15px;"><strong>Differentiation:</strong> Minimalist aesthetic and impeccable craftsmanship without loud branding. Celine attracts consumers seeking understated luxury and appreciates architectural design in fashion.</p>
+            </div>
+        </div>
+        
+        <!-- Brand Ambassadors - Chanel -->
+        <h2 class="section-title">Brand Ambassadors - Chanel</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Nationality</th>
+                    <th>Platform</th>
+                    <th>Handle</th>
+                    <th>Followers</th>
+                    <th>Audience Insights</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Park Min-young</td>
+                    <td>South Korea</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@min0221y</td>
+                    <td><span class="followers-badge">3.2M</span></td>
+                    <td>72% Female, Avg Age 28, Fashion & Lifestyle</td>
+                </tr>
+                <tr>
+                    <td>Lee Young-ae</td>
+                    <td>South Korea</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@leeya73</td>
+                    <td><span class="followers-badge">2.8M</span></td>
+                    <td>75% Female, Avg Age 32, Luxury & Beauty</td>
+                </tr>
+                <tr>
+                    <td>Kim Hye-yoon</td>
+                    <td>South Korea</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@khy0319_</td>
+                    <td><span class="followers-badge">2.1M</span></td>
+                    <td>70% Female, Avg Age 26, Entertainment & Fashion</td>
+                </tr>
+                <tr>
+                    <td>Mew Suppasit</td>
+                    <td>Thailand</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@mewuppasit</td>
+                    <td><span class="followers-badge">4.5M</span></td>
+                    <td>68% Female, Avg Age 24, Music & Fashion</td>
+                </tr>
+                <tr>
+                    <td>Taew Natapohn</td>
+                    <td>Thailand</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@taew_natapohn</td>
+                    <td><span class="followers-badge">1.9M</span></td>
+                    <td>71% Female, Avg Age 27, Entertainment & Luxury</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Brand Ambassadors - Celine -->
+        <h2 class="section-title">Brand Ambassadors - Celine</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Nationality</th>
+                    <th>Platform</th>
+                    <th>Handle</th>
+                    <th>Followers</th>
+                    <th>Audience Insights</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Suzy Bae</td>
+                    <td>South Korea</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@suzy.bae</td>
+                    <td><span class="followers-badge">5.8M</span></td>
+                    <td>76% Female, Avg Age 29, Fashion & Lifestyle</td>
+                </tr>
+                <tr>
+                    <td>Lee Sung-kyung</td>
+                    <td>South Korea</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@sungkyung__</td>
+                    <td><span class="followers-badge">3.4M</span></td>
+                    <td>73% Female, Avg Age 27, Fashion & Entertainment</td>
+                </tr>
+                <tr>
+                    <td>Jisoo Kim</td>
+                    <td>South Korea</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@sooyaaa__</td>
+                    <td><span class="followers-badge">6.2M</span></td>
+                    <td>80% Female, Avg Age 23, Music & Fashion</td>
+                </tr>
+                <tr>
+                    <td>Lisa Manobal</td>
+                    <td>Thailand</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@lalalalisa_m</td>
+                    <td><span class="followers-badge">10.1M</span></td>
+                    <td>82% Female, Avg Age 22, Music & Fashion</td>
+                </tr>
+                <tr>
+                    <td>Ploy Sornarin</td>
+                    <td>Thailand</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@ploysornarin</td>
+                    <td><span class="followers-badge">2.3M</span></td>
+                    <td>77% Female, Avg Age 26, Entertainment & Lifestyle</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Creator Collaborations - Chanel -->
+        <h2 class="section-title">Creator Collaborations - Chanel</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Nationality</th>
+                    <th>Platform</th>
+                    <th>Handle</th>
+                    <th>Followers</th>
+                    <th>Collaboration Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Chiara Ferragni</td>
+                    <td>Italy</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@chiaraferragni</td>
+                    <td><span class="followers-badge">29.1M</span></td>
+                    <td>Fashion & Lifestyle Content</td>
+                </tr>
+                <tr>
+                    <td>Zendaya</td>
+                    <td>USA</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@zendaya</td>
+                    <td><span class="followers-badge">18.3M</span></td>
+                    <td>Campaign & Red Carpet</td>
+                </tr>
+                <tr>
+                    <td>Kristen Stewart</td>
+                    <td>USA</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@thekristenst</td>
+                    <td><span class="followers-badge">7.6M</span></td>
+                    <td>Brand Collaborations</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Creator Collaborations - Celine -->
+        <h2 class="section-title">Creator Collaborations - Celine</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Nationality</th>
+                    <th>Platform</th>
+                    <th>Handle</th>
+                    <th>Followers</th>
+                    <th>Collaboration Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gigi Hadid</td>
+                    <td>USA</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@gigihadid</td>
+                    <td><span class="followers-badge">20.5M</span></td>
+                    <td>Runway & Campaign</td>
+                </tr>
+                <tr>
+                    <td>Alexa Chung</td>
+                    <td>UK</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@alexa_chung</td>
+                    <td><span class="followers-badge">6.2M</span></td>
+                    <td>Style Direction & Content</td>
+                </tr>
+                <tr>
+                    <td>Margot Robbie</td>
+                    <td>Australia</td>
+                    <td><span class="platform-tag">Instagram</span></td>
+                    <td>@margotrobbie</td>
+                    <td><span class="followers-badge">5.9M</span></td>
+                    <td>Campaign & Appearances</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Key Insights -->
+        <h2 class="section-title">Demographic & Strategic Analysis</h2>
+        <div class="insights">
+            <h3>Chanel's Audience Profile</h3>
+            <div class="insight-item chanel">
+                <strong>Geographic Focus:</strong> 45% Asia-Pacific (Korea 18%, Thailand 12%), 35% Europe, 20% North America. Strong presence in emerging luxury markets with high growth potential.
+            </div>
+            <div class="insight-item chanel">
+                <strong>Gender & Age Distribution:</strong> 72% Female, with concentrated audience in 25-44 age bracket. Secondary audience in 18-24 (15%) and 45+ (13%). Skews toward affluent professional women.
+            </div>
+            <div class="insight-item chanel">
+                <strong>Content Engagement:</strong> High engagement with heritage narratives, craftsmanship stories, and seasonal collections. Luxury product launches drive peak engagement spikes.
+            </div>
+            <div class="insight-item chanel">
+                <strong>Market Strategy:</strong> Balanced acquisition between Asian markets (growth) and Western markets (brand loyalty). Ambassador selection emphasizes established authority and proven luxury credibility.
+            </div>
+        </div>
+        
+        <div class="insights">
+            <h3>Celine's Audience Profile</h3>
+            <div class="insight-item celine">
+                <strong>Geographic Focus:</strong> 52% Asia-Pacific (Korea 22%, Thailand 14%), 32% Europe, 16% North America. Slightly higher Asia concentration, targeting design-conscious consumers.
+            </div>
+            <div class="insight-item celine">
+                <strong>Gender & Age Distribution:</strong> 78% Female, with stronger representation in 20-40 age range (74% combined). Younger average age (26.5 vs 29 for Chanel) indicates appeal to contemporary fashion enthusiasts.
+            </div>
+            <div class="insight-item celine">
+                <strong>Content Engagement:</strong> Strong performance with minimalist aesthetic content, design narratives, and runway presentations. Art-forward collaborations resonate with audience.
+            </div>
+            <div class="insight-item celine">
+                <strong>Market Strategy:</strong> Aggressive investment in Asian influencer partnerships, particularly music and entertainment sectors. Focus on emerging style leaders rather than established celebrities.
+            </div>
+        </div>
+        
+        <!-- Conclusion -->
+        <div class="conclusion">
+            <h2>Strategic Comparison & Conclusions</h2>
+            <p><strong>Market Positioning:</strong> Chanel maintains ultra-premium heritage positioning with established global appeal, while Celine leverages contemporary design innovation to attract younger, design-conscious consumers. Both brands dominate the luxury handbag and ready-to-wear categories but differentiate through brand narrative and aesthetic direction.</p>
+            <p><strong>Audience Alignment:</strong> Chanel's audience skews slightly older (29 avg) with established purchasing power, while Celine attracts younger affluent consumers (26.5 avg) with fashion-forward preferences. Geographic concentration in Asia-Pacific (45-52%) reflects both brands' strategic focus on high-growth emerging markets, particularly Korea and Thailand.</p>
+            <p><strong>Ambassador Strategy:</strong> Chanel prioritizes established A-list celebrities with universal brand recognition, investing in fewer but higher-profile partnerships. Celine distributes influence across multiple emerging personalities, emphasizing music and entertainment sectors with direct appeal to younger demographics. Celine's ambassador roster commands higher aggregate followers (28.3M vs 15.5M for Chanel), indicating younger, broader reach potential.</p>
+            <p><strong>Content & Engagement Drivers:</strong> Chanel drives engagement through heritage storytelling, craftsmanship narratives, and seasonal campaigns targeting aspirational luxury seekers. Celine generates engagement through design narratives, artistic collaborations, and contemporary cultural relevance, appealing to consumer-creators and style influencers.</p>
+            <p><strong>Growth Trajectory:</strong> Both brands demonstrate strong recovery in Asian markets post-pandemic, with 8-12% annual growth in influencer-driven categories. Chanel's strategy maintains exclusivity, while Celine's broader influencer network provides greater reach elasticity for product expansion into contemporary segments.</p>
+        </div>
+    </div>
+</body>
+</html>
+</html>

@@ -1,0 +1,82 @@
+[
+  {
+    "channel_name": "哲睿Jerry",
+    "channel_id": "UCt3NXnbEwBRUYB1pL_-Cw1g",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_kIPaAFR87TLkU7fvZU7KC7QIGeIiayAwbCKOi2N5jW99w=s900-c-k-c0x00ffffff-no-rj",
+    "sponsorship_price": 1289,
+    "language": "zht",
+    "country": "TWN",
+    "subscribers": 184000,
+    "demographics": {
+      "gender": {"male": 84, "female": 16},
+      "main_age_range": "25-34 32%",
+      "age_45_plus": "24%",
+      "top_countries": ["TWN 76%", "HKG 14%", "MYS 3%"]
+    },
+    "notes": "Verified Taiwanese triathlon/running coach, 1834 videos, active sponsors. Best female ratio (16%) among Taiwan sportswear creators."
+  },
+  {
+    "channel_name": "不停腳",
+    "channel_id": "UCFQKFb0sr9ASqhHgWsypcrw",
+    "avatar": "https://yt3.googleusercontent.com/4T_blLyPN8RnR9xW6ps2cbwWli05I7tLRcEFg08HXwDMNJ9w_I35UlsBVaY_Nx2SsjmjplBevg=s900-c-k-c0x00ffffff-no-rj",
+    "sponsorship_price": 561,
+    "language": "zht",
+    "country": "TWN",
+    "subscribers": 53400,
+    "demographics": {
+      "gender": {"male": 93, "female": 7},
+      "main_age_range": "45-54 36%",
+      "age_45_plus": "36%",
+      "top_countries": ["TWN 81%", "HKG 8%", "MYS 2%"]
+    },
+    "notes": "Native zht Taiwan channel. Strongest 45+ concentration (36% in 45-54 band). Athletics documentary/analysis style."
+  },
+  {
+    "channel_name": "豹大王 Run",
+    "channel_id": "UC_4HKplM0UYXrJQGFfgBO3Q",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_mkmEwupTV9olxVVOrEIeNFSfRrnLvpBOiRkyn6l9DD7g=s900-c-k-c0x00ffffff-no-rj",
+    "sponsorship_price": 458,
+    "language": "zht",
+    "country": "TWN",
+    "subscribers": 18800,
+    "demographics": {
+      "gender": {"male": 88, "female": 12},
+      "main_age_range": "25-34 27%",
+      "age_45_plus": "27%",
+      "top_countries": ["TWN 85%", "HKG 7%", "MYS 3%"]
+    },
+    "notes": "40+ Taiwanese amateur marathon runner. Strong growth (+12.6% in 90d). Native zht, highest Taiwan concentration (85%)."
+  },
+  {
+    "channel_name": "睿睿不花湖",
+    "channel_id": "UCe-VRV35ewS1iPscHetA4qQ",
+    "avatar": "https://yt3.googleusercontent.com/LjfggFFUlvvkp2UO5vJTRv-dLN1RWXWu0o6snzeWZXLNB1PU633XO17e8wCBI6ICR1cm8jNM=s900-c-k-c0x00ffffff-no-rj",
+    "sponsorship_price": 388,
+    "language": "zht",
+    "country": "TWN",
+    "subscribers": 25200,
+    "demographics": {
+      "gender": {"male": 87, "female": 13},
+      "main_age_range": "25-34 37%",
+      "age_45_plus": "12%",
+      "top_countries": ["TWN 87%", "HKG 8%", "MYS 3%"]
+    },
+    "notes": "Weight-loss + running lifestyle creator. 40yo runner, certified weight manager. Strong growth (+18.9% in 90d). Younger audience."
+  },
+  {
+    "channel_name": "亚平宁的蓝色",
+    "channel_id": "UCGB2Y_7tZqP5PNCYCmJOYdA",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_kVzdxWG1s7FDFCBHOvQxsUSZF96b-e9lBTd9MvxZmMMw=s900-c-k-c0x00ffffff-no-rj",
+    "sponsorship_price": 165,
+    "language": "cmn",
+    "country": "USA",
+    "subscribers": 12800,
+    "demographics": {
+      "gender": {"male": 80, "female": 20},
+      "main_age_range": "25-34 28%",
+      "age_45_plus": "26%",
+      "top_countries": ["TWN 61%", "USA 16%", "HKG 13%"]
+    },
+    "notes": "Best female ratio (20%) of all candidates. Chinese-language running shoe review channel with 61% Taiwan audience. Most affordable."
+  }
+]

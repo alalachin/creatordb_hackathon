@@ -3,6 +3,7 @@ import os
 import requests
 from dotenv import load_dotenv
 import utils
+import json
 load_dotenv()
 
 BASEDIR = "/Users/cdb/Desktop/creatordb_hackathon"
@@ -14,6 +15,31 @@ class creatordbAPI:
             "Accept": "application/json",
             "api-key": os.getenv("CREATORDB_API_KEY")
         }
+
+    def show_endpoint_info(self, endpoint: str) -> dict:
+        with open(f"{BASEDIR}/resource/creatordbAPI/schema/{endpoint}.json", "r") as f:
+            endpoint_io = json.load(f)
+        io_info = endpoint_io[endpoint]
+        return io_info
+
+    def get_account_info(self, endpoint: str, account_id: str) -> dict:
+        endpoint_string = endpoint.strip("/")
+        url = f"{self.url}/{endpoint_string}"
+        if endpoint_string.startswith("youtube"):
+            payload = {
+                "channelId": account_id
+            }
+        elif endpoint_string.startswith("instagram") or endpoint_string.startswith("tiktok"):
+            payload = {
+                "uniqueId": account_id
+            }
+        response = requests.get(url, headers=self.headers, params=payload)
+        if not response.ok:
+            raise Exception(f"API Error {response.status_code}: {response.text}")
+        try:
+            return response.json()
+        except Exception:
+            raise Exception(f"Invalid JSON response (status {response.status_code}): {response.text!r}")
 
 
     def get_popular_accounts(self, platform: str, limit: int):
@@ -60,6 +86,8 @@ class creatordbAPI:
             endpoints = f.read()
         return endpoints
 
+
+
     def make_filter(self, display_name: str = None, min_subscribers: int = None, min_avg_views: int = None, category: str = None):
         filters = []
         if display_name:
@@ -94,7 +122,6 @@ class creatordbAPI:
             "desc": True,
             "sortBy": "totalSubscribers"
         }
-
 
 
     def get_video_transcript(self, vid, verbose=False):
@@ -144,9 +171,26 @@ class creatordbAPI:
 
         accounts = utils.parse_sse_response(response.text)
 
-        return accounts["data"]["creatorList"]
+        return [(creator['channelId'], creator['displayName']) for creator in accounts["data"]["creatorList"] if creator['channelId'].startswith("UC")]
+
+
+    def get_video_price(self, account_id: str) -> dict:
+        url = f"{self.url}/youtube/profile"
+        payload = {
+            "channelId": account_id
+        }
+
+        response = requests.get(url, headers=self.headers, params=payload)
+        if not response.ok:
+            raise Exception(f"API Error {response.status_code}: {response.text}")
+        try:
+            video_price = response.json()['data']['videoPrice']['priceRaw']
+            return video_price
+        except Exception:
+            raise Exception(f"Invalid JSON response (status {response.status_code}): {response.text!r}")
 
 if __name__ == "__main__":
     api = creatordbAPI()
-    accounts = api.search_creators_nl(query = "youtube accounts of brands are the competitors of sufshark")
-    print(accounts)
+    # accounts = api.search_creators_nl(query = "Youtube accounts that is about sportswear.")
+    account = api.get_video_price( account_id = "UCX6OQ3DkcsbYNE6H8uQQuVA")
+    print(account)

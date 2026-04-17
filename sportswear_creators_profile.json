@@ -1,0 +1,2330 @@
+{
+  "total_creators": 15,
+  "successfully_fetched": 15,
+  "budget": 12500,
+  "affordable_count": 15,
+  "all_creators": [
+    {
+      "channel_id": "UCICRLxrMEgzYMMOdjGDiOvQ",
+      "channel_name": "Road Runner Sports",
+      "provided_name": "Road Runner Sports",
+      "video_price": 3213,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/OMGvhMeEkZuEkMRu6rvJtGLFnvFE5-hBKqB9cmcXxFFIzIcRHS1fQ-1wV9IaOwwcGAl_cgXRhA=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 56500,
+        "total_contents": 1102,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": true,
+        "description": "The official YouTube channel of Road Runner Sports.\n\nRoad Runner Sports is the home of the world's largest selection of the best running and active gear. \n\nIn business since 1983, you can trust us for the best price on top-rated running shoes, running clothing, and the best running shoe brands for everything from sports bras to running socks.\n\nSee for yourself at RoadRunnerSports.com."
+      },
+      "audience_demographics": {
+        "average_age": 34,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0357
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.2302
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.3408
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2068
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.109
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0491
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0284
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.9502,
+          "femaleRatio": 0.0498
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7874
+          },
+          {
+            "country": "GBR",
+            "share": 0.0716
+          },
+          {
+            "country": "CAN",
+            "share": 0.044
+          },
+          {
+            "country": "IND",
+            "share": 0.0421
+          },
+          {
+            "country": "DEU",
+            "share": 0.0115
+          },
+          {
+            "country": "PHL",
+            "share": 0.0112
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCch0pyPXmlB1X1x324uk1Pw",
+      "channel_name": "David Bluetile",
+      "provided_name": "David Bluetile",
+      "video_price": 459,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/fzNNnXrwTaSL0IgmFKTdSx3tHGyCmRVDWIejR-IXYylligiCc8SoEmKc95aZMVbFrJYq4gMYhQ=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 129000,
+        "total_contents": 721,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "Whats up? I'm David and I own Bluetile Skateboards in Columbia SC\n\nInstagram: davidbluetile\n\nFacebook: Bluetile Skateshop \nInstagram: bluetilesc\n\nwww.bluetilesc.com"
+      },
+      "audience_demographics": {
+        "average_age": 30,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0526
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.3192
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.3593
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.1612
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.068
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0244
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0153
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.9229,
+          "femaleRatio": 0.0771
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7897
+          },
+          {
+            "country": "GBR",
+            "share": 0.0694
+          },
+          {
+            "country": "CAN",
+            "share": 0.0447
+          },
+          {
+            "country": "IND",
+            "share": 0.0413
+          },
+          {
+            "country": "PHL",
+            "share": 0.011
+          },
+          {
+            "country": "DEU",
+            "share": 0.0102
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UC3h4BbV9hbAcYlM4__imOyw",
+      "channel_name": "RunRepeat.com",
+      "provided_name": "RunRepeat.com",
+      "video_price": 1103,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/ytc/AIdro_kJRiWbuJNw1amyOJsNOoHA6_VHevyBe7GOwWDrr1Md0g=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 54600,
+        "total_contents": 329,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "We cut running shoes in half to measure and analyze 30+ properties relevant to your running. This data-driven approach is complemented by our in-depth field test. We buy all the shoes with our own money.\n"
+      },
+      "audience_demographics": {
+        "average_age": 0,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0
+          },
+          {
+            "ageRange": "65+",
+            "share": 0
+          }
+        ],
+        "gender": {
+          "maleRatio": 0,
+          "femaleRatio": 0
+        },
+        "top_countries": []
+      }
+    },
+    {
+      "channel_id": "UCnVo8RafJC8kNL6CVI_h_Sg",
+      "channel_name": "Alastair Running",
+      "provided_name": "Alastair Running",
+      "video_price": 409,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/XWvoP99aQNnd12PiABqaMr7pis0svOYr9Lx04YuValD7Kj0-VF_rrPMOur8sce0V0tsFVQdSVSA=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 18100,
+        "total_contents": 445,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "Quality, practical running gear reviews.\n\nI review road and trail running gear from affordable entry-level daily trainers through to the fastest carbon fiber plated race day shoes.\n\nAs well as featuring cool new gear from the best running brands, I also create gear roundups to help you choose the best products based on review performance - visit www.alastairrunning.com for all those and more! I also review other lifestyle gadgets and gear from time to time.\n"
+      },
+      "audience_demographics": {
+        "average_age": 34,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0453
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.2363
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.3097
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2305
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1094
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0448
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.024
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.8687,
+          "femaleRatio": 0.1313
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7874
+          },
+          {
+            "country": "GBR",
+            "share": 0.0716
+          },
+          {
+            "country": "CAN",
+            "share": 0.044
+          },
+          {
+            "country": "IND",
+            "share": 0.0421
+          },
+          {
+            "country": "DEU",
+            "share": 0.0115
+          },
+          {
+            "country": "PHL",
+            "share": 0.0112
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCpUtRsyAx5rluUDmF4k_gHw",
+      "channel_name": "Doctors of Running",
+      "provided_name": "Doctors of Running",
+      "video_price": 481,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/ytc/AIdro_nAAyP_QoVYNJngOluYHOnsZxqignssCP8bAAIagsY7jA=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 46700,
+        "total_contents": 944,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": true,
+        "description": "Giving critical thought to the art and science behind the stuff we put on our feet. Running gear analysis/reviews from the perspective of Doctors of Physical Therapy (DPT). Visit www.doctorsofrunning.com for our latest reviews and footwear science discussions!\n\nContributing Physical Therapists: \nDr. Matthew Klein, PT, DPT, PhD, OCS, GCS, SCS, FAAOMPT\nDr. David Salas, PT, DPT, CSCS\nDr. Nathan Brown, PT, DPT, EdD, MS, OCS\nDr. Andrea Myers PT, DPT, OCS\n\nAnything taken from our Youtube channel is purely informational and not designed to replace formal medical care. If you are experiencing pain and are unable to participate in daily activities or running, please contact a physical therapist near you. \n\nQuestions on footwear or interested in reaching us? Find us at doctorsofrunning@gmail.com\n"
+      },
+      "audience_demographics": {
+        "average_age": 36,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0602
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.1995
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.281
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.219
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1273
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0693
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0437
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.8196,
+          "femaleRatio": 0.1804
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.6625
+          },
+          {
+            "country": "GBR",
+            "share": 0.2153
+          },
+          {
+            "country": "CAN",
+            "share": 0.0384
+          },
+          {
+            "country": "IND",
+            "share": 0.0367
+          },
+          {
+            "country": "PHL",
+            "share": 0.0098
+          },
+          {
+            "country": "DEU",
+            "share": 0.009
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UC029CQxPO_w-ENYRuhK1Q_g",
+      "channel_name": "Fleet Feet",
+      "provided_name": "Fleet Feet",
+      "video_price": 338,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/ytc/AIdro_mVuXVde_AzMybC3oM7D9fa2FtHLcvB-1zurfim3A6xw5w=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 38100,
+        "total_contents": 536,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "Fleet Feet knows running.\n\nThe first Fleet Feet store opened its doors in 1976 in Sacramento, California, and we've been outfitting runners with the right gear and knowledge ever since. Since that first day, we've expanded to over 260 stores (and counting) in communities across the country to work toward our vision: to inspire the runner in everyone.\n\nToday, we combine knowledge gained from our four decades of experience with data-driven insights from modern technology to outfit runners with the ideal shoes, apparel and gear.\n"
+      },
+      "audience_demographics": {
+        "average_age": 35,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0692
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.205
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.2866
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2276
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1202
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0577
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0337
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.8631,
+          "femaleRatio": 0.1369
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.5572
+          },
+          {
+            "country": "GBR",
+            "share": 0.3374
+          },
+          {
+            "country": "CAN",
+            "share": 0.0325
+          },
+          {
+            "country": "IND",
+            "share": 0.0311
+          },
+          {
+            "country": "DEU",
+            "share": 0.0104
+          },
+          {
+            "country": "PHL",
+            "share": 0.0068
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCrBbne8HfONwYK569YNTOgA",
+      "channel_name": "VertiMax",
+      "provided_name": "VertiMax",
+      "video_price": 1060,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/QtbvfYOEjgMmjxaoUjt_sFnipY2PMhE64eH6CVuKbtkIXycjLbFYp6B3dZexCBLJVf9feaYnGJo=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 22700,
+        "total_contents": 618,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "VertiMax provides sports, functional, and rehabilitative training solutions to fitness facilities, training centers, and high school and college athletic programs, including for use by student and professional athletes at home or on the field. Thousands of US high schools and 80% of D1 universities utilize VertiMax technologies and platforms, including their portable Raptor product. Over 40% of professional US sports teams like the Baltimore Ravens and New England Patriots, among others, utilize the technology extensively.\n\nUnlike any other training equipment, Vertimax Platforms and Raptors are specifically designed to maximize athletic potential by focusing on three key components: speed, explosive power, and vertical jump.\n\nTo learn more, visit www.vertimax.com or follow @VertiMax on major social networks."
+      },
+      "audience_demographics": {
+        "average_age": 34,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0336
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.2672
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.3259
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.1764
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1052
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0542
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0375
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.9133,
+          "femaleRatio": 0.0867
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7881
+          },
+          {
+            "country": "GBR",
+            "share": 0.0614
+          },
+          {
+            "country": "CAN",
+            "share": 0.0457
+          },
+          {
+            "country": "IND",
+            "share": 0.0442
+          },
+          {
+            "country": "PHL",
+            "share": 0.0112
+          },
+          {
+            "country": "DEU",
+            "share": 0.0112
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCdLuu6qncgyTpRGJu02sTfA",
+      "channel_name": "ALTIS World",
+      "provided_name": "ALTIS World",
+      "video_price": 39,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/ytc/AIdro_kxpKikN-FLYuYMOe7_Ncphy_TuDL3U49t2x37MsZI0ng=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 15300,
+        "total_contents": 661,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "ALTIS is a global leader in coach & athlete education for sport performance and Track & Field. \n\nALTIS Coaching staff include some of the foremost names in Track & Field; including Coaches Dan Pfaff,  Stuart McMillan, Andreas Behm, & Kevin Tyler."
+      },
+      "audience_demographics": {
+        "average_age": 36,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0553
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.1837
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.2829
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2251
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1338
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0735
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0457
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.7471,
+          "femaleRatio": 0.2529
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7885
+          },
+          {
+            "country": "GBR",
+            "share": 0.0745
+          },
+          {
+            "country": "CAN",
+            "share": 0.0438
+          },
+          {
+            "country": "IND",
+            "share": 0.0419
+          },
+          {
+            "country": "PHL",
+            "share": 0.0112
+          },
+          {
+            "country": "DEU",
+            "share": 0.0103
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCMHe0UKRkYxb8JWt7C_c_kA",
+      "channel_name": "NOBULL",
+      "provided_name": "NOBULL",
+      "video_price": 2202,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/bR6uDBc6mcZRDargjElzMF6Z6IscDgJ45UG9kvSarR1g_qPDBHCJFc41Kgj9XRW4sng7x_iLdg=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 12400,
+        "total_contents": 186,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "Here to help you get stronger\u2014physically, mentally, emotionally. We make shoes, apparel and nutrition for training and life.\n"
+      },
+      "audience_demographics": {
+        "average_age": 35,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0655
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.2187
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.2802
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2177
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1212
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.06
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0367
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.7,
+          "femaleRatio": 0.3
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7881
+          },
+          {
+            "country": "GBR",
+            "share": 0.0726
+          },
+          {
+            "country": "CAN",
+            "share": 0.0438
+          },
+          {
+            "country": "IND",
+            "share": 0.0419
+          },
+          {
+            "country": "PHL",
+            "share": 0.0108
+          },
+          {
+            "country": "DEU",
+            "share": 0.0098
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCwZcNfPpV9CXSVbpH1ckVmw",
+      "channel_name": "REI",
+      "provided_name": "REI",
+      "video_price": 583,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/ytc/AIdro_lUHsFlWaQfLNKhYHZLgGcKJi5KSUr85H6SVO7smUbsrng=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 449000,
+        "total_contents": 1444,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": true,
+        "description": "At Recreational Equipment, Inc. (REI), we love to get outside and play, and we know first-hand the importance of quality outdoor gear. We stand behind all our products with a 100% satisfaction guarantee, and we design our own line of award-winning REI brand gear and clothing. Whether you're new to outdoor adventure or a seasoned pro, we gladly share our enthusiasm for our products\u2014and the trails, slopes and waterways where we play.\n\nEach year, REI donates millions of dollars to support conservation efforts nationwide and sends dedicated teams of volunteers\u2014members, customers and REI employees\u2014to build trails, clean up beaches, restore local habitats and more.... \n\nREI's passion for the outdoors runs deep. Our core purpose is to inspire, educate and outfit people for a lifetime of outdoor adventure and stewardship.  Become a member today and get outside!  \n\nwww.rei.com/membership/benefits/"
+      },
+      "audience_demographics": {
+        "average_age": 41,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0147
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.1649
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.2519
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.1878
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1477
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.1245
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.1085
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.7699,
+          "femaleRatio": 0.2301
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7819
+          },
+          {
+            "country": "GBR",
+            "share": 0.0697
+          },
+          {
+            "country": "CAN",
+            "share": 0.048
+          },
+          {
+            "country": "IND",
+            "share": 0.0388
+          },
+          {
+            "country": "AUS",
+            "share": 0.0122
+          },
+          {
+            "country": "PHL",
+            "share": 0.0118
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCqTtwbwc3VgVKax6NP-ZvJw",
+      "channel_name": "DanteTheBody FIT",
+      "provided_name": "DanteTheBody FIT",
+      "video_price": 1388,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/gwHxgkLkk0VTkG72Xp0PtdmqYqTMxYEx50nxiLWL4cztOoITDgyYIVcfKhHqUO6e73lO7nTnPA=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 396000,
+        "total_contents": 241,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": true,
+        "has_sponsors": false,
+        "description": "Dante Johnson is one of the most influential fitness professionals in the world. He is a fitness entrepreneur, from Atlanta, Georgia, who has immense popularity, not just because of his amazing physique, but for the joy he brings to every workout, his character and high standards in representing his family through fitness and health. \n\nHe is respected for many reasons among his fans and followers worldwide, not least because of his highly positive and authentic approach to everything he does. Dante is the owner of an online fitness group and for only $14.99 you can become a part of our virtual fitness family so that it\u2019s easy for you to stick to goals you set for yourself, network and chat with people who  want to grow, and transform your body from the comfort of your living room. \n\nCLICK HERE to start your 7 day free trial: www.hiphopanatomy.org\n\nIG: instagram.com/dantethebody "
+      },
+      "audience_demographics": {
+        "average_age": 34,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0245
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.2065
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.3838
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2091
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1027
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0468
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0266
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.5162,
+          "femaleRatio": 0.4838
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7265
+          },
+          {
+            "country": "GBR",
+            "share": 0.0648
+          },
+          {
+            "country": "IND",
+            "share": 0.0645
+          },
+          {
+            "country": "CAN",
+            "share": 0.0404
+          },
+          {
+            "country": "TWN",
+            "share": 0.0383
+          },
+          {
+            "country": "RUS",
+            "share": 0.0168
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCmVhS0qulkRshtLrXMeMToQ",
+      "channel_name": "DesFit",
+      "provided_name": "DesFit",
+      "video_price": 3414,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/ytc/AIdro_keAmSMJ33UQ62Z91pWfMuuiSUtKqyqNch5hHUWStJNA1c=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 268000,
+        "total_contents": 520,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": true,
+        "has_sponsors": false,
+        "description": "Fitness and sports tech reviews including GPS watches, bike computers, smart bike trainers, and more. Helping you achieve your fitness goals by getting the most out of your fitness technology and bike gear.\n\nCONNECT:\nhttps://twitter.com/GetDesFit\nhttps://www.instagram.com/getdesfit/\nhttps://www.strava.com/athletes/219850\n\nBUSINESS CONTACT:\n(Please use the comments section on a video for questions about that product)\nget.DesFit@gmail.com"
+      },
+      "audience_demographics": {
+        "average_age": 45,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0033
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.0896
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.1841
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2145
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.2031
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.1742
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.1312
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.887,
+          "femaleRatio": 0.113
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.779
+          },
+          {
+            "country": "GBR",
+            "share": 0.0749
+          },
+          {
+            "country": "CAN",
+            "share": 0.046
+          },
+          {
+            "country": "IND",
+            "share": 0.038
+          },
+          {
+            "country": "DEU",
+            "share": 0.0169
+          },
+          {
+            "country": "PHL",
+            "share": 0.0117
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCeSHo5kTvzoik4STh7MuMCA",
+      "channel_name": "Seth James DeMoor",
+      "provided_name": "Seth James DeMoor",
+      "video_price": 258,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/-LH6yU1_-e-OtV9ZnHvPZvkGbmO-xLc56FFVudAxfSxFGDyPpDcPaq_AUr9vluUiWZyPVJoE=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 169000,
+        "total_contents": 3320,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "This YouTube channel will offer the subscriber inspiration and motivation for falling in love with running. As we all aspire to remain healthy and fit, running is one of the best ways to maintain a high level of fitness. Through this channel you will learn about running, experience running through my daily vlog experience, and learn how to choose the best running gear for you. Running gear and running shoes are a key component for enjoying the running experience. In addition, discovering that motivation to become a better runner is often aided through proper running gear and running shoes. You are the right place if you are looking for a high level of running motivation and inspiration."
+      },
+      "audience_demographics": {
+        "average_age": 36,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0636
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.1952
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.2791
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.213
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1284
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.073
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0477
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.7907,
+          "femaleRatio": 0.2093
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.5881
+          },
+          {
+            "country": "GBR",
+            "share": 0.3049
+          },
+          {
+            "country": "CAN",
+            "share": 0.0337
+          },
+          {
+            "country": "IND",
+            "share": 0.0323
+          },
+          {
+            "country": "DEU",
+            "share": 0.0095
+          },
+          {
+            "country": "PHL",
+            "share": 0.0067
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCvJ3gIxdoPpGYnrbXECnw_w",
+      "channel_name": "Jason and Lauren",
+      "provided_name": "Jason and Lauren",
+      "video_price": 1187,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/SXnGijIztssWpVoZ2jka-gXetIOP0yn-MacA0TlG9SRCPFGmdbPcFGJtw22QOaHHV8nv8nmE=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 158000,
+        "total_contents": 208,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": ""
+      },
+      "audience_demographics": {
+        "average_age": 32,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0306
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.2785
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.3536
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.1885
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.0906
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0366
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0216
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.9166,
+          "femaleRatio": 0.0834
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7482
+          },
+          {
+            "country": "GBR",
+            "share": 0.0709
+          },
+          {
+            "country": "CAN",
+            "share": 0.0467
+          },
+          {
+            "country": "IND",
+            "share": 0.0452
+          },
+          {
+            "country": "NLD",
+            "share": 0.0169
+          },
+          {
+            "country": "RUS",
+            "share": 0.0158
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UC2-2J_y_jpOYz8Rld5C6C5w",
+      "channel_name": "Believe in the Run",
+      "provided_name": "Believe in the Run",
+      "video_price": 477,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/qV-5WpA0CnzB16EEJoMocQaQuIXfnFvHrEAc1qj3VbCV9_ebQ68G4bf6hRC2BzD0zqjEjAQ3miw=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 123000,
+        "total_contents": 2070,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": true,
+        "description": "Believe in the Run has been reviewing running shoes, gear, and events since 2009 and takes pride in the honest, straightforward information that it provides to the endurance community. All reviews are completed by a team of passionate athletes that strive to get the most out of themselves and the gear they test. Visit: believeintherun.com"
+      },
+      "audience_demographics": {
+        "average_age": 36,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.045
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.2212
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.2823
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2096
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1256
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0701
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0462
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.7462,
+          "femaleRatio": 0.2538
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7805
+          },
+          {
+            "country": "GBR",
+            "share": 0.0807
+          },
+          {
+            "country": "CAN",
+            "share": 0.0434
+          },
+          {
+            "country": "IND",
+            "share": 0.0415
+          },
+          {
+            "country": "PHL",
+            "share": 0.0111
+          },
+          {
+            "country": "DEU",
+            "share": 0.0102
+          }
+        ]
+      }
+    }
+  ],
+  "affordable_creators": [
+    {
+      "channel_id": "UCdLuu6qncgyTpRGJu02sTfA",
+      "channel_name": "ALTIS World",
+      "provided_name": "ALTIS World",
+      "video_price": 39,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/ytc/AIdro_kxpKikN-FLYuYMOe7_Ncphy_TuDL3U49t2x37MsZI0ng=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 15300,
+        "total_contents": 661,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "ALTIS is a global leader in coach & athlete education for sport performance and Track & Field. \n\nALTIS Coaching staff include some of the foremost names in Track & Field; including Coaches Dan Pfaff,  Stuart McMillan, Andreas Behm, & Kevin Tyler."
+      },
+      "audience_demographics": {
+        "average_age": 36,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0553
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.1837
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.2829
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2251
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1338
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0735
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0457
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.7471,
+          "femaleRatio": 0.2529
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7885
+          },
+          {
+            "country": "GBR",
+            "share": 0.0745
+          },
+          {
+            "country": "CAN",
+            "share": 0.0438
+          },
+          {
+            "country": "IND",
+            "share": 0.0419
+          },
+          {
+            "country": "PHL",
+            "share": 0.0112
+          },
+          {
+            "country": "DEU",
+            "share": 0.0103
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCeSHo5kTvzoik4STh7MuMCA",
+      "channel_name": "Seth James DeMoor",
+      "provided_name": "Seth James DeMoor",
+      "video_price": 258,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/-LH6yU1_-e-OtV9ZnHvPZvkGbmO-xLc56FFVudAxfSxFGDyPpDcPaq_AUr9vluUiWZyPVJoE=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 169000,
+        "total_contents": 3320,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "This YouTube channel will offer the subscriber inspiration and motivation for falling in love with running. As we all aspire to remain healthy and fit, running is one of the best ways to maintain a high level of fitness. Through this channel you will learn about running, experience running through my daily vlog experience, and learn how to choose the best running gear for you. Running gear and running shoes are a key component for enjoying the running experience. In addition, discovering that motivation to become a better runner is often aided through proper running gear and running shoes. You are the right place if you are looking for a high level of running motivation and inspiration."
+      },
+      "audience_demographics": {
+        "average_age": 36,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0636
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.1952
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.2791
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.213
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1284
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.073
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0477
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.7907,
+          "femaleRatio": 0.2093
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.5881
+          },
+          {
+            "country": "GBR",
+            "share": 0.3049
+          },
+          {
+            "country": "CAN",
+            "share": 0.0337
+          },
+          {
+            "country": "IND",
+            "share": 0.0323
+          },
+          {
+            "country": "DEU",
+            "share": 0.0095
+          },
+          {
+            "country": "PHL",
+            "share": 0.0067
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UC029CQxPO_w-ENYRuhK1Q_g",
+      "channel_name": "Fleet Feet",
+      "provided_name": "Fleet Feet",
+      "video_price": 338,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/ytc/AIdro_mVuXVde_AzMybC3oM7D9fa2FtHLcvB-1zurfim3A6xw5w=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 38100,
+        "total_contents": 536,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "Fleet Feet knows running.\n\nThe first Fleet Feet store opened its doors in 1976 in Sacramento, California, and we've been outfitting runners with the right gear and knowledge ever since. Since that first day, we've expanded to over 260 stores (and counting) in communities across the country to work toward our vision: to inspire the runner in everyone.\n\nToday, we combine knowledge gained from our four decades of experience with data-driven insights from modern technology to outfit runners with the ideal shoes, apparel and gear.\n"
+      },
+      "audience_demographics": {
+        "average_age": 35,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0692
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.205
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.2866
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2276
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1202
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0577
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0337
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.8631,
+          "femaleRatio": 0.1369
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.5572
+          },
+          {
+            "country": "GBR",
+            "share": 0.3374
+          },
+          {
+            "country": "CAN",
+            "share": 0.0325
+          },
+          {
+            "country": "IND",
+            "share": 0.0311
+          },
+          {
+            "country": "DEU",
+            "share": 0.0104
+          },
+          {
+            "country": "PHL",
+            "share": 0.0068
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCnVo8RafJC8kNL6CVI_h_Sg",
+      "channel_name": "Alastair Running",
+      "provided_name": "Alastair Running",
+      "video_price": 409,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/XWvoP99aQNnd12PiABqaMr7pis0svOYr9Lx04YuValD7Kj0-VF_rrPMOur8sce0V0tsFVQdSVSA=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 18100,
+        "total_contents": 445,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "Quality, practical running gear reviews.\n\nI review road and trail running gear from affordable entry-level daily trainers through to the fastest carbon fiber plated race day shoes.\n\nAs well as featuring cool new gear from the best running brands, I also create gear roundups to help you choose the best products based on review performance - visit www.alastairrunning.com for all those and more! I also review other lifestyle gadgets and gear from time to time.\n"
+      },
+      "audience_demographics": {
+        "average_age": 34,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0453
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.2363
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.3097
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2305
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1094
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0448
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.024
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.8687,
+          "femaleRatio": 0.1313
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7874
+          },
+          {
+            "country": "GBR",
+            "share": 0.0716
+          },
+          {
+            "country": "CAN",
+            "share": 0.044
+          },
+          {
+            "country": "IND",
+            "share": 0.0421
+          },
+          {
+            "country": "DEU",
+            "share": 0.0115
+          },
+          {
+            "country": "PHL",
+            "share": 0.0112
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCch0pyPXmlB1X1x324uk1Pw",
+      "channel_name": "David Bluetile",
+      "provided_name": "David Bluetile",
+      "video_price": 459,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/fzNNnXrwTaSL0IgmFKTdSx3tHGyCmRVDWIejR-IXYylligiCc8SoEmKc95aZMVbFrJYq4gMYhQ=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 129000,
+        "total_contents": 721,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "Whats up? I'm David and I own Bluetile Skateboards in Columbia SC\n\nInstagram: davidbluetile\n\nFacebook: Bluetile Skateshop \nInstagram: bluetilesc\n\nwww.bluetilesc.com"
+      },
+      "audience_demographics": {
+        "average_age": 30,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0526
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.3192
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.3593
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.1612
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.068
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0244
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0153
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.9229,
+          "femaleRatio": 0.0771
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7897
+          },
+          {
+            "country": "GBR",
+            "share": 0.0694
+          },
+          {
+            "country": "CAN",
+            "share": 0.0447
+          },
+          {
+            "country": "IND",
+            "share": 0.0413
+          },
+          {
+            "country": "PHL",
+            "share": 0.011
+          },
+          {
+            "country": "DEU",
+            "share": 0.0102
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UC2-2J_y_jpOYz8Rld5C6C5w",
+      "channel_name": "Believe in the Run",
+      "provided_name": "Believe in the Run",
+      "video_price": 477,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/qV-5WpA0CnzB16EEJoMocQaQuIXfnFvHrEAc1qj3VbCV9_ebQ68G4bf6hRC2BzD0zqjEjAQ3miw=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 123000,
+        "total_contents": 2070,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": true,
+        "description": "Believe in the Run has been reviewing running shoes, gear, and events since 2009 and takes pride in the honest, straightforward information that it provides to the endurance community. All reviews are completed by a team of passionate athletes that strive to get the most out of themselves and the gear they test. Visit: believeintherun.com"
+      },
+      "audience_demographics": {
+        "average_age": 36,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.045
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.2212
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.2823
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2096
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1256
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0701
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0462
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.7462,
+          "femaleRatio": 0.2538
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7805
+          },
+          {
+            "country": "GBR",
+            "share": 0.0807
+          },
+          {
+            "country": "CAN",
+            "share": 0.0434
+          },
+          {
+            "country": "IND",
+            "share": 0.0415
+          },
+          {
+            "country": "PHL",
+            "share": 0.0111
+          },
+          {
+            "country": "DEU",
+            "share": 0.0102
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCpUtRsyAx5rluUDmF4k_gHw",
+      "channel_name": "Doctors of Running",
+      "provided_name": "Doctors of Running",
+      "video_price": 481,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/ytc/AIdro_nAAyP_QoVYNJngOluYHOnsZxqignssCP8bAAIagsY7jA=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 46700,
+        "total_contents": 944,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": true,
+        "description": "Giving critical thought to the art and science behind the stuff we put on our feet. Running gear analysis/reviews from the perspective of Doctors of Physical Therapy (DPT). Visit www.doctorsofrunning.com for our latest reviews and footwear science discussions!\n\nContributing Physical Therapists: \nDr. Matthew Klein, PT, DPT, PhD, OCS, GCS, SCS, FAAOMPT\nDr. David Salas, PT, DPT, CSCS\nDr. Nathan Brown, PT, DPT, EdD, MS, OCS\nDr. Andrea Myers PT, DPT, OCS\n\nAnything taken from our Youtube channel is purely informational and not designed to replace formal medical care. If you are experiencing pain and are unable to participate in daily activities or running, please contact a physical therapist near you. \n\nQuestions on footwear or interested in reaching us? Find us at doctorsofrunning@gmail.com\n"
+      },
+      "audience_demographics": {
+        "average_age": 36,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0602
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.1995
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.281
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.219
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1273
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0693
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0437
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.8196,
+          "femaleRatio": 0.1804
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.6625
+          },
+          {
+            "country": "GBR",
+            "share": 0.2153
+          },
+          {
+            "country": "CAN",
+            "share": 0.0384
+          },
+          {
+            "country": "IND",
+            "share": 0.0367
+          },
+          {
+            "country": "PHL",
+            "share": 0.0098
+          },
+          {
+            "country": "DEU",
+            "share": 0.009
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCwZcNfPpV9CXSVbpH1ckVmw",
+      "channel_name": "REI",
+      "provided_name": "REI",
+      "video_price": 583,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/ytc/AIdro_lUHsFlWaQfLNKhYHZLgGcKJi5KSUr85H6SVO7smUbsrng=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 449000,
+        "total_contents": 1444,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": true,
+        "description": "At Recreational Equipment, Inc. (REI), we love to get outside and play, and we know first-hand the importance of quality outdoor gear. We stand behind all our products with a 100% satisfaction guarantee, and we design our own line of award-winning REI brand gear and clothing. Whether you're new to outdoor adventure or a seasoned pro, we gladly share our enthusiasm for our products\u2014and the trails, slopes and waterways where we play.\n\nEach year, REI donates millions of dollars to support conservation efforts nationwide and sends dedicated teams of volunteers\u2014members, customers and REI employees\u2014to build trails, clean up beaches, restore local habitats and more.... \n\nREI's passion for the outdoors runs deep. Our core purpose is to inspire, educate and outfit people for a lifetime of outdoor adventure and stewardship.  Become a member today and get outside!  \n\nwww.rei.com/membership/benefits/"
+      },
+      "audience_demographics": {
+        "average_age": 41,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0147
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.1649
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.2519
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.1878
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1477
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.1245
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.1085
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.7699,
+          "femaleRatio": 0.2301
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7819
+          },
+          {
+            "country": "GBR",
+            "share": 0.0697
+          },
+          {
+            "country": "CAN",
+            "share": 0.048
+          },
+          {
+            "country": "IND",
+            "share": 0.0388
+          },
+          {
+            "country": "AUS",
+            "share": 0.0122
+          },
+          {
+            "country": "PHL",
+            "share": 0.0118
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCrBbne8HfONwYK569YNTOgA",
+      "channel_name": "VertiMax",
+      "provided_name": "VertiMax",
+      "video_price": 1060,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/QtbvfYOEjgMmjxaoUjt_sFnipY2PMhE64eH6CVuKbtkIXycjLbFYp6B3dZexCBLJVf9feaYnGJo=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 22700,
+        "total_contents": 618,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "VertiMax provides sports, functional, and rehabilitative training solutions to fitness facilities, training centers, and high school and college athletic programs, including for use by student and professional athletes at home or on the field. Thousands of US high schools and 80% of D1 universities utilize VertiMax technologies and platforms, including their portable Raptor product. Over 40% of professional US sports teams like the Baltimore Ravens and New England Patriots, among others, utilize the technology extensively.\n\nUnlike any other training equipment, Vertimax Platforms and Raptors are specifically designed to maximize athletic potential by focusing on three key components: speed, explosive power, and vertical jump.\n\nTo learn more, visit www.vertimax.com or follow @VertiMax on major social networks."
+      },
+      "audience_demographics": {
+        "average_age": 34,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0336
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.2672
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.3259
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.1764
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1052
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0542
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0375
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.9133,
+          "femaleRatio": 0.0867
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7881
+          },
+          {
+            "country": "GBR",
+            "share": 0.0614
+          },
+          {
+            "country": "CAN",
+            "share": 0.0457
+          },
+          {
+            "country": "IND",
+            "share": 0.0442
+          },
+          {
+            "country": "PHL",
+            "share": 0.0112
+          },
+          {
+            "country": "DEU",
+            "share": 0.0112
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UC3h4BbV9hbAcYlM4__imOyw",
+      "channel_name": "RunRepeat.com",
+      "provided_name": "RunRepeat.com",
+      "video_price": 1103,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/ytc/AIdro_kJRiWbuJNw1amyOJsNOoHA6_VHevyBe7GOwWDrr1Md0g=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 54600,
+        "total_contents": 329,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "We cut running shoes in half to measure and analyze 30+ properties relevant to your running. This data-driven approach is complemented by our in-depth field test. We buy all the shoes with our own money.\n"
+      },
+      "audience_demographics": {
+        "average_age": 0,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0
+          },
+          {
+            "ageRange": "65+",
+            "share": 0
+          }
+        ],
+        "gender": {
+          "maleRatio": 0,
+          "femaleRatio": 0
+        },
+        "top_countries": []
+      }
+    },
+    {
+      "channel_id": "UCvJ3gIxdoPpGYnrbXECnw_w",
+      "channel_name": "Jason and Lauren",
+      "provided_name": "Jason and Lauren",
+      "video_price": 1187,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/SXnGijIztssWpVoZ2jka-gXetIOP0yn-MacA0TlG9SRCPFGmdbPcFGJtw22QOaHHV8nv8nmE=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 158000,
+        "total_contents": 208,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": ""
+      },
+      "audience_demographics": {
+        "average_age": 32,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0306
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.2785
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.3536
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.1885
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.0906
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0366
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0216
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.9166,
+          "femaleRatio": 0.0834
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7482
+          },
+          {
+            "country": "GBR",
+            "share": 0.0709
+          },
+          {
+            "country": "CAN",
+            "share": 0.0467
+          },
+          {
+            "country": "IND",
+            "share": 0.0452
+          },
+          {
+            "country": "NLD",
+            "share": 0.0169
+          },
+          {
+            "country": "RUS",
+            "share": 0.0158
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCqTtwbwc3VgVKax6NP-ZvJw",
+      "channel_name": "DanteTheBody FIT",
+      "provided_name": "DanteTheBody FIT",
+      "video_price": 1388,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/gwHxgkLkk0VTkG72Xp0PtdmqYqTMxYEx50nxiLWL4cztOoITDgyYIVcfKhHqUO6e73lO7nTnPA=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 396000,
+        "total_contents": 241,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": true,
+        "has_sponsors": false,
+        "description": "Dante Johnson is one of the most influential fitness professionals in the world. He is a fitness entrepreneur, from Atlanta, Georgia, who has immense popularity, not just because of his amazing physique, but for the joy he brings to every workout, his character and high standards in representing his family through fitness and health. \n\nHe is respected for many reasons among his fans and followers worldwide, not least because of his highly positive and authentic approach to everything he does. Dante is the owner of an online fitness group and for only $14.99 you can become a part of our virtual fitness family so that it\u2019s easy for you to stick to goals you set for yourself, network and chat with people who  want to grow, and transform your body from the comfort of your living room. \n\nCLICK HERE to start your 7 day free trial: www.hiphopanatomy.org\n\nIG: instagram.com/dantethebody "
+      },
+      "audience_demographics": {
+        "average_age": 34,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0245
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.2065
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.3838
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2091
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1027
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0468
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0266
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.5162,
+          "femaleRatio": 0.4838
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7265
+          },
+          {
+            "country": "GBR",
+            "share": 0.0648
+          },
+          {
+            "country": "IND",
+            "share": 0.0645
+          },
+          {
+            "country": "CAN",
+            "share": 0.0404
+          },
+          {
+            "country": "TWN",
+            "share": 0.0383
+          },
+          {
+            "country": "RUS",
+            "share": 0.0168
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCMHe0UKRkYxb8JWt7C_c_kA",
+      "channel_name": "NOBULL",
+      "provided_name": "NOBULL",
+      "video_price": 2202,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/bR6uDBc6mcZRDargjElzMF6Z6IscDgJ45UG9kvSarR1g_qPDBHCJFc41Kgj9XRW4sng7x_iLdg=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 12400,
+        "total_contents": 186,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": false,
+        "description": "Here to help you get stronger\u2014physically, mentally, emotionally. We make shoes, apparel and nutrition for training and life.\n"
+      },
+      "audience_demographics": {
+        "average_age": 35,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0655
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.2187
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.2802
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2177
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.1212
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.06
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0367
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.7,
+          "femaleRatio": 0.3
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7881
+          },
+          {
+            "country": "GBR",
+            "share": 0.0726
+          },
+          {
+            "country": "CAN",
+            "share": 0.0438
+          },
+          {
+            "country": "IND",
+            "share": 0.0419
+          },
+          {
+            "country": "PHL",
+            "share": 0.0108
+          },
+          {
+            "country": "DEU",
+            "share": 0.0098
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCICRLxrMEgzYMMOdjGDiOvQ",
+      "channel_name": "Road Runner Sports",
+      "provided_name": "Road Runner Sports",
+      "video_price": 3213,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/OMGvhMeEkZuEkMRu6rvJtGLFnvFE5-hBKqB9cmcXxFFIzIcRHS1fQ-1wV9IaOwwcGAl_cgXRhA=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 56500,
+        "total_contents": 1102,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": false,
+        "has_sponsors": true,
+        "description": "The official YouTube channel of Road Runner Sports.\n\nRoad Runner Sports is the home of the world's largest selection of the best running and active gear. \n\nIn business since 1983, you can trust us for the best price on top-rated running shoes, running clothing, and the best running shoe brands for everything from sports bras to running socks.\n\nSee for yourself at RoadRunnerSports.com."
+      },
+      "audience_demographics": {
+        "average_age": 34,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0357
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.2302
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.3408
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2068
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.109
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.0491
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.0284
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.9502,
+          "femaleRatio": 0.0498
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.7874
+          },
+          {
+            "country": "GBR",
+            "share": 0.0716
+          },
+          {
+            "country": "CAN",
+            "share": 0.044
+          },
+          {
+            "country": "IND",
+            "share": 0.0421
+          },
+          {
+            "country": "DEU",
+            "share": 0.0115
+          },
+          {
+            "country": "PHL",
+            "share": 0.0112
+          }
+        ]
+      }
+    },
+    {
+      "channel_id": "UCmVhS0qulkRshtLrXMeMToQ",
+      "channel_name": "DesFit",
+      "provided_name": "DesFit",
+      "video_price": 3414,
+      "profile": {
+        "avatar_url": "https://yt3.googleusercontent.com/ytc/AIdro_keAmSMJ33UQ62Z91pWfMuuiSUtKqyqNch5hHUWStJNA1c=s900-c-k-c0x00ffffff-no-rj",
+        "subscriber_count": 268000,
+        "total_contents": 520,
+        "country": "USA",
+        "language": "eng",
+        "is_verified": true,
+        "has_sponsors": false,
+        "description": "Fitness and sports tech reviews including GPS watches, bike computers, smart bike trainers, and more. Helping you achieve your fitness goals by getting the most out of your fitness technology and bike gear.\n\nCONNECT:\nhttps://twitter.com/GetDesFit\nhttps://www.instagram.com/getdesfit/\nhttps://www.strava.com/athletes/219850\n\nBUSINESS CONTACT:\n(Please use the comments section on a video for questions about that product)\nget.DesFit@gmail.com"
+      },
+      "audience_demographics": {
+        "average_age": 45,
+        "age_breakdown": [
+          {
+            "ageRange": "13-17",
+            "share": 0.0033
+          },
+          {
+            "ageRange": "18-24",
+            "share": 0.0896
+          },
+          {
+            "ageRange": "25-34",
+            "share": 0.1841
+          },
+          {
+            "ageRange": "35-44",
+            "share": 0.2145
+          },
+          {
+            "ageRange": "45-54",
+            "share": 0.2031
+          },
+          {
+            "ageRange": "55-64",
+            "share": 0.1742
+          },
+          {
+            "ageRange": "65+",
+            "share": 0.1312
+          }
+        ],
+        "gender": {
+          "maleRatio": 0.887,
+          "femaleRatio": 0.113
+        },
+        "top_countries": [
+          {
+            "country": "USA",
+            "share": 0.779
+          },
+          {
+            "country": "GBR",
+            "share": 0.0749
+          },
+          {
+            "country": "CAN",
+            "share": 0.046
+          },
+          {
+            "country": "IND",
+            "share": 0.038
+          },
+          {
+            "country": "DEU",
+            "share": 0.0169
+          },
+          {
+            "country": "PHL",
+            "share": 0.0117
+          }
+        ]
+      }
+    }
+  ]
+}

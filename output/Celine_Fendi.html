@@ -1,0 +1,449 @@
+```html
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Demographics & Marketing Analysis - Celine vs Fendi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .brands-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .brand-card {
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            background: white;
+            border-left: 5px solid;
+        }
+        
+        .brand-card.celine {
+            border-left-color: #c4a77d;
+        }
+        
+        .brand-card.fendi {
+            border-left-color: #8b4513;
+        }
+        
+        .brand-card h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        
+        .brand-card p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+        
+        .brand-label {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .brand-label.celine {
+            background: rgba(196, 167, 125, 0.15);
+            color: #8b7355;
+        }
+        
+        .brand-label.fendi {
+            background: rgba(139, 69, 19, 0.15);
+            color: #8b4513;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            margin-top: 40px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        
+        .comparison-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:hover {
+            background: #fafafa;
+        }
+        
+        .metric-label {
+            font-weight: 600;
+            color: #333;
+            width: 180px;
+        }
+        
+        .metric-value {
+            text-align: center;
+            min-width: 120px;
+        }
+        
+        .insight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .insight-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .insight-card h3 {
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        .insight-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            color: #999;
+            font-style: italic;
+        }
+        
+        .ambassadors-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+        
+        .ambassadors-table th {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .ambassadors-table td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .ambassadors-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .ambassadors-table tr:hover {
+            background: #fafafa;
+        }
+        
+        .conclusion {
+            background: linear-gradient(135deg, #f0f0f0 0%, #fafafa 100%);
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 40px;
+            border-left: 5px solid #333;
+        }
+        
+        .conclusion h3 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            font-weight: 400;
+        }
+        
+        .conclusion p {
+            color: #666;
+            margin-bottom: 12px;
+            font-size: 0.95em;
+        }
+        
+        .footer {
+            background: #f5f5f5;
+            padding: 20px 40px;
+            text-align: center;
+            color: #999;
+            font-size: 0.85em;
+        }
+        
+        .bar-chart {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        
+        .bar-chart-label {
+            min-width: 80px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .bar-chart-bar {
+            height: 20px;
+            background: linear-gradient(90deg, #c4a77d 0%, #8b7355 100%);
+            border-radius: 3px;
+            min-width: 20px;
+        }
+        
+        .bar-chart-value {
+            min-width: 50px;
+            text-align: right;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .brands-grid,
+            .insight-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .header p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Brand Demographics & Marketing Analysis</h1>
+            <p>Celine vs Fendi - Influencer & Audience Comparison</p>
+        </div>
+        
+        <div class="content">
+            <!-- Brand Overview Section -->
+            <h2 class="section-title">Brand Overview</h2>
+            
+            <div class="brands-grid">
+                <div class="brand-card celine">
+                    <span class="brand-label celine">BRAND A</span>
+                    <h2>Celine</h2>
+                    <p><strong>Description:</strong> A luxury fashion house renowned for minimalist elegance and contemporary sophistication. Celine emphasizes refined design, quality craftsmanship, and understated luxury.</p>
+                    <p><strong>Target Audience:</strong> High-net-worth individuals, fashion-forward professionals, and discerning consumers who appreciate timeless design and Italian heritage.</p>
+                </div>
+                
+                <div class="brand-card fendi">
+                    <span class="brand-label fendi">BRAND B</span>
+                    <h2>Fendi</h2>
+                    <p><strong>Description:</strong> An iconic Italian luxury brand celebrated for bold design, innovative craftsmanship, and distinctive monogram prints. Fendi blends heritage with contemporary style.</p>
+                    <p><strong>Target Audience:</strong> Affluent consumers with strong brand recognition, fashion enthusiasts, and those seeking statement pieces with heritage luxury credentials.</p>
+                </div>
+            </div>
+            
+            <!-- Demographics Comparison Section -->
+            <h2 class="section-title">Demographics Comparison</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Celine</th>
+                        <th>Fendi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="metric-label">Influencer Count</td>
+                        <td class="metric-value">0</td>
+                        <td class="metric-value">0</td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">Total Combined Followers</td>
+                        <td class="metric-value">0</td>
+                        <td class="metric-value">0</td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">Average Audience Age</td>
+                        <td class="metric-value">0</td>
+                        <td class="metric-value">0</td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">Gender Distribution (Male)</td>
+                        <td class="metric-value">0.0%</td>
+                        <td class="metric-value">0.0%</td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">Gender Distribution (Female)</td>
+                        <td class="metric-value">0.0%</td>
+                        <td class="metric-value">0.0%</td>
+                    </tr>
+                    <tr>
+                        <td class="metric-label">Top Geographic Markets</td>
+                        <td class="metric-value">—</td>
+                        <td class="metric-value">—</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Marketing Strategy Insights Section -->
+            <h2 class="section-title">Marketing Strategy Insights</h2>
+            
+            <div class="insight-grid">
+                <div class="insight-card">
+                    <h3>Celine</h3>
+                    <p><strong>Key Positioning:</strong> Minimalist luxury with focus on timeless, wearable pieces that transcend seasonal trends.</p>
+                    <p><strong>Content Strategy:</strong> Editorial aesthetics emphasizing craftsmanship, quality materials, and understated elegance. Limited edition releases and heritage storytelling.</p>
+                    <p><strong>Unique Differentiation:</strong> Phoebe Philo's creative direction emphasizes simplicity and functionality as luxury, appealing to sophisticated, design-conscious consumers.</p>
+                </div>
+                
+                <div class="insight-card">
+                    <h3>Fendi</h3>
+                    <p><strong>Key Positioning:</strong> Bold statement luxury with distinctive design language. Iconic FF monogram and innovative silhouettes as brand signatures.</p>
+                    <p><strong>Content Strategy:</strong> Dynamic, visually striking campaigns that showcase innovation in materials and design. Strong focus on accessories and monogram-driven collections.</p>
+                    <p><strong>Unique Differentiation:</strong> Extended brand universe through collaborations and sub-collections. Strong legacy in leather goods and handbag innovation drives premium pricing.</p>
+                </div>
+            </div>
+            
+            <!-- Brand Ambassadors Section -->
+            <h2 class="section-title">Brand Ambassadors & Influencers</h2>
+            
+            <h3 style="font-size: 1.3em; margin-top: 25px; margin-bottom: 15px; color: #1a1a1a;">Celine</h3>
+            <table class="ambassadors-table">
+                <thead>
+                    <tr>
+                        <th>Handle</th>
+                        <th>Followers</th>
+                        <th>Avg Age</th>
+                        <th>Top Country</th>
+                        <th>Gender Distribution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" class="no-data">No influencer data available</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 style="font-size: 1.3em; margin-top: 30px; margin-bottom: 15px; color: #1a1a1a;">Fendi</h3>
+            <table class="ambassadors-table">
+                <thead>
+                    <tr>
+                        <th>Handle</th>
+                        <th>Followers</th>
+                        <th>Avg Age</th>
+                        <th>Top Country</th>
+                        <th>Gender Distribution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" class="no-data">No influencer data available</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- Conclusion Section -->
+            <div class="conclusion">
+                <h3>Analysis & Strategic Recommendations</h3>
+                <p>Both Celine and Fendi operate in the premium luxury segment with distinct positioning strategies. Celine emphasizes minimalist sophistication and timeless design, while Fendi leverages bold statement pieces and iconic branding.</p>
+                <p>Without current influencer data, both brands should focus on building authentic partnerships with fashion influencers whose aesthetic aligns with their positioning. Celine would benefit from collaborations with minimalist fashion influencers, while Fendi should target trendsetters who appreciate bold, statement-driven luxury.</p>
+                <p>Both brands' success depends on maintaining brand exclusivity while strategically leveraging digital influence to reach affluent, fashion-forward demographics in key markets globally.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Brand Demographics & Marketing Analysis Report | Generated 2026</p>
+        </div>
+    </div>
+</body>
+</html>
+```

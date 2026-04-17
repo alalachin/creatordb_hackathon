@@ -1,0 +1,122 @@
+[
+  {
+    "channel_name": "DanteTheBody FIT",
+    "risk_level": "HIGH",
+    "risk_score": 10,
+    "keywords": ["suicide note", "missing status"],
+    "finding": "Posted a cryptic suicide note in September 2025; family publicly searched for him. Major brand safety concern. Creator's current status is unclear.",
+    "gender": {"male": 51.62, "female": 48.38}
+  },
+  {
+    "channel_name": "REI",
+    "risk_level": "HIGH",
+    "risk_score": 9,
+    "keywords": ["political controversy", "labor dispute"],
+    "finding": "Multiple active controversies: endorsed then retracted a Trump cabinet pick, NLRB complaint for withholding raises from unionized workers, racial equity failures report, 400+ layoffs from Experiences division closure.",
+    "gender": {"male": 76.99, "female": 23.01}
+  },
+  {
+    "channel_name": "Road Runner Sports",
+    "risk_level": "MEDIUM",
+    "risk_score": 6,
+    "keywords": ["class action", "auto renewal"],
+    "finding": "Class action lawsuit for deceptive VIP membership auto-renewals. Settled with no admission of wrongdoing.",
+    "gender": {"male": 95.02, "female": 4.98}
+  },
+  {
+    "channel_name": "NOBULL",
+    "risk_level": "MEDIUM",
+    "risk_score": 5,
+    "keywords": ["layoffs", "instability"],
+    "finding": "35% workforce layoff (75 employees) in 2023, stagnant revenue growth, multiple executive departures. Company instability poses brand association risk.",
+    "gender": {"male": 70.0, "female": 30.0}
+  },
+  {
+    "channel_name": "Fleet Feet",
+    "risk_level": "MEDIUM",
+    "risk_score": 5,
+    "keywords": ["customer complaints", "lawsuit"],
+    "finding": "Aggressive upselling complaints from customers and a lawsuit related to the Jackrabbit acquisition.",
+    "gender": {"male": 86.31, "female": 13.69}
+  },
+  {
+    "channel_name": "Seth James DeMoor",
+    "risk_level": "LOW",
+    "risk_score": 3,
+    "keywords": ["reckless running", "minor criticism"],
+    "finding": "Minor Reddit criticism about reckless running in traffic and disputed injury claims. No major scandal.",
+    "gender": {"male": 79.07, "female": 20.93}
+  },
+  {
+    "channel_name": "Believe in the Run",
+    "risk_level": "LOW",
+    "risk_score": 2,
+    "keywords": ["review criticism"],
+    "finding": "Community criticism that reviews are too short (20 miles only). Credibility concern, not a scandal.",
+    "gender": {"male": 74.62, "female": 25.38}
+  },
+  {
+    "channel_name": "David Bluetile",
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "keywords": ["no issues"],
+    "finding": "No significant controversies found.",
+    "gender": {"male": 92.29, "female": 7.71}
+  },
+  {
+    "channel_name": "RunRepeat.com",
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "keywords": ["no issues"],
+    "finding": "No significant controversies found.",
+    "gender": {"male": null, "female": null}
+  },
+  {
+    "channel_name": "Alastair Running",
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "keywords": ["no issues"],
+    "finding": "No significant controversies found.",
+    "gender": {"male": 86.87, "female": 13.13}
+  },
+  {
+    "channel_name": "Doctors of Running",
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "keywords": ["no issues"],
+    "finding": "No significant controversies found.",
+    "gender": {"male": 81.96, "female": 18.04}
+  },
+  {
+    "channel_name": "VertiMax",
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "keywords": ["no issues"],
+    "finding": "No significant controversies found.",
+    "gender": {"male": 91.33, "female": 8.67}
+  },
+  {
+    "channel_name": "ALTIS World",
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "keywords": ["no issues"],
+    "finding": "No significant controversies found.",
+    "gender": {"male": 74.71, "female": 25.29}
+  },
+  {
+    "channel_name": "DesFit",
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "keywords": ["no issues"],
+    "finding": "No significant controversies found.",
+    "gender": {"male": 88.7, "female": 11.3}
+  },
+  {
+    "channel_name": "Jason and Lauren",
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "keywords": ["no issues"],
+    "finding": "No significant controversies found.",
+    "gender": {"male": 91.66, "female": 8.34}
+  }
+]

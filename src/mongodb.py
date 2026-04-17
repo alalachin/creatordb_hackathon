@@ -13,8 +13,8 @@ class mongodb:
     def __init__(self):
         self.client = MongoClient(os.getenv("MONGO_URI"))
         self.profile_info_yt = {'_id': 1, 'cName': 1, 'desc': 1, 'stats.channel.followers': 1, 'misc.calculated': 1}
-
-
+        self.profile_info_ig = {'_id': 1, 'handle': 1, 'name': 1, 'description': 1, 'countryCode': 1, 'misc.calculated': 1, 'stats.user': 1}
+        self.profile_info_tt = {'_id': 1, 'handle': 1, 'name': 1, 'description': 1, 'countryCode': 1, 'misc.calculated': 1, 'stats.user': 1}
 
     def get_popular_YT_accounts(self, limit: int=10):
         all_accounts = []
@@ -28,10 +28,9 @@ class mongodb:
     def get_account_data(self, platform: str, account_id: str):
         collection_dict = {"youtube_v2": "channels", "instagram_v2": "accounts", "tiktok": "accounts"}
         account_id_dict = {"youtube_v2": "uId", "instagram_v2": "handle", "tiktok": "handle"}
+        profile_info_dict = {"youtube_v2": self.profile_info_yt, "instagram_v2": self.profile_info_ig, "tiktok": self.profile_info_tt}
         collection = self.client[platform][collection_dict[platform]]
-        document = collection.find_one({account_id_dict[platform]: account_id}, projection=self.profile_info_yt)
-        # convert document to string
-        document_string = json.dumps(document, indent=4)
+        document = collection.find_one({account_id_dict[platform]: account_id}, projection=profile_info_dict[platform])
         return document
 
 
@@ -44,9 +43,9 @@ class mongodb:
         document = collection.find_one({'_id': accountId_dict[db_name]})
         schema = utils.infer_type_schema(document)
         print(schema)
-        # # save schema to json
-        # with open(f"{BASEDIR}/resource/mongodb/schema/{db_name.split('_')[0]}_profile.json", "w") as f:
-        #     json.dump(schema, f, indent=4)
+        # save schema to json
+        with open(f"{BASEDIR}/resource/mongodb/schema/{db_name.split('_')[0]}_profile.json", "w") as f:
+            json.dump(schema, f, indent=4)
         return schema
 
     def get_video_transcript(self, vid, verbose=False):
@@ -81,13 +80,13 @@ class mongodb:
                 print(f"⚠️  Video {vid}: Error - {e}")
             return None
 
+
 if __name__ == "__main__":
     api = mongodb()
     # accounts = api.get_popular_YT_accounts(limit=10)
-    # schema = api.get_schema(db_name="youtube_v2", collection_name="channels")
-    # document = api.get_profile_schema(db_name="tiktok")
-    document = api.get_account_data(platform="youtube_v2", account_id="@mrbeast")
-    print(document) 
+    schema = api.get_account_schema(db_name="tiktok")
+    # document = api.get_account_data(platform="instagram_v2", account_id="lalalalisa_m")
+    # print(document) 
 
 
 # from pymongo import MongoClient

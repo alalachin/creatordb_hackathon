@@ -1,0 +1,760 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brand Comparison: Chanel vs Celine</title>
+  <style>
+    :root {
+      --chanel-dark: #1a1a1a;
+      --chanel-accent: #c8a96e;
+      --chanel-light: #f9f6f0;
+      --celine-dark: #1c2b3a;
+      --celine-accent: #4a8fa8;
+      --celine-light: #f0f5f8;
+      --neutral-bg: #fafafa;
+      --text-primary: #1a1a1a;
+      --text-secondary: #555;
+      --border: #e0e0e0;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background: var(--neutral-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #0f0f0f 0%, #1c2b3a 100%);
+      color: #fff;
+      text-align: center;
+      padding: 72px 24px 56px;
+    }
+    .hero .label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 12px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 300;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero h1 span.chanel-name { color: var(--chanel-accent); }
+    .hero h1 span.vs { color: #666; font-size: 0.5em; vertical-align: middle; margin: 0 16px; }
+    .hero h1 span.celine-name { color: var(--celine-accent); }
+    .hero .sub {
+      font-size: 0.95rem;
+      color: #bbb;
+      letter-spacing: 2px;
+    }
+    .hero .date { margin-top: 10px; font-size: 0.78rem; color: #666; }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 56px 0; }
+    .section-title {
+      font-size: 0.72rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 32px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── TWO-COLUMN GRID ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* ── BRAND CARD ── */
+    .brand-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .brand-card .card-header {
+      padding: 28px 32px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .brand-card.chanel .card-header { background: var(--chanel-light); border-left: 5px solid var(--chanel-accent); }
+    .brand-card.celine .card-header { background: var(--celine-light); border-left: 5px solid var(--celine-accent); }
+    .brand-card .brand-logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .brand-card.chanel .brand-logo { color: var(--chanel-dark); }
+    .brand-card.celine .brand-logo { color: var(--celine-dark); }
+    .brand-card .origin-tag {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+    }
+    .brand-card .card-body { padding: 24px 32px; }
+
+    /* ── META TABLE ── */
+    .meta-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .meta-table tr { border-bottom: 1px solid #f0f0f0; }
+    .meta-table tr:last-child { border-bottom: none; }
+    .meta-table td { padding: 10px 0; vertical-align: top; }
+    .meta-table td:first-child { color: #888; font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; width: 38%; padding-right: 12px; padding-top: 12px; }
+    .meta-table td:last-child { color: var(--text-primary); font-weight: 500; }
+
+    /* ── GENDER BAR ── */
+    .gender-bar-wrap { margin-top: 6px; }
+    .gender-bar-track {
+      height: 8px;
+      background: #e8e8e8;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+    .gender-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+    .chanel-fill { background: linear-gradient(90deg, var(--chanel-accent), #e8c97e); }
+    .celine-fill { background: linear-gradient(90deg, var(--celine-accent), #7ab8cc); }
+    .gender-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: #888;
+      margin-top: 3px;
+    }
+
+    /* ── TAGS ── */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .tag {
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+    .tag.chanel { background: #f5ede0; color: #8b6914; border: 1px solid #e8d4a8; }
+    .tag.celine { background: #e0eff5; color: #1e6b8a; border: 1px solid #b5d8e8; }
+
+    /* ── MARKETING CARDS ── */
+    .marketing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 768px) { .marketing-grid { grid-template-columns: 1fr; } }
+
+    .mkt-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px 28px;
+    }
+    .mkt-card h3 {
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+    }
+    .mkt-card.chanel h3 { color: var(--chanel-accent); border-bottom: 2px solid var(--chanel-accent); }
+    .mkt-card.celine h3 { color: var(--celine-accent); border-bottom: 2px solid var(--celine-accent); }
+
+    .mkt-row { margin-bottom: 14px; }
+    .mkt-row .mkt-label {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 4px;
+    }
+    .mkt-row .mkt-value { font-size: 0.88rem; color: var(--text-primary); }
+
+    /* ── AMBASSADOR / CREATOR TABLE ── */
+    .table-wrap {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .table-brand-header {
+      padding: 18px 28px;
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .table-brand-header.chanel { background: var(--chanel-light); color: var(--chanel-dark); border-left: 5px solid var(--chanel-accent); }
+    .table-brand-header.celine { background: var(--celine-light); color: var(--celine-dark); border-left: 5px solid var(--celine-accent); }
+    .table-brand-header .dot {
+      width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+    }
+    .chanel .dot { background: var(--chanel-accent); }
+    .celine .dot { background: var(--celine-accent); }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    .data-table thead th {
+      background: #f7f7f7;
+      padding: 12px 20px;
+      text-align: left;
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #999;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table tbody tr { border-bottom: 1px solid #f5f5f5; transition: background 0.15s; }
+    .data-table tbody tr:last-child { border-bottom: none; }
+    .data-table tbody tr:hover { background: #fafafa; }
+    .data-table tbody td { padding: 14px 20px; vertical-align: middle; color: var(--text-primary); }
+    .data-table tbody td .handle { font-size: 0.8rem; color: #888; font-family: monospace; }
+    .data-table tbody td .name-bold { font-weight: 600; }
+    .data-table tbody td .stage { font-size: 0.78rem; color: #aaa; margin-top: 2px; }
+
+    .platform-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .platform-ig { background: #fce4ec; color: #c2185b; }
+    .platform-yt { background: #ffebee; color: #c62828; }
+    .platform-tt { background: #e8f5e9; color: #2e7d32; }
+
+    .no-data {
+      padding: 32px 24px;
+      text-align: center;
+      color: #bbb;
+      font-size: 0.85rem;
+      font-style: italic;
+    }
+
+    /* ── CONCLUSION ── */
+    .conclusion-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 768px) { .conclusion-grid { grid-template-columns: 1fr; } }
+
+    .conclusion-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px;
+    }
+    .conclusion-card.chanel { border-top: 4px solid var(--chanel-accent); }
+    .conclusion-card.celine { border-top: 4px solid var(--celine-accent); }
+    .conclusion-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .conclusion-card.chanel h3 { color: var(--chanel-dark); }
+    .conclusion-card.celine h3 { color: var(--celine-dark); }
+    .conclusion-card ul { list-style: none; }
+    .conclusion-card ul li {
+      padding: 8px 0;
+      font-size: 0.88rem;
+      border-bottom: 1px solid #f5f5f5;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .conclusion-card ul li:last-child { border-bottom: none; }
+    .conclusion-card.chanel ul li::before { content: '◆'; color: var(--chanel-accent); font-size: 0.5rem; margin-top: 6px; flex-shrink: 0; }
+    .conclusion-card.celine ul li::before { content: '◆'; color: var(--celine-accent); font-size: 0.5rem; margin-top: 6px; flex-shrink: 0; }
+
+    .verdict-box {
+      background: linear-gradient(135deg, #1a1a1a, #1c2b3a);
+      border-radius: var(--radius);
+      padding: 40px;
+      color: #fff;
+      text-align: center;
+    }
+    .verdict-box h3 {
+      font-size: 0.72rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 16px;
+    }
+    .verdict-box p {
+      font-size: 1rem;
+      color: #ccc;
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .verdict-box p strong.c1 { color: var(--chanel-accent); }
+    .verdict-box p strong.c2 { color: var(--celine-accent); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111;
+      color: #555;
+      text-align: center;
+      padding: 28px;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+
+    /* ── DIVIDER ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+    /* ── REVENUE BAR ── */
+    .rev-bar-container { margin-top: 8px; }
+    .rev-bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .rev-bar-label { font-size: 0.72rem; color: #888; width: 60px; flex-shrink: 0; text-transform: uppercase; letter-spacing: 1px; }
+    .rev-bar-outer { flex: 1; height: 10px; background: #eeeeee; border-radius: 5px; overflow: hidden; }
+    .rev-bar-inner { height: 100%; border-radius: 5px; }
+    .rev-bar-val { font-size: 0.75rem; color: #666; font-weight: 600; width: 64px; text-align: right; }
+  </style>
+</head>
+<body>
+
+<!-- ══ HERO ══════════════════════════════════════════════════════════ -->
+<div class="hero">
+  <div class="label">Luxury Fashion Intelligence</div>
+  <h1>
+    <span class="chanel-name">Chanel</span>
+    <span class="vs">VS</span>
+    <span class="celine-name">Celine</span>
+  </h1>
+  <div class="sub">Brand Comparison Report</div>
+  <div class="date">Generated April 17, 2026 &nbsp;·&nbsp; CreatorDB Analytics</div>
+</div>
+
+<!-- ══ BRAND OVERVIEW ═════════════════════════════════════════════════ -->
+<div class="container">
+  <div class="section">
+    <div class="section-title">01 &nbsp;/&nbsp; Brand Overview</div>
+    <div class="two-col">
+
+      <!-- CHANEL -->
+      <div class="brand-card chanel">
+        <div class="card-header">
+          <div class="brand-logo">Chanel</div>
+          <div class="origin-tag">France &nbsp;·&nbsp; Est. 1910 &nbsp;·&nbsp; Haute Couture &amp; Luxury</div>
+        </div>
+        <div class="card-body">
+          <table class="meta-table">
+            <tr>
+              <td>Description</td>
+              <td>Founded by Gabrielle "Coco" Chanel in Paris, Chanel is an icon of French haute couture, synonymous with timeless elegance, femininity, and the double-C monogram. Privately held by the Wertheimer family.</td>
+            </tr>
+            <tr>
+              <td>Key Products</td>
+              <td>
+                <div class="tag-list">
+                  <span class="tag chanel">Haute Couture</span>
+                  <span class="tag chanel">No. 5 Fragrance</span>
+                  <span class="tag chanel">Handbags (2.55, Classic Flap)</span>
+                  <span class="tag chanel">Fine Jewellery</span>
+                  <span class="tag chanel">Cosmetics</span>
+                  <span class="tag chanel">Ready-to-Wear</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Est. Revenue</td>
+              <td>
+                <strong>~$19.7B USD</strong> (FY 2023)
+                <div class="rev-bar-container" style="margin-top:10px">
+                  <div class="rev-bar-row">
+                    <span class="rev-bar-label">Chanel</span>
+                    <div class="rev-bar-outer"><div class="rev-bar-inner chanel-fill" style="width:100%"></div></div>
+                    <span class="rev-bar-val">$19.7B</span>
+                  </div>
+                  <div class="rev-bar-row">
+                    <span class="rev-bar-label">Celine</span>
+                    <div class="rev-bar-outer"><div class="rev-bar-inner celine-fill" style="width:20%"></div></div>
+                    <span class="rev-bar-val">~$2–3B</span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Target Audience</td>
+              <td>
+                <div style="margin-bottom:6px"><strong>Gender:</strong> Primarily women (≈ 80%), growing men's segment</div>
+                <div class="gender-bar-wrap">
+                  <div class="gender-bar-track"><div class="gender-bar-fill chanel-fill" style="width:80%"></div></div>
+                  <div class="gender-labels"><span>Female 80%</span><span>Male 20%</span></div>
+                </div>
+                <div style="margin-top:10px"><strong>Age:</strong> Core 28–50; aspirational 18–27 (beauty &amp; entry price points)</div>
+                <div style="margin-top:6px"><strong>Geography:</strong> Western Europe, North America, East Asia (KR, CN, JP)</div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- CELINE -->
+      <div class="brand-card celine">
+        <div class="card-header">
+          <div class="brand-logo">Celine</div>
+          <div class="origin-tag">France &nbsp;·&nbsp; Est. 1945 &nbsp;·&nbsp; Luxury Ready-to-Wear</div>
+        </div>
+        <div class="card-body">
+          <table class="meta-table">
+            <tr>
+              <td>Description</td>
+              <td>Founded by Céline Vipiana, revitalized under Hedi Slimane (from 2018) as a rock-inflected, minimalist luxury house. Owned by LVMH, Celine competes directly in the modern wardrobe segment favored by Gen Z and millennials.</td>
+            </tr>
+            <tr>
+              <td>Key Products</td>
+              <td>
+                <div class="tag-list">
+                  <span class="tag celine">Ready-to-Wear</span>
+                  <span class="tag celine">Leather Goods (Triomphe)</span>
+                  <span class="tag celine">Shoes &amp; Sneakers</span>
+                  <span class="tag celine">Sunglasses</span>
+                  <span class="tag celine">Fragrance</span>
+                  <span class="tag celine">Men's Collection</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Est. Revenue</td>
+              <td>
+                <strong>~$2–3B USD</strong> (est. 2023, undisclosed by LVMH)
+                <div style="margin-top:8px;font-size:0.78rem;color:#aaa">Part of LVMH Fashion &amp; Leather Goods segment (~€38.6B)</div>
+              </td>
+            </tr>
+            <tr>
+              <td>Target Audience</td>
+              <td>
+                <div style="margin-bottom:6px"><strong>Gender:</strong> Mixed, strong gender-neutral appeal (≈ 60% female, 40% male)</div>
+                <div class="gender-bar-wrap">
+                  <div class="gender-bar-track"><div class="gender-bar-fill celine-fill" style="width:60%"></div></div>
+                  <div class="gender-labels"><span>Female 60%</span><span>Male 40%</span></div>
+                </div>
+                <div style="margin-top:10px"><strong>Age:</strong> Core 22–40; strong Gen Z resonance</div>
+                <div style="margin-top:6px"><strong>Geography:</strong> Asia-Pacific dominant (KR, CN, TH), Europe, Americas</div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ══ MARKETING STRATEGY ════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">02 &nbsp;/&nbsp; Marketing Strategy Insights</div>
+    <div class="marketing-grid">
+
+      <div class="mkt-card chanel">
+        <h3>Chanel</h3>
+        <div class="mkt-row">
+          <div class="mkt-label">Brand Positioning</div>
+          <div class="mkt-value">Absolute luxury. Heritage-first narrative centered on Parisian femininity, artistic legacy, and irreplaceability. Chanel maintains scarcity by deliberately limiting digital availability and refusing e-commerce for its fashion lines.</div>
+        </div>
+        <div class="mkt-row">
+          <div class="mkt-label">Content Strategy</div>
+          <div class="mkt-value">Cinematic campaigns, runway films, and director collaborations (Karl Lagerfeld era, Virginie Viard). Heavy use of long-form video and editorial photography. Tightly controlled social media tone — aspirational, not conversational.</div>
+        </div>
+        <div class="mkt-row">
+          <div class="mkt-label">Celebrity Usage</div>
+          <div class="mkt-value">Global superstars across markets: K-pop (Jennie, G-Dragon, Jung Kook), Thai pop (Gemini). Strategy blends Western icons (Kristen Stewart, Margot Robbie era) with high-reach Asian talent for regional penetration.</div>
+        </div>
+        <div class="mkt-row">
+          <div class="mkt-label">Differentiation</div>
+          <div class="mkt-value">Unmatched heritage moat — No. 5 fragrance is the world's most recognized perfume. Only luxury house to fully maintain in-house manufacture of all 12 métiers d'art (featherwork, buttons, shoes, etc.).</div>
+        </div>
+      </div>
+
+      <div class="mkt-card celine">
+        <h3>Celine</h3>
+        <div class="mkt-row">
+          <div class="mkt-label">Brand Positioning</div>
+          <div class="mkt-value">Cool, edgy minimalism. Hedi Slimane's vision merges rock subculture with bourgeois restraint. Celine targets "effortless status" — the luxury consumer who rejects ostentation but signals wealth through silhouette and material quality.</div>
+        </div>
+        <div class="mkt-row">
+          <div class="mkt-label">Content Strategy</div>
+          <div class="mkt-value">Slimane himself shoots most campaign imagery — a unique auteur approach among luxury houses. Strong in "drop culture" with limited releases. Social presence is stark, moody, and highly aesthetic rather than commercial.</div>
+        </div>
+        <div class="mkt-row">
+          <div class="mkt-label">Celebrity Usage</div>
+          <div class="mkt-value">Aggressive K-pop and K-drama seeding: V (BTS), Park Bo-gum, Suzy, Danielle (NewJeans), TWS. Asia-Pacific ambassador roster is notably larger relative to brand size, signaling where growth is prioritized.</div>
+        </div>
+        <div class="mkt-row">
+          <div class="mkt-label">Differentiation</div>
+          <div class="mkt-value">Strongest Gen Z cultural traction of any heritage luxury house — Triomphe canvas is a recognized status symbol among under-30 consumers. Men's expansion under Slimane is disproportionately large vs. peers of similar scale.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ══ BRAND AMBASSADORS ══════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">03 &nbsp;/&nbsp; Brand Ambassadors</div>
+
+    <!-- CHANEL AMBASSADORS -->
+    <div class="table-wrap">
+      <div class="table-brand-header chanel">
+        <span class="dot"></span> Chanel &nbsp;—&nbsp; Official Brand Ambassadors
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Stage Name</th>
+            <th>Nationality</th>
+            <th>Platform</th>
+            <th>Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><div class="name-bold">Kim Min-ji (Jennie)</div></td>
+            <td>Jennie (BLACKPINK)</td>
+            <td>Korean</td>
+            <td><span class="platform-badge platform-ig">Instagram</span></td>
+            <td><span class="handle">@jennierubyjane</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><div class="name-bold">Jeon Jung-kook</div></td>
+            <td>Jung Kook (BTS) — Chanel Fragrance &amp; Beauty</td>
+            <td>Korean</td>
+            <td><span class="platform-badge platform-ig">Instagram</span></td>
+            <td><span class="handle">@mnijungkook</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><div class="name-bold">Kwon Ji-yong</div></td>
+            <td>G-Dragon (BIGBANG)</td>
+            <td>Korean</td>
+            <td><span class="platform-badge platform-ig">Instagram</span></td>
+            <td><span class="handle">@xxxibgdrgn</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><div class="name-bold">Norawit Titicharoenrak</div></td>
+            <td>Gemini</td>
+            <td>Thai</td>
+            <td><span class="platform-badge platform-ig">Instagram</span></td>
+            <td><span class="handle">@gemini_nt</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><div class="name-bold">Kim Min-ji</div></td>
+            <td>Minji (NewJeans)</td>
+            <td>Korean</td>
+            <td><span class="platform-badge platform-ig">Instagram</span></td>
+            <td><span class="handle">—</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CELINE AMBASSADORS -->
+    <div class="table-wrap">
+      <div class="table-brand-header celine">
+        <span class="dot"></span> Celine &nbsp;—&nbsp; Official Brand Ambassadors
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Stage Name</th>
+            <th>Nationality</th>
+            <th>Platform</th>
+            <th>Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><div class="name-bold">Kim Tae-hyung</div></td>
+            <td>V (BTS)</td>
+            <td>Korean</td>
+            <td><span class="platform-badge platform-ig">Instagram</span></td>
+            <td><span class="handle">@thv</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><div class="name-bold">Danielle Marsh</div></td>
+            <td>Danielle (NewJeans)</td>
+            <td>Korean-Australian</td>
+            <td><span class="platform-badge platform-ig">Instagram</span></td>
+            <td><span class="handle">@newjeans_official</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><div class="name-bold">Bae Su-ji</div></td>
+            <td>Suzy</td>
+            <td>Korean</td>
+            <td><span class="platform-badge platform-ig">Instagram</span></td>
+            <td><span class="handle">@skuukzky</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><div class="name-bold">Park Bo-gum</div></td>
+            <td>Park Bo Gum</td>
+            <td>Korean</td>
+            <td><span class="platform-badge platform-ig">Instagram</span></td>
+            <td><span class="handle">@bogummy</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><div class="name-bold">TWS (Group)</div></td>
+            <td>TWS (Pledis/HYBE)</td>
+            <td>Korean</td>
+            <td><span class="platform-badge platform-ig">Instagram</span></td>
+            <td><span class="handle">@tws_pledis</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ══ CREATOR COLLABORATIONS ══════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">04 &nbsp;/&nbsp; Previous Collaborations with Creators</div>
+    <p style="font-size:0.82rem;color:#aaa;margin-bottom:24px;letter-spacing:0.5px;">Non-ambassador creator collaborations on record in the CreatorDB database.</p>
+
+    <!-- CHANEL CREATORS -->
+    <div class="table-wrap">
+      <div class="table-brand-header chanel">
+        <span class="dot"></span> Chanel &nbsp;—&nbsp; Creator Collaborations
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Handle</th>
+            <th>Followers</th>
+            <th>Nationality / Max Country</th>
+            <th>Platform</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><span class="handle">@jalal_models</span></td>
+            <td><strong>134,298</strong></td>
+            <td>USA</td>
+            <td><span class="platform-badge platform-ig">Instagram</span></td>
+            <td>Retail / Fashion</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><span class="handle">@bluecra_z</span></td>
+            <td><strong>883</strong></td>
+            <td>—</td>
+            <td><span class="platform-badge platform-ig">Instagram</span></td>
+            <td>Retail / Fashion</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CELINE CREATORS -->
+    <div class="table-wrap">
+      <div class="table-brand-header celine">
+        <span class="dot"></span> Celine &nbsp;—&nbsp; Creator Collaborations
+      </div>
+      <div class="no-data">No creators known in our database</div>
+    </div>
+
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ══ CONCLUSION ══════════════════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">05 &nbsp;/&nbsp; Conclusion</div>
+
+    <div class="conclusion-grid">
+
+      <div class="conclusion-card chanel">
+        <h3>Chanel &nbsp;— Key Takeaways</h3>
+        <ul>
+          <li>Relies on multi-decade heritage and scarcity to justify premium pricing without discounting.</li>
+          <li>K-pop ambassador strategy (Jennie, G-Dragon, Jung Kook) drives massive organic reach in East Asia.</li>
+          <li>Beauty and fragrance lines serve as entry-level touchpoints that sustain broader brand relevance.</li>
+          <li>Thai expansion via Gemini indicates deliberate Southeast Asian market development.</li>
+          <li>Revenue scale (~$19.7B) far exceeds Celine, driven by globally recognized IP and diversified product categories.</li>
+          <li>Creator collaboration footprint is limited — brand prefers tight ambassador control over open creator programs.</li>
+        </ul>
+      </div>
+
+      <div class="conclusion-card celine">
+        <h3>Celine &nbsp;— Key Takeaways</h3>
+        <ul>
+          <li>Hedi Slimane's auteur direction creates a rare, coherent aesthetic identity that is both polarizing and cult-followed.</li>
+          <li>Ambassador roster is almost entirely Korean, making Celine the most K-pop-reliant heritage house at its scale.</li>
+          <li>Gen Z traction through V (BTS) and NewJeans' Danielle positions Celine above peers in youth-luxury crossover.</li>
+          <li>Higher male audience share (≈40%) reflects deliberate gender-neutral strategy, rare in traditional couture.</li>
+          <li>No creator collaboration data in database suggests either extreme exclusivity or undocumented influencer activity.</li>
+          <li>Triomphe canvas has achieved viral status independently — organic brand equity not solely reliant on paid ambassadors.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="verdict-box">
+      <h3>Strategic Summary</h3>
+      <p>
+        <strong class="c1">Chanel</strong> operates as a multi-generational luxury empire, leveraging heritage, haute couture, and tightly curated ambassador relationships to sustain pricing power and cultural authority across geographies.
+        <strong class="c2">Celine</strong>, by contrast, is executing a focused disruption of the younger luxury consumer — its near-exclusive reliance on Korean talent, rock-inflected aesthetic, and gender-fluid positioning make it the fastest-evolving luxury identity in the LVMH portfolio.
+        Where Chanel owns timelessness, Celine owns the cultural moment.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 CreatorDB Analytics &nbsp;·&nbsp; Brand Comparison Intelligence Report &nbsp;·&nbsp; For internal use only
+</footer>
+
+</body>
+</html>

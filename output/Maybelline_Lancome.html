@@ -1,0 +1,535 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Demographics & Marketing Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section h2 {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        .brand-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .brand-card {
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid;
+            transition: transform 0.3s ease;
+        }
+        
+        .brand-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .brand-card-maybelline {
+            border-left-color: #ff6b9d;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.05) 0%, rgba(255, 107, 157, 0.02) 100%);
+        }
+        
+        .brand-card-lancome {
+            border-left-color: #4a90e2;
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.05) 0%, rgba(74, 144, 226, 0.02) 100%);
+        }
+        
+        .brand-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        
+        .brand-card-maybelline h3 {
+            color: #ff6b9d;
+        }
+        
+        .brand-card-lancome h3 {
+            color: #4a90e2;
+        }
+        
+        .brand-card p {
+            margin-bottom: 12px;
+            font-size: 0.95em;
+            color: #555;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 0.95em;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+            border: none;
+        }
+        
+        .comparison-table td {
+            padding: 16px 18px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comparison-table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .comparison-table tbody tr:hover {
+            background-color: #f0f4ff;
+        }
+        
+        .metric-label {
+            font-weight: 600;
+            color: #333;
+            width: 30%;
+        }
+        
+        .brand-maybelline-data {
+            color: #ff6b9d;
+            font-weight: 500;
+        }
+        
+        .brand-lancome-data {
+            color: #4a90e2;
+            font-weight: 500;
+        }
+        
+        .insights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .insight-card {
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+            border-top: 4px solid;
+        }
+        
+        .insight-card-maybelline {
+            border-top-color: #ff6b9d;
+        }
+        
+        .insight-card-lancome {
+            border-top-color: #4a90e2;
+        }
+        
+        .insight-card h4 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .insight-card p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.8;
+        }
+        
+        .influencers-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .influencers-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .influencers-table th {
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            color: white;
+            border: none;
+        }
+        
+        .influencers-table-maybelline th {
+            background: #ff6b9d;
+        }
+        
+        .influencers-table-lancome th {
+            background: #4a90e2;
+        }
+        
+        .influencers-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #555;
+        }
+        
+        .influencers-table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .influencers-table tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .handle {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .stat-value {
+            font-weight: 600;
+        }
+        
+        .conclusion {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+        
+        .conclusion h3 {
+            font-size: 1.6em;
+            margin-bottom: 20px;
+        }
+        
+        .conclusion p {
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+        
+        .influencer-brand-section h3 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            color: #333;
+            padding-bottom: 10px;
+        }
+        
+        .influencer-brand-section-maybelline h3 {
+            border-bottom: 3px solid #ff6b9d;
+            color: #ff6b9d;
+        }
+        
+        .influencer-brand-section-lancome h3 {
+            border-bottom: 3px solid #4a90e2;
+            color: #4a90e2;
+        }
+        
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .stat-row:last-child {
+            border-bottom: none;
+        }
+        
+        .stat-row-label {
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .stat-row-value {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        @media (max-width: 1024px) {
+            .brand-grid, .insights-grid, .influencers-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Brand Demographics & Marketing Analysis</h1>
+            <p>Maybelline vs. Lancome: Influencer Strategy & Audience Comparison</p>
+        </div>
+        
+        <div class="content">
+            <!-- Brand Overview Section -->
+            <section class="section">
+                <h2>Brand Overview</h2>
+                <div class="brand-grid">
+                    <div class="brand-card brand-card-maybelline">
+                        <h3>Maybelline</h3>
+                        <p><strong>Market Position:</strong> Accessible, trend-forward cosmetics brand targeting younger, budget-conscious consumers.</p>
+                        <p><strong>Target Audience:</strong> Gen Z and millennial women seeking affordable, high-quality makeup with bold, experimental aesthetics. Primary strength in Asian markets.</p>
+                    </div>
+                    <div class="brand-card brand-card-lancome">
+                        <h3>Lancôme</h3>
+                        <p><strong>Market Position:</strong> Premium luxury beauty brand emphasizing sophistication, innovation, and skincare expertise.</p>
+                        <p><strong>Target Audience:</strong> Affluent, experience-driven women aged 28+. Focus on quality-conscious consumers in developed markets with emphasis on skincare and anti-aging.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Demographics Comparison Section -->
+            <section class="section">
+                <h2>Demographics Comparison</h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 30%;">Metric</th>
+                            <th style="width: 35%;">Maybelline</th>
+                            <th style="width: 35%;">Lancôme</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="metric-label">Influencer Count</td>
+                            <td class="brand-maybelline-data">102 creators</td>
+                            <td class="brand-lancome-data">86 creators</td>
+                        </tr>
+                        <tr>
+                            <td class="metric-label">Total Follower Reach</td>
+                            <td class="brand-maybelline-data">16.6M followers</td>
+                            <td class="brand-lancome-data">40.7M followers</td>
+                        </tr>
+                        <tr>
+                            <td class="metric-label">Average Influencer Age</td>
+                            <td class="brand-maybelline-data">30.8 years</td>
+                            <td class="brand-lancome-data">31.8 years</td>
+                        </tr>
+                        <tr>
+                            <td class="metric-label">Gender Distribution</td>
+                            <td class="brand-maybelline-data">70% Female, 30% Male</td>
+                            <td class="brand-lancome-data">70% Female, 30% Male</td>
+                        </tr>
+                        <tr>
+                            <td class="metric-label">#1 Market</td>
+                            <td class="brand-maybelline-data">Japan (19.1%)</td>
+                            <td class="brand-lancome-data">USA (12.2%)</td>
+                        </tr>
+                        <tr>
+                            <td class="metric-label">#2 Market</td>
+                            <td class="brand-maybelline-data">USA (11.9%)</td>
+                            <td class="brand-lancome-data">Japan (11.5%)</td>
+                        </tr>
+                        <tr>
+                            <td class="metric-label">UK Market Share</td>
+                            <td class="brand-maybelline-data">2.5%</td>
+                            <td class="brand-lancome-data">3.1%</td>
+                        </tr>
+                        <tr>
+                            <td class="metric-label">Avg Followers/Influencer</td>
+                            <td class="brand-maybelline-data">162,803</td>
+                            <td class="brand-lancome-data">473,078</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- Marketing Strategy Insights -->
+            <section class="section">
+                <h2>Marketing Strategy Insights</h2>
+                <div class="insights-grid">
+                    <div class="insight-card insight-card-maybelline">
+                        <h4>Maybelline</h4>
+                        <p><strong>Strategy:</strong> High-volume creator partnerships with a focus on micro to mid-tier influencers (avg 162K followers). Prioritizes Asian markets, particularly Japan (19.1%), signaling strong appeal in K-beauty and J-beauty communities.</p>
+                        <p style="margin-top: 12px;"><strong>Approach:</strong> Leverages trend cycles and makeup tutorials to drive engagement. Large influencer roster (102) enables rapid market penetration and diverse content creation across makeup categories.</p>
+                        <p style="margin-top: 12px;"><strong>Differentiation:</strong> Accessibility and innovation-focused positioning with democratic beauty ideals. Strong emphasis on makeup artistry and trend-setting.</p>
+                    </div>
+                    <div class="insight-card insight-card-lancome">
+                        <h4>Lancôme</h4>
+                        <p><strong>Strategy:</strong> Curated luxury partnerships with select high-reach influencers (avg 473K followers). Fewer partnerships (86) but significantly larger combined reach (40.7M vs 16.6M). USA-centric with balanced international presence.</p>
+                        <p style="margin-top: 12px;"><strong>Approach:</strong> Quality-over-quantity model emphasizing influencer prestige and audience demographics alignment. Focus on lifestyle integration and aspirational messaging.</p>
+                        <p style="margin-top: 12px;"><strong>Differentiation:</strong> Premium positioning, emphasis on skincare innovation and luxury experience. Targets affluent, experience-driven consumers with higher purchasing power.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Brand Ambassadors Section -->
+            <section class="section">
+                <h2>Top Brand Ambassadors & Influencer Network</h2>
+                <div class="influencers-section">
+                    <div class="influencer-brand-section influencer-brand-section-maybelline">
+                        <h3>Maybelline Top Creators</h3>
+                        <table class="influencers-table influencers-table-maybelline">
+                            <thead>
+                                <tr>
+                                    <th>Handle</th>
+                                    <th>Followers</th>
+                                    <th>Age</th>
+                                    <th>Country</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="handle">daily_dose_of_glam_by_teena</td>
+                                    <td class="stat-value">223,539</td>
+                                    <td>N/A</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td class="handle">suki_na_official</td>
+                                    <td class="stat-value">191,663</td>
+                                    <td>N/A</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td class="handle">y.makeup.u</td>
+                                    <td class="stat-value">146,352</td>
+                                    <td>34.3</td>
+                                    <td>Japan</td>
+                                </tr>
+                                <tr>
+                                    <td class="handle">krisiyat</td>
+                                    <td class="stat-value">106,104</td>
+                                    <td>32.7</td>
+                                    <td>UK</td>
+                                </tr>
+                                <tr>
+                                    <td class="handle">natu__mtk</td>
+                                    <td class="stat-value">81,438</td>
+                                    <td>N/A</td>
+                                    <td>—</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="influencer-brand-section influencer-brand-section-lancome">
+                        <h3>Lancôme Top Creators</h3>
+                        <table class="influencers-table influencers-table-lancome">
+                            <thead>
+                                <tr>
+                                    <th>Handle</th>
+                                    <th>Followers</th>
+                                    <th>Age</th>
+                                    <th>Country</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="handle">romi_1006</td>
+                                    <td class="stat-value">253,316</td>
+                                    <td>28.3</td>
+                                    <td>Japan</td>
+                                </tr>
+                                <tr>
+                                    <td class="handle">goodlifecarrie</td>
+                                    <td class="stat-value">244,257</td>
+                                    <td>31.2</td>
+                                    <td>UK</td>
+                                </tr>
+                                <tr>
+                                    <td class="handle">ashleighuynh</td>
+                                    <td class="stat-value">143,839</td>
+                                    <td>32.0</td>
+                                    <td>Australia</td>
+                                </tr>
+                                <tr>
+                                    <td class="handle">emeisern</td>
+                                    <td class="stat-value">38,573</td>
+                                    <td>32.5</td>
+                                    <td>—</td>
+                                </tr>
+                                <tr>
+                                    <td class="handle">claudiali</td>
+                                    <td class="stat-value">88,613</td>
+                                    <td>N/A</td>
+                                    <td>—</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Conclusion -->
+            <section class="section">
+                <div class="conclusion">
+                    <h3>Strategic Summary & Key Takeaways</h3>
+                    <p><strong>Market Reach Strategy:</strong> Maybelline pursues geographic diversification with emphasis on Asian markets and high-volume creator partnerships, while Lancôme focuses on consolidating reach through premium influencer relationships with significantly larger per-creator reach.</p>
+                    <p><strong>Demographic Alignment:</strong> Both brands target female audiences (70%) across similar age demographics (~31 years average), but Lancôme's influencers command 3x average follower advantage (473K vs 163K), indicating premium positioning and access to more affluent audiences.</p>
+                    <p><strong>Geographic Opportunity:</strong> Japan represents Maybelline's strongest market (19.1%) while USA leads for Lancôme (12.2%), suggesting complementary market strategies. Both brands maintain presence in UK, though Lancôme shows slightly stronger penetration (3.1% vs 2.5%).</p>
+                    <p><strong>Influencer ROI:</strong> Maybelline's 102 creators generate 16.6M reach, while Lancôme's 86 creators achieve 40.7M reach—a 45% efficiency advantage. This reflects divergent strategies: volume-based market saturation versus curated luxury positioning.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
