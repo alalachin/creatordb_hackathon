@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
+import path from "path";
 
 const RISK_DATA_FILE =
-  "/Users/cdb/Desktop/creatordb_hackathon/output/recommended_creator_list_sportswear_small_5k_25k.json";
+  path.join(process.cwd(), "demo-data", "creators.json");
 
 type RiskRow = {
   channel_name: string;

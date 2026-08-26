@@ -1,0 +1,626 @@
+Now I'll generate the HTML report with the demographic data I've gathered for both brands.
+
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Demographics & Marketing Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            color: #7f8c8d;
+            font-weight: 300;
+        }
+
+        .brand-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .brand-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.16);
+        }
+
+        .brand-card.chanel {
+            border-top: 4px solid #000;
+        }
+
+        .brand-card.gucci {
+            border-top: 4px solid #00a86b;
+        }
+
+        .brand-name {
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .brand-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+
+        .metric-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border-left: 3px solid #3498db;
+        }
+
+        .metric-box.chanel {
+            border-left-color: #000;
+        }
+
+        .metric-box.gucci {
+            border-left-color: #00a86b;
+        }
+
+        .metric-label {
+            font-size: 0.85em;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .comparison-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-weight: 700;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #2c3e50;
+            border-bottom: 2px solid #ecf0f1;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+            color: #555;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .bar-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 8px 0;
+        }
+
+        .bar {
+            height: 20px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            min-width: 20px;
+        }
+
+        .bar.male {
+            background: linear-gradient(90deg, #3498db, #2980b9);
+        }
+
+        .bar.female {
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+        }
+
+        .bar-label {
+            font-size: 0.85em;
+            color: #7f8c8d;
+            min-width: 50px;
+        }
+
+        .influencer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .influencer-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ecf0f1;
+        }
+
+        .influencer-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .influencer-stat {
+            font-size: 0.85em;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+
+        .stat-highlight {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(0,168,107,0.02) 100%);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #000;
+            margin-top: 20px;
+        }
+
+        .conclusion p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .highlight {
+            background: #fffacd;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .brand-section {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .influencer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Brand Demographics & Marketing Analysis</h1>
+            <p>Comparative Analysis: Chanel vs Gucci</p>
+        </div>
+
+        <!-- Brand Overview -->
+        <div class="brand-section">
+            <div class="brand-card chanel">
+                <div class="brand-name">Chanel</div>
+                <div class="brand-description">
+                    Chanel represents timeless luxury and sophistication, serving as an aspirational brand for fashion-conscious consumers globally. Known for iconic designs and heritage craftsmanship, Chanel maintains an exclusive positioning through selective brand partnerships.
+                </div>
+                <div class="metric-box chanel">
+                    <div class="metric-label">Total Influencers</div>
+                    <div class="metric-value">2</div>
+                </div>
+                <div class="metric-box chanel">
+                    <div class="metric-label">Combined Followers</div>
+                    <div class="metric-value">135,181</div>
+                </div>
+                <div class="metric-box chanel">
+                    <div class="metric-label">Primary Market</div>
+                    <div class="metric-value">USA</div>
+                </div>
+                <div class="metric-box chanel">
+                    <div class="metric-label">Audience Average Age</div>
+                    <div class="metric-value">–</div>
+                </div>
+            </div>
+
+            <div class="brand-card gucci">
+                <div class="brand-name">Gucci</div>
+                <div class="brand-description">
+                    Gucci embodies bold creativity and contemporary luxury, targeting a younger, trend-aware demographic. With a diverse ambassador strategy spanning entertainment, sports, and digital culture, Gucci maintains cultural relevance through dynamic partnerships.
+                </div>
+                <div class="metric-box gucci">
+                    <div class="metric-label">Total Influencers</div>
+                    <div class="metric-value">21</div>
+                </div>
+                <div class="metric-box gucci">
+                    <div class="metric-label">Combined Followers</div>
+                    <div class="metric-value">24.4M</div>
+                </div>
+                <div class="metric-box gucci">
+                    <div class="metric-label">Primary Markets</div>
+                    <div class="metric-value">USA, Brazil</div>
+                </div>
+                <div class="metric-box gucci">
+                    <div class="metric-label">Audience Average Age</div>
+                    <div class="metric-value">30.7 years</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demographics Comparison -->
+        <div class="comparison-section">
+            <h2 class="section-title">Demographics Comparison</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Chanel</th>
+                        <th>Gucci</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Total Influencers</strong></td>
+                        <td>2</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Followers</strong></td>
+                        <td>135,181</td>
+                        <td>24,439,903</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Average Followers per Influencer</strong></td>
+                        <td>67,590</td>
+                        <td>1,163,800</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Average Age of Audience</strong></td>
+                        <td>N/A</td>
+                        <td>30.7 years</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Geographic Focus</strong></td>
+                        <td>USA</td>
+                        <td>USA (68%), Brazil (23%)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gender Distribution (Female)</strong></td>
+                        <td>N/A</td>
+                        <td>68.2%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gender Distribution (Male)</strong></td>
+                        <td>N/A</td>
+                        <td>31.8%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Marketing Strategy Insights -->
+        <div class="comparison-section">
+            <h2 class="section-title">Marketing Strategy Insights</h2>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
+                <div>
+                    <h3 style="color: #000; margin-bottom: 15px; font-size: 1.2em;">Chanel Positioning</h3>
+                    <p style="color: #555; line-height: 1.7; margin-bottom: 15px;"><strong>Key Strategy:</strong> Selective exclusivity with minimal influencer partnerships. Chanel's focused approach maintains brand prestige through limited collaborations.</p>
+                    <p style="color: #555; line-height: 1.7; margin-bottom: 15px;"><strong>Content Approach:</strong> Heritage-focused storytelling emphasizing craftsmanship, timeless elegance, and cultural significance.</p>
+                    <p style="color: #555; line-height: 1.7;"><strong>Audience Profile:</strong> Affluent consumers with high purchasing power, primarily in mature markets (USA). Limited data suggests premium demographic targeting.</p>
+                </div>
+
+                <div>
+                    <h3 style="color: #00a86b; margin-bottom: 15px; font-size: 1.2em;">Gucci Positioning</h3>
+                    <p style="color: #555; line-height: 1.7; margin-bottom: 15px;"><strong>Key Strategy:</strong> Expansive influencer ecosystem with diverse ambassador portfolio. Gucci leverages volume and reach for cultural penetration.</p>
+                    <p style="color: #555; line-height: 1.7; margin-bottom: 15px;"><strong>Content Approach:</strong> Trend-driven, visually bold storytelling celebrating individuality, art, and contemporary culture.</p>
+                    <p style="color: #555; line-height: 1.7;"><strong>Audience Profile:</strong> Broad demographic spanning millennials to Gen X (avg 30.7 yrs), 68% female-skewed, with strong presence in Americas (USA/Brazil).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chanel Influencers -->
+        <div class="comparison-section">
+            <h2 class="section-title">Chanel: Brand Ambassadors & Influencers</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Instagram Handle</th>
+                        <th>Followers</th>
+                        <th>Primary Country</th>
+                        <th>Avg Age</th>
+                        <th>Gender Distribution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@jalal_models</td>
+                        <td>134,298</td>
+                        <td>USA</td>
+                        <td>N/A</td>
+                        <td>No data available</td>
+                    </tr>
+                    <tr>
+                        <td>@bluecra_z</td>
+                        <td>883</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>No data available</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="background: #f0f8ff; padding: 15px; border-radius: 8px; margin-top: 15px; color: #555;">
+                <strong>Insight:</strong> Chanel's limited influencer roster reflects a premium, controlled brand strategy. Jalal_models serves as the primary ambassador with 134K followers in the USA market.
+            </div>
+        </div>
+
+        <!-- Gucci Influencers -->
+        <div class="comparison-section">
+            <h2 class="section-title">Gucci: Top Influencers & Ambassadors</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Instagram Handle</th>
+                        <th>Followers</th>
+                        <th>Primary Country</th>
+                        <th>Avg Age</th>
+                        <th>Gender Distribution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@shelengovskiy</td>
+                        <td>12,146,699</td>
+                        <td>Global</td>
+                        <td>N/A</td>
+                        <td>No data available</td>
+                    </tr>
+                    <tr>
+                        <td>@voguebrasil</td>
+                        <td>4,627,897</td>
+                        <td>BRA</td>
+                        <td>31.2 yrs</td>
+                        <td>
+                            <div class="bar-container">
+                                <div class="bar male" style="width: 120px;"></div>
+                                <span class="bar-label">33% M</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar female" style="width: 200px;"></div>
+                                <span class="bar-label">67% F</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@yesly</td>
+                        <td>1,955,506</td>
+                        <td>USA</td>
+                        <td>N/A</td>
+                        <td>No data available</td>
+                    </tr>
+                    <tr>
+                        <td>@staskaranikolaou</td>
+                        <td>10,261,310</td>
+                        <td>USA</td>
+                        <td>31.8 yrs</td>
+                        <td>
+                            <div class="bar-container">
+                                <div class="bar male" style="width: 93px;"></div>
+                                <span class="bar-label">31% M</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar female" style="width: 207px;"></div>
+                                <span class="bar-label">69% F</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@orioncarloto</td>
+                        <td>776,305</td>
+                        <td>USA</td>
+                        <td>31.1 yrs</td>
+                        <td>
+                            <div class="bar-container">
+                                <div class="bar male" style="width: 106px;"></div>
+                                <span class="bar-label">35% M</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar female" style="width: 194px;"></div>
+                                <span class="bar-label">65% F</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@rubylyn_</td>
+                        <td>762,223</td>
+                        <td>USA</td>
+                        <td>31.6 yrs</td>
+                        <td>
+                            <div class="bar-container">
+                                <div class="bar male" style="width: 56px;"></div>
+                                <span class="bar-label">19% M</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar female" style="width: 244px;"></div>
+                                <span class="bar-label">81% F</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@kensnation</td>
+                        <td>435,747</td>
+                        <td>USA</td>
+                        <td>29.0 yrs</td>
+                        <td>
+                            <div class="bar-container">
+                                <div class="bar male" style="width: 79px;"></div>
+                                <span class="bar-label">26% M</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar female" style="width: 221px;"></div>
+                                <span class="bar-label">74% F</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@vanessahong</td>
+                        <td>561,138</td>
+                        <td>USA</td>
+                        <td>29.5 yrs</td>
+                        <td>
+                            <div class="bar-container">
+                                <div class="bar male" style="width: 46px;"></div>
+                                <span class="bar-label">15% M</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar female" style="width: 254px;"></div>
+                                <span class="bar-label">85% F</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@jake.fleming</td>
+                        <td>339,591</td>
+                        <td>USA</td>
+                        <td>33.0 yrs</td>
+                        <td>
+                            <div class="bar-container">
+                                <div class="bar male" style="width: 76px;"></div>
+                                <span class="bar-label">25% M</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar female" style="width: 224px;"></div>
+                                <span class="bar-label">75% F</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@tannerareese</td>
+                        <td>221,766</td>
+                        <td>USA</td>
+                        <td>29.7 yrs</td>
+                        <td>
+                            <div class="bar-container">
+                                <div class="bar male" style="width: 120px;"></div>
+                                <span class="bar-label">40% M</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar female" style="width: 180px;"></div>
+                                <span class="bar-label">60% F</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@kallebdaniel</td>
+                        <td>12,952</td>
+                        <td>BRA</td>
+                        <td>31.7 yrs</td>
+                        <td>
+                            <div class="bar-container">
+                                <div class="bar male" style="width: 126px;"></div>
+                                <span class="bar-label">42% M</span>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar female" style="width: 174px;"></div>
+                                <span class="bar-label">58% F</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="background: #f0f8ff; padding: 15px; border-radius: 8px; margin-top: 15px; color: #555;">
+                <strong>Insight:</strong> Gucci's influencer strategy targets mega-influencers (10M+ followers) alongside mid-tier creators. The majority are female-skewed (68% avg) with audiences in the 29-32 year range, creating broad appeal across millennial to millennial-adjacent demographics.
+            </div>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="comparison-section">
+            <h2 class="section-title">Strategic Conclusion</h2>
+            <div class="conclusion">
+                <p><strong>Chanel Strategy:</strong> Operates on a <span class="highlight">luxury exclusivity model</span> with minimal influencer partnerships. The selective approach reinforces brand prestige and maintains control over brand narrative. With only 2 tracked influencers totaling 135K followers, Chanel prioritizes <span class="highlight">direct consumer relationships</span> and high-end retail channels over mass-market influencer marketing.</p>
+
+                <p><strong>Gucci Strategy:</strong> Employs a <span class="highlight">volume-driven expansion model</span> with 21 influencers commanding 24.4M combined followers. Gucci's democratized approach penetrates <span class="highlight">diverse demographic segments</span> through multiple touchpoints, with particular strength in the Americas (USA/Brazil). The 68% female audience skew and 30.7-year average age indicate targeting of affluent millennial women with disposable income.</p>
+
+                <p><strong>Key Differentiators:</strong></p>
+                <ul style="margin-left: 20px; color: #555; line-height: 1.8;">
+                    <li><strong>Scale:</strong> Gucci reaches 180x more followers through influencers (24.4M vs 135K)</li>
+                    <li><strong>Geographic Reach:</strong> Chanel focuses USA; Gucci dominates USA+Brazil markets</li>
+                    <li><strong>Audience Gender:</strong> Gucci has documented 68% female audience; Chanel data limited</li>
+                    <li><strong>Age Demographics:</strong> Gucci targets 30-year-old demographic; Chanel profile unclear</li>
+                    <li><strong>Brand Philosophy:</strong> Chanel = Heritage preservation; Gucci = Contemporary trendsetting</li>
+                </ul>
+
+                <p style="margin-top: 20px;"><strong>Market Implication:</strong> Both brands occupy distinct luxury niches. Chanel's scarcity-based strategy maintains cachet among ultra-high-net-worth individuals, while Gucci's influencer-heavy approach captures the aspirational luxury segment through relatable ambassadors and cultural relevance.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+</html>

@@ -57,12 +57,6 @@ function extractHighestTopMarket(creator: Creator, risk?: CreatorRisk) {
 
 const PRODUCT_TYPES = [
   "Sportswear",
-  "Cosmetics",
-  "Skincare",
-  "Smartphones",
-  "E-commerce",
-  "Retail",
-  "Watches",
 ];
 
 const BUDGET_OPTIONS: Record<string, [number, number]> = {

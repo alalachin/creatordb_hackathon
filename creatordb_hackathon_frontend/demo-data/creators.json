@@ -1,0 +1,287 @@
+[
+  {
+    "channel_name": "Road Runner Sports",
+    "channel_id": "UCICRLxrMEgzYMMOdjGDiOvQ",
+    "avatar": "https://yt3.googleusercontent.com/OMGvhMeEkZuEkMRu6rvJtGLFnvFE5-hBKqB9cmcXxFFIzIcRHS1fQ-1wV9IaOwwcGAl_cgXRhA=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 56500,
+    "sponsorship_price": 3213,
+    "demographics": {
+      "gender": {"male": 95.02, "female": 4.98},
+      "main age range": "25-34 34%",
+      "top_countries": ["US 78.7%", "UK 7.2%", "CA 4.4%", "IN 4.2%"],
+      "video price": 3213
+    },
+    "risk_level": "MEDIUM",
+    "risk_score": 6,
+    "risk_keywords": ["class action", "auto renewal"],
+    "risk_finding": "Class action lawsuit for deceptive VIP membership auto-renewals. Settled with no admission of wrongdoing."
+  },
+  {
+    "channel_name": "David Bluetile",
+    "channel_id": "UCch0pyPXmlB1X1x324uk1Pw",
+    "avatar": "https://yt3.googleusercontent.com/fzNNnXrwTaSL0IgmFKTdSx3tHGyCmRVDWIejR-IXYylligiCc8SoEmKc95aZMVbFrJYq4gMYhQ=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 129000,
+    "sponsorship_price": 459,
+    "demographics": {
+      "gender": {"male": 92.29, "female": 7.71},
+      "main age range": "25-34 36%",
+      "top_countries": ["US 78.9%", "UK 6.9%", "CA 4.5%", "IN 4.1%"],
+      "video price": 459
+    },
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "risk_keywords": ["no issues"],
+    "risk_finding": "No significant controversies found."
+  },
+  {
+    "channel_name": "RunRepeat.com",
+    "channel_id": "UC3h4BbV9hbAcYlM4__imOyw",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_kJRiWbuJNw1amyOJsNOoHA6_VHevyBe7GOwWDrr1Md0g=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 54600,
+    "sponsorship_price": 1103,
+    "demographics": {
+      "gender": {"male": null, "female": null},
+      "main age range": null,
+      "top_countries": null,
+      "video price": 1103
+    },
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "risk_keywords": ["no issues"],
+    "risk_finding": "No significant controversies found."
+  },
+  {
+    "channel_name": "Alastair Running",
+    "channel_id": "UCnVo8RafJC8kNL6CVI_h_Sg",
+    "avatar": "https://yt3.googleusercontent.com/XWvoP99aQNnd12PiABqaMr7pis0svOYr9Lx04YuValD7Kj0-VF_rrPMOur8sce0V0tsFVQdSVSA=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 18100,
+    "sponsorship_price": 409,
+    "demographics": {
+      "gender": {"male": 86.87, "female": 13.13},
+      "main age range": "25-34 31%",
+      "top_countries": ["US 78.7%", "UK 7.2%", "CA 4.4%", "IN 4.2%"],
+      "video price": 409
+    },
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "risk_keywords": ["no issues"],
+    "risk_finding": "No significant controversies found."
+  },
+  {
+    "channel_name": "Doctors of Running",
+    "channel_id": "UCpUtRsyAx5rluUDmF4k_gHw",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_nAAyP_QoVYNJngOluYHOnsZxqignssCP8bAAIagsY7jA=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 46700,
+    "sponsorship_price": 481,
+    "demographics": {
+      "gender": {"male": 81.96, "female": 18.04},
+      "main age range": "25-34 28%",
+      "top_countries": ["US 66.2%", "UK 21.5%", "CA 3.8%", "IN 3.7%"],
+      "video price": 481
+    },
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "risk_keywords": ["no issues"],
+    "risk_finding": "No significant controversies found."
+  },
+  {
+    "channel_name": "Fleet Feet",
+    "channel_id": "UC029CQxPO_w-ENYRuhK1Q_g",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_mVuXVde_AzMybC3oM7D9fa2FtHLcvB-1zurfim3A6xw5w=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 38100,
+    "sponsorship_price": 338,
+    "demographics": {
+      "gender": {"male": 86.31, "female": 13.69},
+      "main age range": "25-34 29%",
+      "top_countries": ["US 55.7%", "UK 33.7%", "CA 3.2%", "IN 3.1%"],
+      "video price": 338
+    },
+    "risk_level": "MEDIUM",
+    "risk_score": 5,
+    "risk_keywords": ["customer complaints", "lawsuit"],
+    "risk_finding": "Aggressive upselling complaints from customers and a lawsuit related to the Jackrabbit acquisition."
+  },
+  {
+    "channel_name": "VertiMax",
+    "channel_id": "UCrBbne8HfONwYK569YNTOgA",
+    "avatar": "https://yt3.googleusercontent.com/QtbvfYOEjgMmjxaoUjt_sFnipY2PMhE64eH6CVuKbtkIXycjLbFYp6B3dZexCBLJVf9feaYnGJo=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 22700,
+    "sponsorship_price": 1060,
+    "demographics": {
+      "gender": {"male": 91.33, "female": 8.67},
+      "main age range": "25-34 33%",
+      "top_countries": ["US 78.8%", "UK 6.1%", "CA 4.6%", "IN 4.4%"],
+      "video price": 1060
+    },
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "risk_keywords": ["no issues"],
+    "risk_finding": "No significant controversies found."
+  },
+  {
+    "channel_name": "ALTIS World",
+    "channel_id": "UCdLuu6qncgyTpRGJu02sTfA",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_kxpKikN-FLYuYMOe7_Ncphy_TuDL3U49t2x37MsZI0ng=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 15300,
+    "sponsorship_price": 39,
+    "demographics": {
+      "gender": {"male": 74.71, "female": 25.29},
+      "main age range": "25-34 28%",
+      "top_countries": ["US 78.8%", "UK 7.4%", "CA 4.4%", "IN 4.2%"],
+      "video price": 39
+    },
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "risk_keywords": ["no issues"],
+    "risk_finding": "No significant controversies found."
+  },
+  {
+    "channel_name": "NOBULL",
+    "channel_id": "UCMHe0UKRkYxb8JWt7C_c_kA",
+    "avatar": "https://yt3.googleusercontent.com/bR6uDBc6mcZRDargjElzMF6Z6IscDgJ45UG9kvSarR1g_qPDBHCJFc41Kgj9XRW4sng7x_iLdg=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 12400,
+    "sponsorship_price": 2202,
+    "demographics": {
+      "gender": {"male": 70.0, "female": 30.0},
+      "main age range": "25-34 28%",
+      "top_countries": ["US 78.8%", "UK 7.3%", "CA 4.4%", "IN 4.2%"],
+      "video price": 2202
+    },
+    "risk_level": "MEDIUM",
+    "risk_score": 5,
+    "risk_keywords": ["layoffs", "instability"],
+    "risk_finding": "35% workforce layoff (75 employees) in 2023, stagnant revenue growth, multiple executive departures. Company instability poses brand association risk."
+  },
+  {
+    "channel_name": "REI",
+    "channel_id": "UCwZcNfPpV9CXSVbpH1ckVmw",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_lUHsFlWaQfLNKhYHZLgGcKJi5KSUr85H6SVO7smUbsrng=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 449000,
+    "sponsorship_price": 583,
+    "demographics": {
+      "gender": {"male": 76.99, "female": 23.01},
+      "main age range": "25-34 25%",
+      "top_countries": ["US 78.2%", "UK 7.0%", "CA 4.8%", "IN 3.9%"],
+      "video price": 583
+    },
+    "risk_level": "HIGH",
+    "risk_score": 9,
+    "risk_keywords": ["political controversy", "labor dispute"],
+    "risk_finding": "Multiple active controversies: endorsed then retracted a Trump cabinet pick, NLRB complaint for withholding raises from unionized workers, racial equity failures report, 400+ layoffs from Experiences division closure."
+  },
+  {
+    "channel_name": "DanteTheBody FIT",
+    "channel_id": "UCqTtwbwc3VgVKax6NP-ZvJw",
+    "avatar": "https://yt3.googleusercontent.com/gwHxgkLkk0VTkG72Xp0PtdmqYqTMxYEx50nxiLWL4cztOoITDgyYIVcfKhHqUO6e73lO7nTnPA=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 396000,
+    "sponsorship_price": 1388,
+    "demographics": {
+      "gender": {"male": 51.62, "female": 48.38},
+      "main age range": "25-34 38%",
+      "top_countries": ["US 72.6%", "UK 6.5%", "IN 6.4%", "CA 4.0%"],
+      "video price": 1388
+    },
+    "risk_level": "HIGH",
+    "risk_score": 10,
+    "risk_keywords": ["suicide note", "missing status"],
+    "risk_finding": "Posted a cryptic suicide note in September 2025; family publicly searched for him. Major brand safety concern. Creator's current status is unclear."
+  },
+  {
+    "channel_name": "DesFit",
+    "channel_id": "UCmVhS0qulkRshtLrXMeMToQ",
+    "avatar": "https://yt3.googleusercontent.com/ytc/AIdro_keAmSMJ33UQ62Z91pWfMuuiSUtKqyqNch5hHUWStJNA1c=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 268000,
+    "sponsorship_price": 3414,
+    "demographics": {
+      "gender": {"male": 88.7, "female": 11.3},
+      "main age range": "45-54 20%",
+      "top_countries": ["US 77.9%", "UK 7.5%", "CA 4.6%", "IN 3.8%"],
+      "video price": 3414
+    },
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "risk_keywords": ["no issues"],
+    "risk_finding": "No significant controversies found."
+  },
+  {
+    "channel_name": "Seth James DeMoor",
+    "channel_id": "UCeSHo5kTvzoik4STh7MuMCA",
+    "avatar": "https://yt3.googleusercontent.com/-LH6yU1_-e-OtV9ZnHvPZvkGbmO-xLc56FFVudAxfSxFGDyPpDcPaq_AUr9vluUiWZyPVJoE=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 169000,
+    "sponsorship_price": 258,
+    "demographics": {
+      "gender": {"male": 79.07, "female": 20.93},
+      "main age range": "25-34 28%",
+      "top_countries": ["US 58.8%", "UK 30.5%", "CA 3.4%", "IN 3.2%"],
+      "video price": 258
+    },
+    "risk_level": "LOW",
+    "risk_score": 3,
+    "risk_keywords": ["reckless running", "minor criticism"],
+    "risk_finding": "Minor Reddit criticism about reckless running in traffic and disputed injury claims. No major scandal."
+  },
+  {
+    "channel_name": "Jason and Lauren",
+    "channel_id": "UCvJ3gIxdoPpGYnrbXECnw_w",
+    "avatar": "https://yt3.googleusercontent.com/SXnGijIztssWpVoZ2jka-gXetIOP0yn-MacA0TlG9SRCPFGmdbPcFGJtw22QOaHHV8nv8nmE=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 158000,
+    "sponsorship_price": 1187,
+    "demographics": {
+      "gender": {"male": 91.66, "female": 8.34},
+      "main age range": "25-34 35%",
+      "top_countries": ["US 74.8%", "UK 7.1%", "CA 4.7%", "IN 4.5%"],
+      "video price": 1187
+    },
+    "risk_level": "CLEAN",
+    "risk_score": 1,
+    "risk_keywords": ["no issues"],
+    "risk_finding": "No significant controversies found."
+  },
+  {
+    "channel_name": "Believe in the Run",
+    "channel_id": "UC2-2J_y_jpOYz8Rld5C6C5w",
+    "avatar": "https://yt3.googleusercontent.com/qV-5WpA0CnzB16EEJoMocQaQuIXfnFvHrEAc1qj3VbCV9_ebQ68G4bf6hRC2BzD0zqjEjAQ3miw=s900-c-k-c0x00ffffff-no-rj",
+    "language": "en",
+    "country": "US",
+    "subscribers": 123000,
+    "sponsorship_price": 477,
+    "demographics": {
+      "gender": {"male": 74.62, "female": 25.38},
+      "main age range": "25-34 28%",
+      "top_countries": ["US 78.0%", "UK 8.1%", "CA 4.3%", "IN 4.1%"],
+      "video price": 477
+    },
+    "risk_level": "LOW",
+    "risk_score": 2,
+    "risk_keywords": ["review criticism"],
+    "risk_finding": "Community criticism that reviews are too short (20 miles only). Credibility concern, not a scandal."
+  }
+]

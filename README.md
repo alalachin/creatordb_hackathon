@@ -1,6 +1,6 @@
 # clearHub
 
-clearHub is a brand and creator intelligence platform built with Next.js 14. It helps users explore competitors, compare brand audiences, and discover creators for marketing campaigns.
+clearHub is a brand and creator intelligence platform built with Next.js 14. This `demo` branch uses saved reports and creator data, so it can run without Claude or external API calls.
 
 ## Features
 
@@ -13,8 +13,6 @@ clearHub is a brand and creator intelligence platform built with Next.js 14. It 
 
 - Node.js 18 or later
 - npm
-- Claude Code CLI
-- CreatorDB API key
 
 ## Setup
 
@@ -24,21 +22,6 @@ Enter the frontend directory and install the dependencies:
 cd creatordb_hackathon_frontend
 npm install
 ```
-
-Copy the environment variable template:
-
-```bash
-cp .env.local.example .env.local
-```
-
-Edit `.env.local`:
-
-```env
-CREATORDB_API_KEY=your_api_key_here
-PROJECT_ROOT=/absolute/path/to/creatordb_hackathon
-```
-
-`PROJECT_ROOT` must be the absolute path to this repository's root directory—the directory containing `resource/` and `output/`.
 
 ## Run the Project
 
@@ -61,14 +44,12 @@ npm run start
 
 ```text
 creatordb_hackathon/
-├── creatordb_hackathon_frontend/  # Next.js application
-├── resource/external/             # Brand and creator data
-├── output/                        # Generated reports and cache
+├── creatordb_hackathon_frontend/  # Next.js application and bundled demo data
 └── README.md
 ```
 
 ## Notes
 
-- Do not commit `.env.local`, as it may contain API credentials.
-- Brand comparison and creator discovery features use the Claude Code CLI.
-- Initial report generation may take some time. Generated results are cached in `output/`.
+- This demo does not require environment variables or API credentials.
+- Brand comparisons are limited to the reports included with the demo.
+- Creator discovery uses a bundled static dataset and does not make live AI calls.

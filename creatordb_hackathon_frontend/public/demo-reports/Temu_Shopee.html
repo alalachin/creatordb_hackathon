@@ -1,0 +1,740 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Demographics & Marketing Analysis</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --temu: #FF6B35;
+      --temu-light: #FFF0EB;
+      --temu-mid: #FF9264;
+      --shopee: #EE4D2D;
+      --shopee-alt: #F05D27;
+      --shopee-light: #FFF0EE;
+      --shopee-mid: #F5845D;
+      --neutral: #F8F9FA;
+      --border: #E5E7EB;
+      --text: #1A1A2E;
+      --muted: #6B7280;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #F3F4F8;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      background: linear-gradient(135deg, #1A1A2E 0%, #16213E 60%, #0F3460 100%);
+      color: #fff;
+      text-align: center;
+      padding: 64px 24px 52px;
+    }
+    .header-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      margin-bottom: 20px;
+      color: rgba(255,255,255,0.8);
+    }
+    .header h1 {
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .header-brands {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .brand-pill {
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+    .pill-temu  { background: var(--temu);  color: #fff; }
+    .pill-shopee { background: var(--shopee); color: #fff; }
+    .vs-badge {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 800; color: #fff;
+    }
+    .header-meta {
+      margin-top: 20px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 48px 0 24px; }
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .section-heading {
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 700;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: var(--card-shadow);
+      padding: 28px;
+      border: 1px solid var(--border);
+    }
+    .card-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 680px) {
+      .card-grid-2 { grid-template-columns: 1fr; }
+    }
+
+    /* ── BRAND OVERVIEW CARDS ── */
+    .brand-card { border-radius: 16px; overflow: hidden; box-shadow: var(--card-shadow); }
+    .brand-card-header {
+      padding: 22px 26px 18px;
+      color: #fff;
+    }
+    .brand-card-header.temu  { background: linear-gradient(135deg, var(--temu) 0%, #FF4500 100%); }
+    .brand-card-header.shopee { background: linear-gradient(135deg, var(--shopee) 0%, #C0392B 100%); }
+    .brand-card-header h2 { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+    .brand-card-header span { font-size: 12px; opacity: 0.85; }
+    .brand-card-body { background: #fff; padding: 22px 26px; border: 1px solid var(--border); border-top: none; border-radius: 0 0 16px 16px; }
+    .brand-card-body p { font-size: 14px; color: #444; line-height: 1.7; margin-bottom: 14px; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      font-size: 11px; font-weight: 600;
+      border-radius: 20px; padding: 4px 12px;
+    }
+    .tag-temu  { background: var(--temu-light); color: var(--temu); }
+    .tag-shopee { background: var(--shopee-light); color: var(--shopee); }
+
+    /* ── STAT ROW ── */
+    .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+    @media (max-width: 780px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+    .stat-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border);
+    }
+    .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 6px; }
+    .stat-value { font-size: 26px; font-weight: 800; line-height: 1; }
+    .stat-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .val-temu  { color: var(--temu); }
+    .val-shopee { color: var(--shopee); }
+
+    /* ── COMPARISON TABLE ── */
+    .cmp-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .cmp-table th, .cmp-table td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .cmp-table thead th { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); background: var(--neutral); }
+    .cmp-table thead th:nth-child(2) { background: var(--temu-light); color: var(--temu); }
+    .cmp-table thead th:nth-child(3) { background: var(--shopee-light); color: var(--shopee); }
+    .cmp-table tbody tr:hover { background: #FAFAFA; }
+    .cmp-table td:first-child { font-weight: 600; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .cmp-table td:nth-child(2) { font-weight: 700; color: var(--temu); }
+    .cmp-table td:nth-child(3) { font-weight: 700; color: var(--shopee); }
+
+    /* ── BAR VISUAL ── */
+    .bar-wrap { margin: 4px 0; }
+    .bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 13px; }
+    .bar-label { min-width: 90px; color: var(--muted); font-size: 12px; }
+    .bar-track { flex: 1; background: #F0F0F0; border-radius: 999px; height: 10px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 999px; transition: width 0.6s ease; }
+    .bar-pct { min-width: 40px; text-align: right; font-weight: 700; font-size: 12px; }
+
+    /* ── GENDER DONUT (CSS only) ── */
+    .gender-grid { display: flex; gap: 32px; flex-wrap: wrap; }
+    .gender-block { text-align: center; }
+    .gender-block .g-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+    .pie-wrap { position: relative; width: 80px; height: 80px; margin: 0 auto; }
+    .pie {
+      width: 80px; height: 80px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pie-temu-f  { background: conic-gradient(var(--temu) 0% 60%, var(--temu-mid) 60% 100%); }
+    .pie-shopee-f { background: conic-gradient(var(--shopee) 0% 50%, var(--shopee-mid) 50% 100%); }
+    .pie-inner {
+      width: 50px; height: 50px; border-radius: 50%; background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 700; text-align: center; line-height: 1.3;
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    }
+    .pie-legend { display: flex; gap: 8px; justify-content: center; margin-top: 8px; flex-wrap: wrap; }
+    .legend-dot { display: flex; align-items: center; gap: 4px; font-size: 11px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    /* ── STRATEGY CARDS ── */
+    .strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 680px) { .strategy-grid { grid-template-columns: 1fr; } }
+    .strat-card { border-radius: 16px; overflow: hidden; box-shadow: var(--card-shadow); }
+    .strat-head { padding: 16px 22px; color: #fff; font-weight: 700; font-size: 15px; }
+    .strat-head.temu  { background: linear-gradient(90deg, var(--temu), #FF4500); }
+    .strat-head.shopee { background: linear-gradient(90deg, var(--shopee), #C0392B); }
+    .strat-body { background: #fff; padding: 20px 22px; border: 1px solid var(--border); border-top: none; border-radius: 0 0 16px 16px; }
+    .strat-item { display: flex; gap: 10px; margin-bottom: 14px; font-size: 13.5px; }
+    .strat-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+    .strat-item strong { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; color: var(--muted); }
+
+    /* ── INFLUENCER TABLE ── */
+    .inf-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    .inf-table th { padding: 10px 14px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); background: var(--neutral); text-align: left; border-bottom: 2px solid var(--border); }
+    .inf-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .inf-table tbody tr:hover { background: #FAFAFA; }
+    .handle { font-weight: 700; }
+    .handle-temu  { color: var(--temu); }
+    .handle-shopee { color: var(--shopee); }
+    .follower-badge {
+      display: inline-block;
+      background: var(--neutral);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .country-badge {
+      display: inline-block;
+      background: #EEF2FF;
+      color: #4338CA;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .na { color: #CCC; font-style: italic; font-size: 12px; }
+
+    /* ── GEO BAR ── */
+    .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 680px) { .geo-grid { grid-template-columns: 1fr; } }
+    .geo-card { background: #fff; border-radius: 16px; box-shadow: var(--card-shadow); padding: 22px 26px; border: 1px solid var(--border); }
+    .geo-title { font-weight: 700; font-size: 14px; margin-bottom: 16px; }
+
+    /* ── CONCLUSION ── */
+    .conclusion { background: linear-gradient(135deg, #1A1A2E 0%, #0F3460 100%); border-radius: 20px; padding: 40px; color: #fff; margin-bottom: 40px; }
+    .conclusion h2 { font-size: 22px; font-weight: 800; margin-bottom: 20px; }
+    .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 600px) { .diff-grid { grid-template-columns: 1fr; } }
+    .diff-block { background: rgba(255,255,255,0.08); border-radius: 12px; padding: 18px; }
+    .diff-block h3 { font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+    .diff-block ul { padding-left: 16px; font-size: 13px; line-height: 1.8; opacity: 0.85; }
+
+    /* ── FOOTER ── */
+    footer { text-align: center; padding: 24px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); background: #fff; }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════ HEADER ════════════════════ -->
+<div class="header">
+  <div class="header-tag">Influencer Marketing Intelligence</div>
+  <h1>Brand Demographics &amp; Marketing Analysis</h1>
+  <div class="header-brands">
+    <span class="brand-pill pill-temu">Temu</span>
+    <span class="vs-badge">VS</span>
+    <span class="brand-pill pill-shopee">Shopee</span>
+  </div>
+  <div class="header-meta">Generated April 16, 2026 &nbsp;·&nbsp; Based on Instagram influencer ambassador data</div>
+</div>
+
+<div class="container">
+
+  <!-- ════════════════════ BRAND OVERVIEW ════════════════════ -->
+  <div class="section">
+    <div class="section-title">Section 01</div>
+    <div class="section-heading">Brand Overview</div>
+    <div class="card-grid-2">
+
+      <div class="brand-card">
+        <div class="brand-card-header temu">
+          <h2>Temu</h2>
+          <span>Global Budget E-commerce Platform</span>
+        </div>
+        <div class="brand-card-body">
+          <p>Temu is a fast-growing international e-commerce marketplace offering deeply discounted consumer goods across virtually every category. Backed by PDD Holdings, Temu aggressively targets Western consumers with ultra-low price points and heavy social media advertising.</p>
+          <div class="tag-list">
+            <span class="tag tag-temu">Value Shopping</span>
+            <span class="tag tag-temu">Mass Market</span>
+            <span class="tag tag-temu">Western Expansion</span>
+            <span class="tag tag-temu">Female-Skewed</span>
+            <span class="tag tag-temu">218 Ambassadors</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-card">
+        <div class="brand-card-header shopee">
+          <h2>Shopee</h2>
+          <span>Southeast Asia & Taiwan E-commerce Leader</span>
+        </div>
+        <div class="brand-card-body">
+          <p>Shopee is the dominant e-commerce platform across Southeast Asia and Taiwan, operated by Sea Limited. Known for gamified shopping experiences and strong local merchant ecosystems, Shopee maintains deep cultural relevance in its core markets through targeted micro-influencer programs.</p>
+          <div class="tag-list">
+            <span class="tag tag-shopee">Regional Leader</span>
+            <span class="tag tag-shopee">SEA Focus</span>
+            <span class="tag tag-shopee">Micro-Influencer</span>
+            <span class="tag tag-shopee">Balanced Gender</span>
+            <span class="tag tag-shopee">13 Ambassadors</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════ KEY METRICS ════════════════════ -->
+  <div class="section" style="padding-top:0">
+    <div class="section-title">Section 02</div>
+    <div class="section-heading">Key Metrics at a Glance</div>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-label">Temu — Influencers</div>
+        <div class="stat-value val-temu">218</div>
+        <div class="stat-sub">vs 13 for Shopee</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Temu — Total Reach</div>
+        <div class="stat-value val-temu">47.1M</div>
+        <div class="stat-sub">Total followers</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Shopee — Influencers</div>
+        <div class="stat-value val-shopee">13</div>
+        <div class="stat-sub">vs 218 for Temu</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Shopee — Total Reach</div>
+        <div class="stat-value val-shopee">403K</div>
+        <div class="stat-sub">Total followers</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════ DEMOGRAPHICS COMPARISON ════════════════════ -->
+  <div class="section" style="padding-top:0">
+    <div class="section-title">Section 03</div>
+    <div class="section-heading">Demographics Comparison</div>
+
+    <div class="card" style="margin-bottom:24px; overflow-x:auto;">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>🟠 Temu</th>
+            <th>🔴 Shopee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Influencer Count</td>
+            <td>218</td>
+            <td>13</td>
+          </tr>
+          <tr>
+            <td>Total Follower Reach</td>
+            <td>47,089,938</td>
+            <td>403,460</td>
+          </tr>
+          <tr>
+            <td>Avg Influencer Age</td>
+            <td>31.8 yrs</td>
+            <td>30.3 yrs</td>
+          </tr>
+          <tr>
+            <td>Gender — Female</td>
+            <td>60%</td>
+            <td>50%</td>
+          </tr>
+          <tr>
+            <td>Gender — Male</td>
+            <td>40%</td>
+            <td>50%</td>
+          </tr>
+          <tr>
+            <td>#1 Market</td>
+            <td>USA (28.0%)</td>
+            <td>Taiwan (8.0%)</td>
+          </tr>
+          <tr>
+            <td>#2 Market</td>
+            <td>Brazil (14.2%)</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>#3 Market</td>
+            <td>Italy (9.3%)</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Avg Followers / Influencer</td>
+            <td>215,963</td>
+            <td>31,035</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Gender & Geo Side-by-Side -->
+    <div class="card-grid-2" style="margin-bottom:24px;">
+      <!-- Gender -->
+      <div class="card">
+        <div style="font-weight:700;font-size:14px;margin-bottom:16px;">Gender Distribution</div>
+        <div class="gender-grid">
+          <div class="gender-block">
+            <div class="g-label" style="color:var(--temu)">Temu</div>
+            <div class="pie-wrap">
+              <div class="pie pie-temu-f"></div>
+              <div class="pie-inner" style="color:var(--temu)">60%<br>Female</div>
+            </div>
+            <div class="pie-legend">
+              <div class="legend-dot"><div class="dot" style="background:var(--temu)"></div><span style="font-size:11px">F 60%</span></div>
+              <div class="legend-dot"><div class="dot" style="background:var(--temu-mid)"></div><span style="font-size:11px">M 40%</span></div>
+            </div>
+          </div>
+          <div class="gender-block">
+            <div class="g-label" style="color:var(--shopee)">Shopee</div>
+            <div class="pie-wrap">
+              <div class="pie pie-shopee-f"></div>
+              <div class="pie-inner" style="color:var(--shopee)">50%<br>Female</div>
+            </div>
+            <div class="pie-legend">
+              <div class="legend-dot"><div class="dot" style="background:var(--shopee)"></div><span style="font-size:11px">F 50%</span></div>
+              <div class="legend-dot"><div class="dot" style="background:var(--shopee-mid)"></div><span style="font-size:11px">M 50%</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);">
+          Temu skews notably female (60%), aligning with lifestyle/beauty content. Shopee maintains perfect gender parity.
+        </div>
+      </div>
+
+      <!-- Age -->
+      <div class="card">
+        <div style="font-weight:700;font-size:14px;margin-bottom:16px;">Average Influencer Age</div>
+        <div style="margin-bottom:20px;">
+          <div class="bar-row">
+            <span class="bar-label">Temu</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:63.6%;background:var(--temu);"></div>
+            </div>
+            <span class="bar-pct" style="color:var(--temu)">31.8</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">Shopee</span>
+            <div class="bar-track">
+              <div class="bar-fill" style="width:60.6%;background:var(--shopee);"></div>
+            </div>
+            <span class="bar-pct" style="color:var(--shopee)">30.3</span>
+          </div>
+        </div>
+
+        <div style="font-weight:700;font-size:14px;margin-bottom:14px;margin-top:8px;">Scale of Influencer Program</div>
+        <div class="bar-row">
+          <span class="bar-label">Temu (218)</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:100%;background:var(--temu);"></div>
+          </div>
+          <span class="bar-pct" style="color:var(--temu)">218</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Shopee (13)</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:5.9%;background:var(--shopee);"></div>
+          </div>
+          <span class="bar-pct" style="color:var(--shopee)">13</span>
+        </div>
+        <div style="margin-top:14px;font-size:12px;color:var(--muted);">Both brands target a similar millennial cohort (30–32 yrs), but Temu's program is 16.8× larger by influencer count.</div>
+      </div>
+    </div>
+
+    <!-- Geographic Reach -->
+    <div class="geo-grid">
+      <div class="geo-card">
+        <div class="geo-title" style="color:var(--temu)">🟠 Temu — Geographic Reach</div>
+        <div class="bar-row"><span class="bar-label">USA</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--temu);"></div></div><span class="bar-pct" style="color:var(--temu)">28.0%</span></div>
+        <div class="bar-row"><span class="bar-label">Brazil</span><div class="bar-track"><div class="bar-fill" style="width:50.7%;background:var(--temu-mid);"></div></div><span class="bar-pct" style="color:var(--temu)">14.2%</span></div>
+        <div class="bar-row"><span class="bar-label">Italy</span><div class="bar-track"><div class="bar-fill" style="width:33.2%;background:var(--temu-mid);opacity:0.7"></div></div><span class="bar-pct" style="color:var(--temu)">9.3%</span></div>
+      </div>
+      <div class="geo-card">
+        <div class="geo-title" style="color:var(--shopee)">🔴 Shopee — Geographic Reach</div>
+        <div class="bar-row"><span class="bar-label">Taiwan</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--shopee);"></div></div><span class="bar-pct" style="color:var(--shopee)">8.0%</span></div>
+        <div style="font-size:12px;color:var(--muted);margin-top:12px;padding:10px;background:#FFF5F5;border-radius:8px;">
+          ⚠ Only Taiwan appears in top country data — remaining influencers lack geo-tagging, suggesting significant data gaps in the Shopee ambassador dataset.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════ MARKETING STRATEGY ════════════════════ -->
+  <div class="section">
+    <div class="section-title">Section 04</div>
+    <div class="section-heading">Marketing Strategy Insights</div>
+    <div class="strategy-grid">
+
+      <div class="strat-card">
+        <div class="strat-head temu">🟠 Temu — Strategy Analysis</div>
+        <div class="strat-body">
+          <div class="strat-item">
+            <span class="strat-icon">🎯</span>
+            <div><strong>Positioning</strong>Ultra-low price, impulse-buy culture targeting Western mass-market consumers. "Shop like a billionaire" is achieved through volume and variety.</div>
+          </div>
+          <div class="strat-item">
+            <span class="strat-icon">📱</span>
+            <div><strong>Content Strategy</strong>Haul videos, unboxing content, and lifestyle integration. Female-skewed content (60%) points to beauty, home decor, and fashion verticals.</div>
+          </div>
+          <div class="strat-item">
+            <span class="strat-icon">🌍</span>
+            <div><strong>Market Focus</strong>USA (28%), Brazil (14.2%), Italy (9.3%) — tri-continental reach across English, Portuguese, and Italian-speaking audiences.</div>
+          </div>
+          <div class="strat-item">
+            <span class="strat-icon">📊</span>
+            <div><strong>Influencer Scale</strong>218 ambassadors averaging 215,963 followers each. Mid-tier influencer strategy maximizes authentic reach at scale.</div>
+          </div>
+          <div class="strat-item">
+            <span class="strat-icon">💡</span>
+            <div><strong>Differentiator</strong>Aggressive volume approach — 16.8× more ambassadors than Shopee. Prioritizes breadth over depth.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="strat-card">
+        <div class="strat-head shopee">🔴 Shopee — Strategy Analysis</div>
+        <div class="strat-body">
+          <div class="strat-item">
+            <span class="strat-icon">🎯</span>
+            <div><strong>Positioning</strong>Community-first, regionally authentic platform. Shopee leverages cultural familiarity and trust within Southeast Asian / Taiwanese consumer bases.</div>
+          </div>
+          <div class="strat-item">
+            <span class="strat-icon">📱</span>
+            <div><strong>Content Strategy</strong>Balanced gender representation (50/50) suggests broad category coverage — food, lifestyle, fashion, tech. Micro-community engagement over mass reach.</div>
+          </div>
+          <div class="strat-item">
+            <span class="strat-icon">🌍</span>
+            <div><strong>Market Focus</strong>Concentrated on Taiwan with an expected broader SEA footprint. Instagram ambassador program appears supplementary to core in-app campaigns.</div>
+          </div>
+          <div class="strat-item">
+            <span class="strat-icon">📊</span>
+            <div><strong>Influencer Scale</strong>13 ambassadors averaging 31,035 followers each. Hyper-targeted micro-influencer model prioritizing niche audience alignment.</div>
+          </div>
+          <div class="strat-item">
+            <span class="strat-icon">💡</span>
+            <div><strong>Differentiator</strong>Quality over quantity — lean, curated ambassador roster suggests deliberate selection criteria and potentially higher per-influencer investment.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════ BRAND AMBASSADORS ════════════════════ -->
+  <div class="section">
+    <div class="section-title">Section 05</div>
+    <div class="section-heading">Brand Ambassador Profiles</div>
+
+    <!-- Temu Influencers -->
+    <div class="card" style="margin-bottom:24px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+        <div style="width:10px;height:10px;border-radius:50%;background:var(--temu);flex-shrink:0;"></div>
+        <span style="font-weight:800;font-size:15px;">Temu — Top 5 Ambassadors</span>
+        <span style="margin-left:auto;font-size:12px;color:var(--muted);">Showing 5 of 218</span>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="inf-table">
+          <thead>
+            <tr>
+              <th>Handle</th>
+              <th>Followers</th>
+              <th>Avg Age</th>
+              <th>Gender (F/M)</th>
+              <th>Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="handle handle-temu">@tpt_cycling</span></td>
+              <td><span class="follower-badge">155,494</span></td>
+              <td>30.5 yrs</td>
+              <td>
+                <div class="bar-wrap" style="min-width:100px;">
+                  <div style="display:flex;gap:3px;height:8px;border-radius:4px;overflow:hidden;">
+                    <div style="width:62.9%;background:var(--temu);"></div>
+                    <div style="flex:1;background:#E5E7EB;"></div>
+                  </div>
+                  <div style="font-size:10px;color:var(--muted);margin-top:3px;">F 62.9% / M 37.1%</div>
+                </div>
+              </td>
+              <td><span class="country-badge">ESP</span></td>
+            </tr>
+            <tr>
+              <td><span class="handle handle-temu">@coisinhasdalaisa</span></td>
+              <td><span class="follower-badge">491,033</span></td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+            </tr>
+            <tr>
+              <td><span class="handle handle-temu">@sharel.plepi</span></td>
+              <td><span class="follower-badge">57,192</span></td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+            </tr>
+            <tr>
+              <td><span class="handle handle-temu">@beautycravex</span></td>
+              <td><span class="follower-badge">67,180</span></td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+            </tr>
+            <tr>
+              <td><span class="handle handle-temu">@casacarolmatias</span></td>
+              <td><span class="follower-badge">28,790</span></td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--muted);padding:8px 10px;background:var(--temu-light);border-radius:8px;">
+        ℹ️ <strong>@coisinhasdalaisa</strong> (491K followers) is Temu's highest-reach ambassador in this dataset. Detailed demographics unavailable for 4 of 5 listed — common where influencers have not completed audience analytics integration.
+      </div>
+    </div>
+
+    <!-- Shopee Influencers -->
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+        <div style="width:10px;height:10px;border-radius:50%;background:var(--shopee);flex-shrink:0;"></div>
+        <span style="font-weight:800;font-size:15px;">Shopee — Top 5 Ambassadors</span>
+        <span style="margin-left:auto;font-size:12px;color:var(--muted);">Showing 5 of 13</span>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="inf-table">
+          <thead>
+            <tr>
+              <th>Handle</th>
+              <th>Followers</th>
+              <th>Avg Age</th>
+              <th>Gender (F/M)</th>
+              <th>Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="handle handle-shopee">@foodielife_wing</span></td>
+              <td><span class="follower-badge">10,890</span></td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+              <td><span class="country-badge">TWN</span></td>
+            </tr>
+            <tr>
+              <td><span class="handle handle-shopee">@kittyhi1004</span></td>
+              <td><span class="follower-badge">27,226</span></td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+              <td><span class="country-badge">TWN</span></td>
+            </tr>
+            <tr>
+              <td><span class="handle handle-shopee">@folio.stacey</span></td>
+              <td><span class="follower-badge">13,623</span></td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+              <td><span class="country-badge">TWN</span></td>
+            </tr>
+            <tr>
+              <td><span class="handle handle-shopee">@jia_1027</span></td>
+              <td><span class="follower-badge">9,719</span></td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+            </tr>
+            <tr>
+              <td><span class="handle handle-shopee">@jeannnie915</span></td>
+              <td><span class="follower-badge">4,965</span></td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+              <td class="na">N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--muted);padding:8px 10px;background:var(--shopee-light);border-radius:8px;">
+        ℹ️ Shopee's ambassador cohort is concentrated in the nano-to-micro range (5K–27K followers). <strong>@kittyhi1004</strong> (27.2K) leads by reach. The Taiwan-heavy presence aligns with Shopee's core market positioning in the dataset.
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════ CONCLUSION ════════════════════ -->
+  <div class="section">
+    <div class="section-title">Section 06</div>
+    <div class="section-heading">Conclusion & Strategic Summary</div>
+    <div class="conclusion">
+      <h2>Key Takeaways</h2>
+      <div class="diff-grid">
+        <div class="diff-block">
+          <h3 style="color:#FF9264;">🟠 Temu</h3>
+          <ul>
+            <li>Massive influencer footprint (218 ambassadors)</li>
+            <li>47M+ total follower reach — dominant scale</li>
+            <li>Female-leaning audience (60%) suits lifestyle/retail</li>
+            <li>Western markets lead: USA, Brazil, Italy</li>
+            <li>Mid-tier strategy (~216K avg followers)</li>
+            <li>Age 31.8 — core millennial consumer</li>
+          </ul>
+        </div>
+        <div class="diff-block">
+          <h3 style="color:#F5845D;">🔴 Shopee</h3>
+          <ul>
+            <li>Lean, curated program (13 ambassadors)</li>
+            <li>403K total reach — hyper-targeted niche</li>
+            <li>Balanced gender (50/50) — broad appeal</li>
+            <li>Taiwan primary market in Instagram data</li>
+            <li>Micro strategy (~31K avg followers)</li>
+            <li>Age 30.3 — slightly younger millennial</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:22px;background:rgba(255,255,255,0.06);border-radius:12px;padding:18px;font-size:13.5px;line-height:1.8;opacity:0.9;">
+        <strong style="opacity:1;">Analyst Note:</strong> Temu and Shopee represent two fundamentally different Instagram ambassador philosophies. Temu operates a wide-net, volume-driven program targeting Western markets at scale — optimized for brand awareness and impulse discovery. Shopee's lean program signals either a deliberate micro-influencer strategy for its Taiwan market, or that its primary influencer investment occurs on other platforms (TikTok, Shopee Live) native to its SEA user base. The 116× follower reach gap (47M vs 403K) is the most striking differentiator and reflects Temu's aggressive global expansion investment.
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  Brand Demographics &amp; Marketing Analysis &nbsp;·&nbsp; Temu vs. Shopee &nbsp;·&nbsp; Data source: Instagram Ambassador Program &nbsp;·&nbsp; April 2026
+</footer>
+
+</body>
+</html>

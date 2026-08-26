@@ -4,9 +4,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const STATS = [
-  { value: "3M+", label: "Creators Indexed" },
-  { value: "10K+", label: "Brands Tracked" },
-  { value: "Real-time", label: "Data Feed" },
+  { value: "12", label: "Saved Reports" },
+  { value: "15", label: "Demo Creators" },
+  { value: "Static", label: "Data Mode" },
 ];
 
 const FEATURE_CARDS = [
@@ -50,7 +50,7 @@ export default function HomePage() {
         >
           <span className="badge-brand inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium mb-8">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            Live Demo · Investor Preview
+            Static Demo · No live AI calls
           </span>
         </motion.div>
 
@@ -73,8 +73,8 @@ export default function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Discover, compare, and activate creators with real-time data. Built for
-          modern brands that move fast.
+          Explore clearHub using saved reports and creator data. This public demo
+          makes no live AI calls.
         </motion.p>
 
         {/* Stats bar */}
@@ -160,7 +160,7 @@ export default function HomePage() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 1.0 }}
       >
-        clearHub by CreatorDB · Real-time influencer intelligence
+        clearHub by CreatorDB · Static public demo
       </motion.p>
     </div>
   );

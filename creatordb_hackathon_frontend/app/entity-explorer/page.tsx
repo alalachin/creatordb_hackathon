@@ -1,22 +1,11 @@
 import Link from "next/link";
-import { loadBrandsByProductType } from "@/lib/utils";
-import { LUXURY_BRANDS } from "@/lib/brandsData";
+import { BRANDS_DATA } from "@/lib/brandsData";
 import CategoryGrid from "./CategoryGrid";
 
-export const dynamic = "force-dynamic";
-
 export default function EntityExplorerPage() {
-  const brandsByType = loadBrandsByProductType();
-
-  // Inject Luxury if not present
-  if (!brandsByType["Luxury"]) {
-    brandsByType["Luxury"] = [...LUXURY_BRANDS].sort();
-  }
-
-  // Luxury first, then the rest sorted alphabetically
   const categories = [
     "Luxury",
-    ...Object.keys(brandsByType)
+    ...Object.keys(BRANDS_DATA)
       .filter((k) => k !== "Luxury")
       .sort(),
   ];
@@ -24,10 +13,13 @@ export default function EntityExplorerPage() {
   // Build brand counts per category
   const brandCounts: Record<string, number> = {};
   for (const cat of categories) {
-    brandCounts[cat] = brandsByType[cat]?.length ?? 0;
+    brandCounts[cat] = Object.keys(BRANDS_DATA[cat] ?? {}).length;
   }
 
-  const totalBrands = Object.values(brandsByType).flat().length;
+  const totalBrands = Object.values(BRANDS_DATA).reduce(
+    (total, brands) => total + Object.keys(brands).length,
+    0
+  );
 
   return (
     <div className="mesh-bg min-h-screen">
