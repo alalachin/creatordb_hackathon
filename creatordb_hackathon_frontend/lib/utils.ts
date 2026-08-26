@@ -1,5 +1,40 @@
 import fs from "fs";
+import path from "path";
+import { parse } from "csv-parse/sync";
 import { Creator } from "./types";
+
+export function loadBrandsByProductType(): Record<string, string[]> {
+  const csvPath = path.join(process.cwd(), "demo-data", "brand_influencers.csv");
+
+  try {
+    const content = fs.readFileSync(csvPath, "utf-8");
+    const records = parse(content, { columns: true, skip_empty_lines: true }) as Record<
+      string,
+      string
+    >[];
+    const brandsByType: Record<string, Set<string>> = {};
+
+    for (const row of records) {
+      const productType = row["product type"]?.trim();
+      const brandDomain = row.brandDomain?.trim();
+      if (!productType || !brandDomain) continue;
+
+      const domainName = brandDomain.split(".")[0];
+      const brandName = domainName.charAt(0).toUpperCase() + domainName.slice(1);
+      if (!brandsByType[productType]) brandsByType[productType] = new Set();
+      brandsByType[productType].add(brandName);
+    }
+
+    return Object.fromEntries(
+      Object.entries(brandsByType).map(([type, brands]) => [
+        type,
+        Array.from(brands).sort(),
+      ])
+    );
+  } catch {
+    return {};
+  }
+}
 
 export function loadCreatorCache(filePath: string): Creator[] {
   try {
