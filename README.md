@@ -1,6 +1,10 @@
 # clearHub
 
-clearHub is a brand and creator intelligence platform built with Next.js 14. This `demo` branch uses saved reports and creator data, so it can run without Claude or external API calls.
+clearHub is a brand and creator intelligence platform built with Next.js 14. This public demo uses saved reports and creator data, so it can run without Claude or external API calls.
+
+## Live Demo
+
+[Open clearHub](https://creatordb-hackathon.vercel.app)
 
 ## Features
 
