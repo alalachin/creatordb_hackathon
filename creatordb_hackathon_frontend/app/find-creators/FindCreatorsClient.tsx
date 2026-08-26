@@ -313,7 +313,7 @@ export default function FindCreatorsClient({
 }) {
   const [productType, setProductType] = useState(PRODUCT_TYPES[0]);
   const [budget, setBudget] = useState(Object.keys(BUDGET_OPTIONS)[0]);
-  const [creatorCount, setCreatorCount] = useState(3);
+  const [creatorCount, setCreatorCount] = useState(15);
   const [language, setLanguage] = useState("Any");
   const [location, setLocation] = useState("Any");
   const [gender, setGender] = useState("Any");
@@ -525,8 +525,8 @@ export default function FindCreatorsClient({
               {creatorCount}
             </span>
             <button
-              onClick={() => setCreatorCount((c) => Math.min(10, c + 1))}
-              disabled={creatorCount >= 10}
+              onClick={() => setCreatorCount((c) => Math.min(15, c + 1))}
+              disabled={creatorCount >= 15}
               className={`w-9 h-9 rounded-xl border-2 font-bold text-lg flex items-center justify-center disabled:opacity-30 disabled:pointer-events-none transition-all duration-150 ${
                 teaMode
                   ? "border-slate-700 bg-slate-800 text-slate-200 hover:border-teal-400 hover:text-teal-300"
