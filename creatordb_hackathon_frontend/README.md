@@ -1,6 +1,6 @@
-# CreatorDB Dashboard
+# clearHub
 
-An influencer intelligence platform built with Next.js 14 (TypeScript). Find creators, explore competitor brands, and generate AI-powered brand comparison reports.
+An influencer intelligence platform built with Next.js 14 and TypeScript. Find creators, explore competitor brands, and generate AI-powered brand comparison reports.
 
 ---
 
@@ -27,8 +27,8 @@ claude --version
 ### 1. Clone and enter the project
 
 ```bash
-git clone git@github.com:ricky42613/creator_hackathon.git
-cd creator_hackathon
+git clone https://github.com/alalachin/creatordb_hackathon.git
+cd creatordb_hackathon/creatordb_hackathon_frontend
 ```
 
 ### 2. Install dependencies

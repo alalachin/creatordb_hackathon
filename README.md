@@ -1,6 +1,6 @@
-# CreatorDB Dashboard
+# clearHub
 
-CreatorDB Dashboard is a brand and creator intelligence tool built with Next.js 14. It helps users explore competitors, compare brand audiences, and discover creators for marketing campaigns.
+clearHub is a brand and creator intelligence platform built with Next.js 14. It helps users explore competitors, compare brand audiences, and discover creators for marketing campaigns.
 
 ## Features
 
