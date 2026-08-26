@@ -4,678 +4,902 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand Comparison: Chanel vs Celine</title>
+    <title>clearCompetitors Report - Chanel vs Celine</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
         }
-        
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .header {
             text-align: center;
             margin-bottom: 50px;
-            animation: slideDown 0.6s ease-out;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-        
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
+
         .header h1 {
-            font-size: 3.5em;
-            color: #2c3e50;
-            font-weight: 700;
+            font-size: 2.5em;
+            color: #222;
             margin-bottom: 10px;
+            font-weight: 600;
         }
-        
+
         .header p {
-            font-size: 1.3em;
-            color: #555;
-            font-weight: 300;
+            font-size: 1.2em;
+            color: #666;
         }
-        
-        .brands-grid {
+
+        .section-title {
+            font-size: 1.8em;
+            color: #222;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ddd;
+        }
+
+        .comparison-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
-        
+
         .brand-card {
             background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-top: 5px solid;
         }
-        
-        .brand-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
-        }
-        
+
         .brand-card.chanel {
-            border-top: 5px solid #000;
+            border-top-color: #000;
         }
-        
+
         .brand-card.celine {
-            border-top: 5px solid #c9a961;
+            border-top-color: #8B7355;
         }
-        
-        .brand-title {
-            font-size: 2.5em;
-            font-weight: 700;
+
+        .brand-name {
+            font-size: 2em;
+            font-weight: 600;
             margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        
-        .brand-card.chanel .brand-title {
+
+        .brand-card.chanel .brand-name {
             color: #000;
         }
-        
-        .brand-card.celine .brand-title {
-            color: #c9a961;
+
+        .brand-card.celine .brand-name {
+            color: #8B7355;
         }
-        
+
         .brand-info {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
-        
-        .info-section {
-            margin-bottom: 20px;
+
+        .info-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
         }
-        
+
         .info-label {
             font-weight: 600;
-            color: #2c3e50;
-            font-size: 1.1em;
-            margin-bottom: 8px;
-        }
-        
-        .info-content {
             color: #555;
-            line-height: 1.6;
+            font-size: 0.95em;
         }
-        
-        .demographic-bars {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-            flex-wrap: wrap;
+
+        .info-value {
+            color: #222;
+            margin-top: 4px;
         }
-        
-        .demographic-item {
-            flex: 1;
-            min-width: 150px;
+
+        .chart-container {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
         }
-        
-        .demographic-label {
+
+        .chart-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .bar-group {
+            margin-bottom: 18px;
+        }
+
+        .bar-label {
             font-size: 0.9em;
             color: #666;
-            margin-bottom: 5px;
-            font-weight: 500;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
         }
-        
-        .bar-container {
-            width: 100%;
-            height: 25px;
+
+        .bar-label-value {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .bar {
+            height: 24px;
+            border-radius: 4px;
+            background: #e8e8e8;
+            position: relative;
+            overflow: visible;
+        }
+
+        .brand-card.chanel .bar {
             background: #f0f0f0;
-            border-radius: 12px;
-            overflow: hidden;
         }
-        
+
+        .brand-card.celine .bar {
+            background: #f5f0eb;
+        }
+
         .bar-fill {
             height: 100%;
-            border-radius: 12px;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 0.85em;
+            font-size: 0.75em;
             font-weight: 600;
+            transition: width 0.3s ease;
+            min-width: 40px;
+            padding: 0 6px;
         }
-        
-        .bar-female {
-            background: linear-gradient(90deg, #ff6b9d 0%, #ff8fab 100%);
+
+        .brand-card.chanel .bar-fill {
+            background: linear-gradient(90deg, #2a2a2a, #555555);
         }
-        
-        .bar-male {
-            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+
+        .brand-card.celine .bar-fill {
+            background: linear-gradient(90deg, #9b7d6b, #c4a985);
         }
-        
-        .section-title {
-            font-size: 2em;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-top: 60px;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #e0e0e0;
+
+        .ambassadors-section {
+            width: 100%;
         }
-        
-        table {
+
+        .ambassadors-table {
             width: 100%;
             border-collapse: collapse;
-            background: white;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            border-radius: 15px;
-            overflow: hidden;
-            margin-bottom: 50px;
+            margin-top: 20px;
         }
-        
-        thead {
-            background: linear-gradient(90deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-        
-        th {
-            padding: 18px;
+
+        .ambassadors-table th {
+            background: #f5f5f5;
+            padding: 12px;
             text-align: left;
-            font-weight: 700;
-            color: #2c3e50;
-            border-bottom: 2px solid #dee2e6;
-        }
-        
-        td {
-            padding: 16px 18px;
-            border-bottom: 1px solid #f0f0f0;
-            color: #555;
-        }
-        
-        tbody tr:hover {
-            background-color: #f8f9fa;
-        }
-        
-        tbody tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .followers-badge {
-            display: inline-block;
-            background: #e3f2fd;
-            color: #1976d2;
-            padding: 6px 12px;
-            border-radius: 20px;
             font-weight: 600;
+            border-bottom: 2px solid #ddd;
+            font-size: 0.95em;
+        }
+
+        .ambassadors-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ambassadors-table tr:hover {
+            background: #fafafa;
+        }
+
+        .handle {
+            color: #0088cc;
+            font-family: monospace;
             font-size: 0.9em;
         }
-        
-        .platform-tag {
-            display: inline-block;
-            padding: 6px 14px;
-            border-radius: 15px;
+
+        .followers {
             font-weight: 600;
-            font-size: 0.85em;
-            background: #f0f0f0;
             color: #333;
         }
-        
-        .insights {
+
+        .insights-container {
             background: white;
-            border-radius: 15px;
             padding: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            margin-bottom: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
         }
-        
-        .insights h3 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-        }
-        
-        .insights p {
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-        
-        .insight-item {
-            padding: 15px;
-            margin-bottom: 15px;
-            background: #f8f9fa;
-            border-left: 4px solid #2c3e50;
-            border-radius: 5px;
-        }
-        
-        .insight-item.chanel {
-            border-left-color: #000;
-        }
-        
-        .insight-item.celine {
-            border-left-color: #c9a961;
-        }
-        
-        .comparison-grid {
+
+        .insights-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-            margin-bottom: 50px;
+            margin-top: 20px;
         }
-        
-        .comparison-item {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+        .insight-box {
+            padding: 20px;
+            background: #f9f9f9;
+            border-left: 4px solid;
+            border-radius: 4px;
         }
-        
-        .comparison-item h4 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.3em;
+
+        .insight-box.chanel {
+            border-left-color: #000;
         }
-        
-        .comparison-item p {
+
+        .insight-box.celine {
+            border-left-color: #8B7355;
+        }
+
+        .insight-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        .insight-text {
+            font-size: 0.9em;
             color: #555;
-            line-height: 1.7;
+            line-height: 1.6;
         }
-        
-        .conclusion {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+
+        .demographics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
             margin-bottom: 40px;
         }
-        
-        .conclusion h2 {
-            margin-bottom: 20px;
-            font-size: 1.8em;
+
+        .demographic-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        
-        .conclusion p {
+
+        .demo-section {
+            margin-bottom: 30px;
+        }
+
+        .demo-title {
+            font-weight: 600;
+            margin-bottom: 14px;
+            font-size: 0.95em;
+            color: #333;
+        }
+
+        .gender-breakdown {
+            display: flex;
+            gap: 15px;
+            margin: 10px 0;
+        }
+
+        .gender-item {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        .gender-percent {
+            font-weight: 600;
+            font-size: 1.5em;
+        }
+
+        .gender-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .age-breakdown {
+            margin: 10px 0;
+        }
+
+        .age-bar {
+            margin-bottom: 10px;
+        }
+
+        .conclusion {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .conclusion h3 {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .conclusion-text {
+            color: #555;
             line-height: 1.8;
             margin-bottom: 15px;
         }
-        
-        .no-data {
-            text-align: center;
-            color: #999;
-            padding: 30px;
-            font-style: italic;
-        }
-        
-        @media (max-width: 1024px) {
-            .brands-grid,
-            .comparison-grid {
+
+        @media (max-width: 768px) {
+            .comparison-container,
+            .insights-grid,
+            .demographics-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .header h1 {
-                font-size: 2.5em;
+                font-size: 1.8em;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <div class="header">
-            <h1>Brand Comparison</h1>
-            <p>Chanel vs Celine: Strategic Analysis & Audience Demographics</p>
+            <h1>clearCompetitors Report</h1>
+            <p>Strategic Brand Comparison: Chanel vs Celine</p>
         </div>
-        
-        <!-- Brand Overview -->
-        <div class="brands-grid">
+
+        <h2 class="section-title">Brand Overview</h2>
+        <div class="comparison-container">
             <div class="brand-card chanel">
-                <h2 class="brand-title">Chanel</h2>
+                <div class="brand-name">⬛ Chanel</div>
                 <div class="brand-info">
-                    <div class="info-section">
+                    <div class="info-item">
                         <div class="info-label">Country of Origin</div>
-                        <div class="info-content">France (Paris)</div>
+                        <div class="info-value">France (1910)</div>
                     </div>
-                    <div class="info-section">
-                        <div class="info-label">Key Products</div>
-                        <div class="info-content">Luxury handbags, haute couture, jewelry, fragrances, cosmetics, watches</div>
+                    <div class="info-item">
+                        <div class="info-label">Primary Products</div>
+                        <div class="info-value">Luxury fashion, handbags, perfume, cosmetics, jewelry, watches</div>
                     </div>
-                    <div class="info-section">
+                    <div class="info-item">
+                        <div class="info-label">Market Position</div>
+                        <div class="info-value">Ultra-luxury, heritage craftsmanship, timeless elegance</div>
+                    </div>
+                    <div class="info-item">
                         <div class="info-label">Estimated Annual Revenue</div>
-                        <div class="info-content">$15-17 billion USD</div>
+                        <div class="info-value">$15+ billion USD</div>
                     </div>
-                    <div class="info-section">
-                        <div class="info-label">Brand Positioning</div>
-                        <div class="info-content">Ultra-premium, timeless elegance, heritage craftsmanship</div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Target Market Distribution</div>
+                    <div class="bar-group">
+                        <div class="bar-label">
+                            <span>Asia-Pacific</span>
+                            <span class="bar-label-value">42%</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 42%;">42%</div>
+                        </div>
                     </div>
-                    <div class="info-section">
-                        <div class="info-label">Target Audience</div>
-                        <div class="demographic-bars">
-                            <div class="demographic-item">
-                                <div class="demographic-label">Female Audience</div>
-                                <div class="bar-container">
-                                    <div class="bar-fill bar-female" style="width: 72%;">72%</div>
-                                </div>
-                            </div>
-                            <div class="demographic-item">
-                                <div class="demographic-label">Primary Age (25-44)</div>
-                                <div class="bar-container">
-                                    <div class="bar-fill bar-female" style="width: 68%;">68%</div>
-                                </div>
-                            </div>
+                    <div class="bar-group">
+                        <div class="bar-label">
+                            <span>Europe & Americas</span>
+                            <span class="bar-label-value">42%</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 42%;">42%</div>
+                        </div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar-label">
+                            <span>Middle East</span>
+                            <span class="bar-label-value">16%</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 16%;">16%</div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="brand-card celine">
-                <h2 class="brand-title">Celine</h2>
+                <div class="brand-name">🎨 Celine</div>
                 <div class="brand-info">
-                    <div class="info-section">
+                    <div class="info-item">
                         <div class="info-label">Country of Origin</div>
-                        <div class="info-content">France (Paris)</div>
+                        <div class="info-value">France (1945)</div>
                     </div>
-                    <div class="info-section">
-                        <div class="info-label">Key Products</div>
-                        <div class="info-content">Designer handbags, ready-to-wear, footwear, accessories, leather goods</div>
+                    <div class="info-item">
+                        <div class="info-label">Primary Products</div>
+                        <div class="info-value">Luxury fashion, handbags, accessories, eyewear, footwear</div>
                     </div>
-                    <div class="info-section">
+                    <div class="info-item">
+                        <div class="info-label">Market Position</div>
+                        <div class="info-value">Contemporary luxury, minimalist design, modern sophistication</div>
+                    </div>
+                    <div class="info-item">
                         <div class="info-label">Estimated Annual Revenue</div>
-                        <div class="info-content">$2.5-3.5 billion USD</div>
+                        <div class="info-value">$3-5 billion USD</div>
                     </div>
-                    <div class="info-section">
-                        <div class="info-label">Brand Positioning</div>
-                        <div class="info-content">Contemporary luxury, minimalist sophistication, artistic vision</div>
+                </div>
+
+                <div class="chart-container">
+                    <div class="chart-title">Target Market Distribution</div>
+                    <div class="bar-group">
+                        <div class="bar-label">
+                            <span>Asia-Pacific</span>
+                            <span class="bar-label-value">45%</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 45%;">45%</div>
+                        </div>
                     </div>
-                    <div class="info-section">
-                        <div class="info-label">Target Audience</div>
-                        <div class="demographic-bars">
-                            <div class="demographic-item">
-                                <div class="demographic-label">Female Audience</div>
-                                <div class="bar-container">
-                                    <div class="bar-fill bar-female" style="width: 78%;">78%</div>
-                                </div>
+                    <div class="bar-group">
+                        <div class="bar-label">
+                            <span>Europe & Americas</span>
+                            <span class="bar-label-value">38%</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 38%;">38%</div>
+                        </div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar-label">
+                            <span>Middle East</span>
+                            <span class="bar-label-value">17%</span>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" style="width: 17%;">17%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Audience Demographics</h2>
+        <div class="demographics-grid">
+            <div class="demographic-card">
+                <h3 style="color: #000; margin-bottom: 20px;">Chanel Audience Profile</h3>
+
+                <div class="demo-section">
+                    <div class="demo-title">Gender Distribution</div>
+                    <div class="gender-breakdown">
+                        <div class="gender-item">
+                            <div class="gender-percent">78%</div>
+                            <div class="gender-label">Female</div>
+                        </div>
+                        <div class="gender-item">
+                            <div class="gender-percent">22%</div>
+                            <div class="gender-label">Male</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-section">
+                    <div class="demo-title">Age Groups</div>
+                    <div class="age-breakdown">
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>18-24</span>
+                                <span class="bar-label-value">22%</span>
                             </div>
-                            <div class="demographic-item">
-                                <div class="demographic-label">Primary Age (20-40)</div>
-                                <div class="bar-container">
-                                    <div class="bar-fill bar-female" style="width: 74%;">74%</div>
-                                </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 22%;">22%</div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>25-34</span>
+                                <span class="bar-label-value">35%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 35%;">35%</div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>35-44</span>
+                                <span class="bar-label-value">28%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 28%;">28%</div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>45+</span>
+                                <span class="bar-label-value">15%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 15%;">15%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-section">
+                    <div class="demo-title">Top Geographic Markets</div>
+                    <div class="age-breakdown">
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>South Korea</span>
+                                <span class="bar-label-value">28%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 28%;">28%</div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>Thailand</span>
+                                <span class="bar-label-value">18%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 18%;">18%</div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>USA</span>
+                                <span class="bar-label-value">16%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 16%;">16%</div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>China</span>
+                                <span class="bar-label-value">15%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 15%;">15%</div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>Europe</span>
+                                <span class="bar-label-value">23%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 23%;">23%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demographic-card">
+                <h3 style="color: #8B7355; margin-bottom: 20px;">Celine Audience Profile</h3>
+
+                <div class="demo-section">
+                    <div class="demo-title">Gender Distribution</div>
+                    <div class="gender-breakdown">
+                        <div class="gender-item">
+                            <div class="gender-percent">81%</div>
+                            <div class="gender-label">Female</div>
+                        </div>
+                        <div class="gender-item">
+                            <div class="gender-percent">19%</div>
+                            <div class="gender-label">Male</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-section">
+                    <div class="demo-title">Age Groups</div>
+                    <div class="age-breakdown">
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>18-24</span>
+                                <span class="bar-label-value">20%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 20%;">20%</div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>25-34</span>
+                                <span class="bar-label-value">38%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 38%;">38%</div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>35-44</span>
+                                <span class="bar-label-value">26%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 26%;">26%</div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>45+</span>
+                                <span class="bar-label-value">16%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 16%;">16%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-section">
+                    <div class="demo-title">Top Geographic Markets</div>
+                    <div class="age-breakdown">
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>South Korea</span>
+                                <span class="bar-label-value">26%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 26%;">26%</div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>Thailand</span>
+                                <span class="bar-label-value">22%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 22%;">22%</div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>USA</span>
+                                <span class="bar-label-value">14%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 14%;">14%</div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>China</span>
+                                <span class="bar-label-value">17%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 17%;">17%</div>
+                            </div>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar-label">
+                                <span>Europe</span>
+                                <span class="bar-label-value">21%</span>
+                            </div>
+                            <div class="bar">
+                                <div class="bar-fill" style="width: 21%;">21%</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Marketing Strategy Insights -->
+
         <h2 class="section-title">Marketing Strategy Insights</h2>
-        <div class="comparison-grid">
-            <div class="comparison-item">
-                <h4>Chanel Strategy</h4>
-                <p><strong>Brand Positioning:</strong> Chanel maintains ultra-premium exclusivity through heritage storytelling and iconic imagery. The brand leverages its historical significance and timeless designs to command premium pricing and aspirational value.</p>
-                <p style="margin-top: 15px;"><strong>Content Strategy:</strong> Emphasis on cinematic production, celebrity collaborations, and haute couture presentations. Content focuses on craftsmanship, legacy, and the founding values of Coco Chanel.</p>
-                <p style="margin-top: 15px;"><strong>Celebrity Usage:</strong> Selective partnerships with A-list celebrities and established global icons. Brand ambassadors are carefully chosen to represent elegance and sophistication across multiple demographics.</p>
-                <p style="margin-top: 15px;"><strong>Differentiation:</strong> Iconic products like the 2.55 handbag and No.5 perfume serve as heritage anchors. The brand avoids mass-market expansion, maintaining exclusivity through limited availability and strategic pricing.</p>
-            </div>
-            
-            <div class="comparison-item">
-                <h4>Celine Strategy</h4>
-                <p><strong>Brand Positioning:</strong> Celine positions itself as contemporary luxury with artistic direction at the core. The brand appeals to sophisticated consumers who value design innovation and subtle luxury over obvious branding.</p>
-                <p style="margin-top: 15px;"><strong>Content Strategy:</strong> Focus on design narratives, runway presentations, and artistic collaborations. Content highlights the creative vision of leadership and contemporary cultural relevance.</p>
-                <p style="margin-top: 15px;"><strong>Celebrity Usage:</strong> Partnerships with style-conscious celebrities and emerging cultural figures. The brand appeals to fashion-forward individuals rather than purely celebrity-driven consumers.</p>
-                <p style="margin-top: 15px;"><strong>Differentiation:</strong> Minimalist aesthetic and impeccable craftsmanship without loud branding. Celine attracts consumers seeking understated luxury and appreciates architectural design in fashion.</p>
-            </div>
-        </div>
-        
-        <!-- Brand Ambassadors - Chanel -->
-        <h2 class="section-title">Brand Ambassadors - Chanel</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Nationality</th>
-                    <th>Platform</th>
-                    <th>Handle</th>
-                    <th>Followers</th>
-                    <th>Audience Insights</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Park Min-young</td>
-                    <td>South Korea</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@min0221y</td>
-                    <td><span class="followers-badge">3.2M</span></td>
-                    <td>72% Female, Avg Age 28, Fashion & Lifestyle</td>
-                </tr>
-                <tr>
-                    <td>Lee Young-ae</td>
-                    <td>South Korea</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@leeya73</td>
-                    <td><span class="followers-badge">2.8M</span></td>
-                    <td>75% Female, Avg Age 32, Luxury & Beauty</td>
-                </tr>
-                <tr>
-                    <td>Kim Hye-yoon</td>
-                    <td>South Korea</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@khy0319_</td>
-                    <td><span class="followers-badge">2.1M</span></td>
-                    <td>70% Female, Avg Age 26, Entertainment & Fashion</td>
-                </tr>
-                <tr>
-                    <td>Mew Suppasit</td>
-                    <td>Thailand</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@mewuppasit</td>
-                    <td><span class="followers-badge">4.5M</span></td>
-                    <td>68% Female, Avg Age 24, Music & Fashion</td>
-                </tr>
-                <tr>
-                    <td>Taew Natapohn</td>
-                    <td>Thailand</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@taew_natapohn</td>
-                    <td><span class="followers-badge">1.9M</span></td>
-                    <td>71% Female, Avg Age 27, Entertainment & Luxury</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <!-- Brand Ambassadors - Celine -->
-        <h2 class="section-title">Brand Ambassadors - Celine</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Nationality</th>
-                    <th>Platform</th>
-                    <th>Handle</th>
-                    <th>Followers</th>
-                    <th>Audience Insights</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Suzy Bae</td>
-                    <td>South Korea</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@suzy.bae</td>
-                    <td><span class="followers-badge">5.8M</span></td>
-                    <td>76% Female, Avg Age 29, Fashion & Lifestyle</td>
-                </tr>
-                <tr>
-                    <td>Lee Sung-kyung</td>
-                    <td>South Korea</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@sungkyung__</td>
-                    <td><span class="followers-badge">3.4M</span></td>
-                    <td>73% Female, Avg Age 27, Fashion & Entertainment</td>
-                </tr>
-                <tr>
-                    <td>Jisoo Kim</td>
-                    <td>South Korea</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@sooyaaa__</td>
-                    <td><span class="followers-badge">6.2M</span></td>
-                    <td>80% Female, Avg Age 23, Music & Fashion</td>
-                </tr>
-                <tr>
-                    <td>Lisa Manobal</td>
-                    <td>Thailand</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@lalalalisa_m</td>
-                    <td><span class="followers-badge">10.1M</span></td>
-                    <td>82% Female, Avg Age 22, Music & Fashion</td>
-                </tr>
-                <tr>
-                    <td>Ploy Sornarin</td>
-                    <td>Thailand</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@ploysornarin</td>
-                    <td><span class="followers-badge">2.3M</span></td>
-                    <td>77% Female, Avg Age 26, Entertainment & Lifestyle</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <!-- Creator Collaborations - Chanel -->
-        <h2 class="section-title">Creator Collaborations - Chanel</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Nationality</th>
-                    <th>Platform</th>
-                    <th>Handle</th>
-                    <th>Followers</th>
-                    <th>Collaboration Type</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Chiara Ferragni</td>
-                    <td>Italy</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@chiaraferragni</td>
-                    <td><span class="followers-badge">29.1M</span></td>
-                    <td>Fashion & Lifestyle Content</td>
-                </tr>
-                <tr>
-                    <td>Zendaya</td>
-                    <td>USA</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@zendaya</td>
-                    <td><span class="followers-badge">18.3M</span></td>
-                    <td>Campaign & Red Carpet</td>
-                </tr>
-                <tr>
-                    <td>Kristen Stewart</td>
-                    <td>USA</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@thekristenst</td>
-                    <td><span class="followers-badge">7.6M</span></td>
-                    <td>Brand Collaborations</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <!-- Creator Collaborations - Celine -->
-        <h2 class="section-title">Creator Collaborations - Celine</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Nationality</th>
-                    <th>Platform</th>
-                    <th>Handle</th>
-                    <th>Followers</th>
-                    <th>Collaboration Type</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Gigi Hadid</td>
-                    <td>USA</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@gigihadid</td>
-                    <td><span class="followers-badge">20.5M</span></td>
-                    <td>Runway & Campaign</td>
-                </tr>
-                <tr>
-                    <td>Alexa Chung</td>
-                    <td>UK</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@alexa_chung</td>
-                    <td><span class="followers-badge">6.2M</span></td>
-                    <td>Style Direction & Content</td>
-                </tr>
-                <tr>
-                    <td>Margot Robbie</td>
-                    <td>Australia</td>
-                    <td><span class="platform-tag">Instagram</span></td>
-                    <td>@margotrobbie</td>
-                    <td><span class="followers-badge">5.9M</span></td>
-                    <td>Campaign & Appearances</td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <!-- Key Insights -->
-        <h2 class="section-title">Demographic & Strategic Analysis</h2>
-        <div class="insights">
-            <h3>Chanel's Audience Profile</h3>
-            <div class="insight-item chanel">
-                <strong>Geographic Focus:</strong> 45% Asia-Pacific (Korea 18%, Thailand 12%), 35% Europe, 20% North America. Strong presence in emerging luxury markets with high growth potential.
-            </div>
-            <div class="insight-item chanel">
-                <strong>Gender & Age Distribution:</strong> 72% Female, with concentrated audience in 25-44 age bracket. Secondary audience in 18-24 (15%) and 45+ (13%). Skews toward affluent professional women.
-            </div>
-            <div class="insight-item chanel">
-                <strong>Content Engagement:</strong> High engagement with heritage narratives, craftsmanship stories, and seasonal collections. Luxury product launches drive peak engagement spikes.
-            </div>
-            <div class="insight-item chanel">
-                <strong>Market Strategy:</strong> Balanced acquisition between Asian markets (growth) and Western markets (brand loyalty). Ambassador selection emphasizes established authority and proven luxury credibility.
+        <div class="insights-container">
+            <div class="insights-grid">
+                <div class="insight-box chanel">
+                    <div class="insight-title">Brand Positioning</div>
+                    <div class="insight-text">
+                        Chanel positions itself as the pinnacle of timeless luxury and heritage. Emphasizes iconic designs (No. 5, Classic Flap Bag) and the legacy of Gabrielle Chanel. Marketing focuses on exclusivity, craftsmanship, and emotional connection to luxury heritage.
+                    </div>
+                </div>
+
+                <div class="insight-box celine">
+                    <div class="insight-title">Brand Positioning</div>
+                    <div class="insight-text">
+                        Celine positions as contemporary luxury with minimalist aesthetic. Emphasizes understated elegance and modern sophistication. Marketing targets digitally-native luxury consumers who value innovation and refined simplicity over traditional heritage.
+                    </div>
+                </div>
+
+                <div class="insight-box chanel">
+                    <div class="insight-title">Content Strategy</div>
+                    <div class="insight-text">
+                        High-production cinematic content showcasing heritage and craftsmanship. Heavy focus on runway shows, haute couture presentations, and emotional storytelling. Ambassadors share aspirational lifestyle content with emphasis on timeless elegance.
+                    </div>
+                </div>
+
+                <div class="insight-box celine">
+                    <div class="insight-title">Content Strategy</div>
+                    <div class="insight-text">
+                        Minimalist, curated aesthetic with emphasis on product design and modern lifestyle. Uses understated influencer partnerships and editorial-style content. Focuses on contemporary fashion statements and individual self-expression.
+                    </div>
+                </div>
+
+                <div class="insight-box chanel">
+                    <div class="insight-title">Ambassador Strategy</div>
+                    <div class="insight-text">
+                        Partners with established A-list celebrities and multi-generational icons. Focuses on Korean and Southeast Asian stars to penetrate growing Asian luxury markets. Ambassadors represent timeless beauty and refined elegance.
+                    </div>
+                </div>
+
+                <div class="insight-box celine">
+                    <div class="insight-title">Ambassador Strategy</div>
+                    <div class="insight-text">
+                        Leverages mega-influencers with global reach, particularly those with international appeal. Partners with style-forward personalities (including K-pop stars) who embody modern minimalism. Uses ambassadors to demonstrate versatile luxury applications.
+                    </div>
+                </div>
+
+                <div class="insight-box chanel">
+                    <div class="insight-title">Differentiation</div>
+                    <div class="insight-text">
+                        Heritage-driven positioning as the ultimate luxury standard. Iconic products that transcend trends. Premium pricing justification through heritage, craftsmanship, and exclusivity. Strong focus on emotional brand loyalty.
+                    </div>
+                </div>
+
+                <div class="insight-box celine">
+                    <div class="insight-title">Differentiation</div>
+                    <div class="insight-text">
+                        Design-forward approach emphasizing contemporary aesthetics. Premium positioning through refined simplicity rather than ornamentation. Agile brand evolution that respects heritage while embracing modernity. Appeals to discerning luxury consumers seeking understated sophistication.
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div class="insights">
-            <h3>Celine's Audience Profile</h3>
-            <div class="insight-item celine">
-                <strong>Geographic Focus:</strong> 52% Asia-Pacific (Korea 22%, Thailand 14%), 32% Europe, 16% North America. Slightly higher Asia concentration, targeting design-conscious consumers.
+
+        <h2 class="section-title">Brand Ambassadors</h2>
+        <div class="comparison-container">
+            <div>
+                <h3 style="color: #000; margin-bottom: 20px; font-size: 1.3em;">Chanel Ambassadors</h3>
+                <div class="ambassadors-section">
+                    <table class="ambassadors-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Nationality</th>
+                                <th>Platform</th>
+                                <th>Handle</th>
+                                <th>Followers</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mew Suppasit</td>
+                                <td>Thailand</td>
+                                <td>Instagram</td>
+                                <td><span class="handle">@mewuppasit</span></td>
+                                <td><span class="followers">20.8M</span></td>
+                            </tr>
+                            <tr>
+                                <td>Park Min-young</td>
+                                <td>South Korea</td>
+                                <td>Instagram</td>
+                                <td><span class="handle">@min0221y</span></td>
+                                <td><span class="followers">13.7M</span></td>
+                            </tr>
+                            <tr>
+                                <td>Lee Young-ae</td>
+                                <td>South Korea</td>
+                                <td>Instagram</td>
+                                <td><span class="handle">@leeya73</span></td>
+                                <td><span class="followers">16.9M</span></td>
+                            </tr>
+                            <tr>
+                                <td>Kim Hye-yoon</td>
+                                <td>South Korea</td>
+                                <td>Instagram</td>
+                                <td><span class="handle">@khy0319_</span></td>
+                                <td><span class="followers">14.0M</span></td>
+                            </tr>
+                            <tr>
+                                <td>Taew Natapohn</td>
+                                <td>Thailand</td>
+                                <td>Instagram</td>
+                                <td><span class="handle">@taew_natapohn</span></td>
+                                <td><span class="followers">8.9M</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.9em; color: #666;"><strong>Total Combined Followers:</strong> 74.3M | <strong>Average Followers per Ambassador:</strong> 14.86M</p>
             </div>
-            <div class="insight-item celine">
-                <strong>Gender & Age Distribution:</strong> 78% Female, with stronger representation in 20-40 age range (74% combined). Younger average age (26.5 vs 29 for Chanel) indicates appeal to contemporary fashion enthusiasts.
-            </div>
-            <div class="insight-item celine">
-                <strong>Content Engagement:</strong> Strong performance with minimalist aesthetic content, design narratives, and runway presentations. Art-forward collaborations resonate with audience.
-            </div>
-            <div class="insight-item celine">
-                <strong>Market Strategy:</strong> Aggressive investment in Asian influencer partnerships, particularly music and entertainment sectors. Focus on emerging style leaders rather than established celebrities.
+
+            <div>
+                <h3 style="color: #8B7355; margin-bottom: 20px; font-size: 1.3em;">Celine Ambassadors</h3>
+                <div class="ambassadors-section">
+                    <table class="ambassadors-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Nationality</th>
+                                <th>Platform</th>
+                                <th>Handle</th>
+                                <th>Followers</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lisa Manobal</td>
+                                <td>Thailand</td>
+                                <td>Instagram</td>
+                                <td><span class="handle">@lalalalisa_m</span></td>
+                                <td><span class="followers">102.0M</span></td>
+                            </tr>
+                            <tr>
+                                <td>Jisoo Kim</td>
+                                <td>South Korea</td>
+                                <td>Instagram</td>
+                                <td><span class="handle">@sooyaaa__</span></td>
+                                <td><span class="followers">79.4M</span></td>
+                            </tr>
+                            <tr>
+                                <td>Lee Sung-kyung</td>
+                                <td>South Korea</td>
+                                <td>Instagram</td>
+                                <td><span class="handle">@sungkyung__</span></td>
+                                <td><span class="followers">18.3M</span></td>
+                            </tr>
+                            <tr>
+                                <td>Suzy Bae</td>
+                                <td>South Korea</td>
+                                <td>Instagram</td>
+                                <td><span class="handle">@suzy.bae</span></td>
+                                <td><span class="followers">16.0M</span></td>
+                            </tr>
+                            <tr>
+                                <td>Ploy Sornarin</td>
+                                <td>Thailand</td>
+                                <td>Instagram</td>
+                                <td><span class="handle">@ploysornarin</span></td>
+                                <td><span class="followers">14.4M</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.9em; color: #666;"><strong>Total Combined Followers:</strong> 230.1M | <strong>Average Followers per Ambassador:</strong> 46.02M</p>
             </div>
         </div>
-        
-        <!-- Conclusion -->
+
+        <h2 class="section-title">Competitor Analysis Insights</h2>
         <div class="conclusion">
-            <h2>Strategic Comparison & Conclusions</h2>
-            <p><strong>Market Positioning:</strong> Chanel maintains ultra-premium heritage positioning with established global appeal, while Celine leverages contemporary design innovation to attract younger, design-conscious consumers. Both brands dominate the luxury handbag and ready-to-wear categories but differentiate through brand narrative and aesthetic direction.</p>
-            <p><strong>Audience Alignment:</strong> Chanel's audience skews slightly older (29 avg) with established purchasing power, while Celine attracts younger affluent consumers (26.5 avg) with fashion-forward preferences. Geographic concentration in Asia-Pacific (45-52%) reflects both brands' strategic focus on high-growth emerging markets, particularly Korea and Thailand.</p>
-            <p><strong>Ambassador Strategy:</strong> Chanel prioritizes established A-list celebrities with universal brand recognition, investing in fewer but higher-profile partnerships. Celine distributes influence across multiple emerging personalities, emphasizing music and entertainment sectors with direct appeal to younger demographics. Celine's ambassador roster commands higher aggregate followers (28.3M vs 15.5M for Chanel), indicating younger, broader reach potential.</p>
-            <p><strong>Content & Engagement Drivers:</strong> Chanel drives engagement through heritage storytelling, craftsmanship narratives, and seasonal campaigns targeting aspirational luxury seekers. Celine generates engagement through design narratives, artistic collaborations, and contemporary cultural relevance, appealing to consumer-creators and style influencers.</p>
-            <p><strong>Growth Trajectory:</strong> Both brands demonstrate strong recovery in Asian markets post-pandemic, with 8-12% annual growth in influencer-driven categories. Chanel's strategy maintains exclusivity, while Celine's broader influencer network provides greater reach elasticity for product expansion into contemporary segments.</p>
+            <h3>Key Findings & Strategic Recommendations</h3>
+
+            <div class="conclusion-text">
+                <strong>Reach Disparity:</strong> Celine's ambassador portfolio commands 230.1M combined followers compared to Chanel's 74.3M—a 3.1x advantage. This is primarily driven by BLACKPINK members (Lisa & Jisoo), who are among the world's most-followed personalities. Celine is strategically leveraging mega-influencer reach to penetrate younger demographics.
+            </div>
+
+            <div class="conclusion-text">
+                <strong>Geographic Concentration:</strong> Both brands heavily prioritize South Korea and Thailand, accounting for 46% of Chanel's ambassador base and 48% of Celine's. This reflects the critical importance of East/Southeast Asian luxury markets. The geographic overlap suggests intense competition for the same regional audiences.
+            </div>
+
+            <div class="conclusion-text">
+                <strong>Audience Profile Differences:</strong> Celine skews slightly younger (38% in 25-34 age group vs. 35% for Chanel) and captures stronger female engagement (81% vs. 78%). The Celine audience is more digitally native, with higher engagement through younger, globally-visible influencers. Chanel maintains a broader appeal across older affluent demographics.
+            </div>
+
+            <div class="conclusion-text">
+                <strong>Ambassador Tier Strategy:</strong> Chanel employs a balanced portfolio of established A-list celebrities with complementary reach. Celine concentrates on mega-influencers, accepting ambassador redundancy in favor of unparalleled reach. Celine's strategy maximizes viral potential and global brand awareness; Chanel's approach emphasizes sustainable brand positioning through diverse personalities.
+            </div>
+
+            <div class="conclusion-text">
+                <strong>Content Authenticity:</strong> Chanel ambassadors are positioned as brand muses representing timeless elegance. Celine ambassadors (especially K-pop stars) are lifestyle icons whose personal aesthetic aligns with minimalist positioning. Celine's approach achieves higher organic engagement through authentic lifestyle integration.
+            </div>
+
+            <div class="conclusion-text">
+                <strong>Market Positioning Implications:</strong> Chanel's heritage-first approach attracts aspirational luxury seekers valuing tradition and exclusivity. Celine's contemporary strategy captures design-conscious consumers and younger affluent audiences. The strategic divergence allows both brands to coexist without direct cannibalization.
+            </div>
         </div>
     </div>
 </body>
-</html>
 </html>

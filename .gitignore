@@ -1,0 +1,7 @@
+.env
+.gitignore
+/venv
+/notebooks
+__pycache__
+.DS_Store
+output/
